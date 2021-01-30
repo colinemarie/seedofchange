@@ -17,22 +17,21 @@ $body-font: 'Quicksand', "Helvetica", "sans-serif";
 
 // pour les titres de card et show
 h1 {
-  font-size: 20px;
+  font-size: 20px !important;
 }
 
 
 p {
-  font-size: 16px;
-  margin: 0px 0px 0px 0px;
+  font-size: 16px !important;
 }
 
 // nom de catégorie et texte navbar secondaire
 h2 {
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 // texte accompagnant les pictos
 subtitle {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
