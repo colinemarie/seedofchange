@@ -1,0 +1,27 @@
+.card-challenge {
+  height: 90px;
+  margin: 10px;
+  border-radius : 20px;
+  background-color: $lightgrey;
+  padding: 10px;
+}
+
+.card-challenge h1 {
+  margin-bottom: 20px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  border-radius: 20px;
+  padding: 3px 10px;
+  display: table;
+  color: $lightgrey;
+}
+
+.label-alim {
+  background-color: $blue;
+}
