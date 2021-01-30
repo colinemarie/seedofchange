@@ -3,14 +3,14 @@ class CreateChallenges < ActiveRecord::Migration[6.0]
     create_table :challenges do |t|
       t.string :name
       t.string :category
-      t.string :description
+      t.text :description
       t.integer :difficulty
       t.integer :duration
       t.integer :price
-      t.string :necessary_items
-      t.string :how_to
-      t.string :tips
-      t.string :where_to
+      t.text :necessary_items
+      t.text :how_to
+      t.text :tips
+      t.text :where_to
 
       t.timestamps
     end
