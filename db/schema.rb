@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_193357) do
+ActiveRecord::Schema.define(version: 2021_01_30_135053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.text "description"
+    t.integer "difficulty"
+    t.integer "duration"
+    t.integer "price"
+    t.text "necessary_items", default: [], array: true
+    t.text "how_to", default: [], array: true
+    t.text "tips"
+    t.text "where_to", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
