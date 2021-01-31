@@ -11,8 +11,10 @@
     <i class="fas fa-seedling"></i>
     <subtitle>Clan</subtitle>
   <% end %>
-  <%= link_to user_path(current_user), class:"navbar-element" do %>
-    <i class="fas fa-user"></i>
-    <subtitle>Profil</subtitle>
+  <% if current_user %>
+    <%= link_to user_path(current_user), class:"navbar-element" do %>
+      <i class="fas fa-user"></i>
+      <subtitle>Profil</subtitle>
+    <% end %>
   <% end %>
 </div>
