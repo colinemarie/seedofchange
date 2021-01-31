@@ -10,8 +10,8 @@
   <%= link_to root_path, class:"navbar-element" do %>
     <i class="fas fa-seedling"></i>
     <subtitle>Clan</subtitle>
-    </div>
-  <%= link_to root_path, class:"navbar-element" do %>
+  <% end %>
+  <%= link_to user_path(current_user), class:"navbar-element" do %>
     <i class="fas fa-user"></i>
     <subtitle>Profil</subtitle>
   <% end %>
