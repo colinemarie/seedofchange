@@ -11,3 +11,36 @@
   flex-direction: column;
   align-items: center;
 }
+
+.navbar-element:active {
+  color: $gold;
+}
+
+.navbar-element:hover {
+  color: $gold;
+}
+
+.navbar-secondary {
+  height: 45px;
+  width: 300px;
+  background-color: $mediumgreen;
+  margin: 10px auto;
+  border-radius: 20px;
+  display: flex;
+}
+
+.navbar-button {
+  height: 45px;
+  background: transparent;
+  padding: 10px 22px;
+  border-radius: 20px;
+}
+
+.navbar-button:active {
+  height: 45px;
+  background: $gold;
+  padding: 10px 31px;
+  opacity: 1;
+  border-radius: 20px;
+}
+
