@@ -3,3 +3,10 @@
 
 <%= render 'shared/card' %>
 <%= render 'shared/navbarsecondary' %>
+
+<%= link_to "J'abandonne", root_path, class:"button button-fail"  %>
+<%= link_to "Yeah, terminé !", root_path, class:"button button-success"  %>
+
+<%= link_to root_path, class:"button-arrow" do  %>
+  <i class="fas fa-arrow-left"></i>
+<% end %>
