@@ -20,27 +20,59 @@
   color: $gold;
 }
 
-.navbar-secondary {
-  height: 45px;
-  width: 300px;
-  background-color: $mediumgreen;
-  margin: 10px auto;
-  border-radius: 20px;
-  display: flex;
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-button {
-  height: 45px;
-  background: transparent;
-  padding: 10px 22px;
-  border-radius: 20px;
+html, body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #151515;
 }
 
-.navbar-button:active {
-  height: 45px;
-  background: $gold;
-  padding: 10px 31px;
-  opacity: 1;
+.switch-button {
+  width: 400px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3D(-50%, -50%, 0);
+  z-index: 197 !important;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  background-color: #7C9A92;
   border-radius: 20px;
+}
+.switch-button-case {
+  display: inline-block;
+  background: none;
+  width: 49%;
+  height: 100%;
+  color: white;
+  position: relative;
+  border: none;
+  transition: 0.3s ease all;
+}
+
+.switch-button-case:focus {
+  outline: none;
+}
+.switch-button .active {
+  color: #151515;
+  background-color: goldenrod;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.3s ease-out all;
+  border-radius: 20px;
+}
+.switch-button .active-case {
+  color: #white;
 }
 
