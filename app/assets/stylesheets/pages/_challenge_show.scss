@@ -1,0 +1,27 @@
+
+.challenge-show {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  position: relative;
+  left: -16px;
+  padding: 24px;
+  background: $white;
+}
+
+.challenge-show h1 {
+  text-align: center;
+}
+
+.challenge-show h2 {
+  font-style: bold;
+}
+
+.first-info {
+  display: flex;
+  align-items: space-between;
+}
+
+.challenge-show-action {
+  text-align: center;
+  display-align: flex;
+}
