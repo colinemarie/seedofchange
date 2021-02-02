@@ -1,4 +1,12 @@
+<% leaves = Array.new(3) { render 'shared/empty_leaf' } %>
+<% level.times do |n| %>
+  <% leaves[n] = '<i class="fas fa-leaf"></i>' %>
+<% end %>
 <div class="difficulty">
+<%= leaves.join.html_safe %>
+</div>
+
+<!-- <div class="difficulty">
   <i class="fas fa-leaf"></i>
   <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <rect width="26.7481" height="24" fill="url(#pattern0)"/>
@@ -39,4 +47,5 @@
   <i class="fas fa-leaf"></i>
   <i class="fas fa-leaf"></i>
   <i class="fas fa-leaf"></i>
-</div>
+</div> -->
+

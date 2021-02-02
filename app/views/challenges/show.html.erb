@@ -1,7 +1,65 @@
 <div class="container">
-  <h1><%= @challenge.name %></h1>
-  <p><%= @challenge.price %></p>
-  <p><%= @challenge.duration %></p>
-  <p><%= @challenge.difficulty %></p>
-  <p><%= @challenge.description %></p>
+
+  <div class="challenge-show">
+
+    <%= link_to root_path, class:"button-arrow" do  %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+
+    <br><br>
+
+    <h1><%= @challenge.name %></h1>
+    <br>
+
+    <div class="first-info">
+    <p><i class="fas fa-shopping-cart"></i>   <%= @challenge.price %> €</p>
+    <p><i class="fas fa-hourglass-start"></i>   <%= @challenge.duration %></p>
+    <%= render 'shared/difficulty', level: @challenge.difficulty %>
+    </div>
+
+    <br>
+    <p><%= @challenge.description %></p>
+
+
+    <% if @challenge.necessary_items.present? %>
+      <h2>Liste de course</h2>
+      <% @challenge.necessary_items.each do |item| %>
+      <ul>
+        <li>
+          <%= item %>
+        </li>
+      </ul>
+      <% end %>
+    <% end %>
+
+  <% if @challenge.how_to.present? %>
+      <h2>Comment faire ?</h2>
+      <% @challenge.how_to.each do |step| %>
+      <ul>
+        <li>
+          <%= step %>
+        </li>
+      </ul>
+      <% end %>
+    <% end %>
+
+
+  <% if @challenge.tips.present? %>
+      <h2>Petite astuce</h2>
+      <%= @challenge.tips %>
+    <% end %>
+
+  <% if @challenge.where_to.present? %>
+      <h2>Petite astuce</h2>
+      <%= @challenge.where_to %>
+    <% end %>
+
+  <br>
+
+  <div class="challenge-show-action">
+    <%= link_to "J'abandonne", root_path, class:"button button-fail"  %>
+    <%= link_to "Yeah, terminé !", root_path, class:"button button-success"  %>
+  </div>
+
+  </div>
 </div>
