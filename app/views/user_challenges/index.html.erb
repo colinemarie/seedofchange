@@ -1,4 +1,20 @@
-<h1>Mes défis</h1>
-<% @user_challenges.each do |user_challenge| %>
-<p> <%= user_challenge.challenge.name %> </p>
-<% end %>
+<div class="fixed-top">
+<%= render 'shared/navbarsecondary' %>
+</div>
+
+<div class="challenges-cards">
+  <% @user_challenges.each do |user_challenge| %>
+  <div class="card-challenge">
+    <h1><%= user_challenge.challenge.name %></h1>
+    <div class="card-info">
+      <h2 class="label label-alim"><%= user_challenge.challenge.category %></h2>
+      <%= render 'shared/difficulty', level: user_challenge.challenge.difficulty %>
+    </div>
+  </div>
+    <% end %>
+</div>
+<div class="row justify-content-center">
+    <%= link_to user_challenges_path, class: "button button-add", :method => :post do %>
+    <i class="fas fa-plus"></i>
+    <% end %>
+</div>

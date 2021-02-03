@@ -9,6 +9,19 @@
   background: $orange;
 }
 
+.button-add {
+    display: flex;
+    background: #ECA809;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+    align-items: center;
+    justify-content: center;
+    color: $darkgreen;
+}
+
 .button-success {
   background: $lightgreen;
 }
