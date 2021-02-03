@@ -1,0 +1,6 @@
+<div class="card-show">
+  <%= @user_challenge.challenge.name %>
+  <%= @user_challenges_ongoing %>
+</div>
+  <%= link_to "accepter", accept_user_challenge_path(@user_challenge), method: :patch %>
+  <%= link_to "decliner", decline_user_challenge_path(@user_challenge), method: :patch %>
