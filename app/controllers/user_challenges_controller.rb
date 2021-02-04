@@ -28,9 +28,8 @@ class UserChallengesController < ApplicationController
     @user_challenge = UserChallenge.find(params[:id])
     @user_challenge.update(status: "accepted")
     @user_challenges_ongoing = UserChallenge.all.where({ user: current_user, status: ["accepted"] }).count
-    @next_challenge = UserChallenge.find(@user_challenge.id + 1)
-    if @next_challenge && @user_challenges_ongoing < 5
-      redirect_to user_challenge_path(@next_challenge)
+    if UserChallenge.find_by_id(@user_challenge.id + 1) && @user_challenges_ongoing < 5
+      redirect_to user_challenge_path(UserChallenge.find_by_id(@user_challenge.id + 1))
     else
       render "user_challenges/end"
     end
@@ -40,9 +39,8 @@ class UserChallengesController < ApplicationController
     @user_challenge = UserChallenge.find(params[:id])
     @user_challenge.update(status: "declined")
     @user_challenges_ongoing = UserChallenge.all.where({ user: current_user, status: ["accepted"] }).count
-    @next_challenge = UserChallenge.find(@user_challenge.id + 1)
-    if @next_challenge && @user_challenges_ongoing < 5
-      redirect_to user_challenge_path(@next_challenge)
+    if UserChallenge.find_by_id(@user_challenge.id + 1) && @user_challenges_ongoing < 5
+      redirect_to user_challenge_path(UserChallenge.find_by_id(@user_challenge.id + 1))
     else
       render "user_challenges/end"
     end
