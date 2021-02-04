@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_02_185903) do
+ActiveRecord::Schema.define(version: 2021_02_04_142551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,17 @@ ActiveRecord::Schema.define(version: 2021_02_02_185903) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "clans", force: :cascade do |t|
+    t.string "name"
+    t.integer "score", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "user_challenges", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "challenge_id", null: false
-    t.string "status"
+    t.string "status", default: "pending"
     t.boolean "saved", default: false
     t.datetime "starts_at"
     t.datetime "created_at", precision: 6, null: false
@@ -53,10 +60,13 @@ ActiveRecord::Schema.define(version: 2021_02_02_185903) do
     t.string "username"
     t.string "first_name"
     t.integer "score", default: 0
+    t.bigint "clan_id"
+    t.index ["clan_id"], name: "index_users_on_clan_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "user_challenges", "challenges"
   add_foreign_key "user_challenges", "users"
+  add_foreign_key "users", "clans"
 end
