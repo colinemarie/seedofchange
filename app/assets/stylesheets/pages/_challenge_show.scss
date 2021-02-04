@@ -16,12 +16,30 @@
   font-style: bold;
 }
 
-.first-info {
-  display: flex;
-  align-items: space-between;
+.compulsory-info {
+  background-color: $lightlightgreen;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.other-info {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .challenge-show-action {
   text-align: center;
   display-align: flex;
+}
+
+.tips {
+  border: solid 1px #D2E1DD;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
