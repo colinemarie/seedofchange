@@ -26,6 +26,19 @@
     color: $darkgreen;
 }
 
+.button-add-inactive {
+    display: flex;
+    background: $lightgrey;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+    align-items: center;
+    justify-content: center;
+    color: $darkgreen;
+}
+
 .button-arrow {
   background: $lightgrey;
   color: $darkgreen;

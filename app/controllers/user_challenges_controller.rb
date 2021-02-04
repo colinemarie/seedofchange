@@ -24,6 +24,7 @@ class UserChallengesController < ApplicationController
     @current_week = Date.today.strftime('%d %b %Y')
   end
 
+
   def accept
     @user_challenge = UserChallenge.find(params[:id])
     @user_challenge.update(status: "accepted")

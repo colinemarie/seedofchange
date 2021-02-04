@@ -13,8 +13,16 @@
   </div>
     <% end %>
 </div>
-<div class="row justify-content-center">
-    <%= link_to user_challenges_path, class: "button button-add", :method => :post do %>
-    <i class="fas fa-plus"></i>
-    <% end %>
-</div>
+<% if @user_challenges.count == 5  %>
+  <div class="row justify-content-center">
+    <button class="button-add-inactive">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+<% else  %>
+  <div class="row justify-content-center">
+      <%= link_to user_challenges_path, class: "button button-add", :method => :post do %>
+      <i class="fas fa-plus"></i>
+      <% end %>
+  </div>
+<% end %>
