@@ -1,6 +1,6 @@
 class UserChallengesController < ApplicationController
-  before_action :set_user_challenge, only: [:show, :accept, :decline]
-  before_action :set_challenge, only: [:drop, :validate]
+  before_action :set_user_challenge, only: [:show, :accept, :decline, :drop]
+  before_action :set_challenge, only: [:validate]
   def index
     @user_challenges = UserChallenge.all.where({ user: current_user, status: ["accepted"] })
   end
@@ -47,7 +47,6 @@ class UserChallengesController < ApplicationController
   end
 
   def drop
-    @user_challenge = UserChallenge.where(challenge: @challenge)
     @user_challenge.update(status: "dropped")
     redirect_to user_challenges_path
   end
