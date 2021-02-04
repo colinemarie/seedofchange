@@ -2,7 +2,7 @@
 
   <div class="challenge-show">
 
-    <%= link_to root_path, class:"button-arrow" do  %>
+    <%= link_to user_challenges_path, class:"button-arrow" do  %>
       <i class="fas fa-arrow-left"></i>
     <% end %>
 
@@ -57,8 +57,8 @@
   <br>
 
   <div class="challenge-show-action">
-    <%= link_to "J'abandonne", root_path, class:"button button-fail"  %>
-    <%= link_to "Yeah, terminé !", root_path, class:"button button-success"  %>
+    <%= link_to "J'abandonne", drop_user_challenge_path(@challenge), method: :patch, class:"button button-fail"  %>
+    <%= link_to "Yeah, terminé !", validate_user_challenge_path(@challenge), method: :patch, class:"button button-success"  %>
   </div>
 
   </div>

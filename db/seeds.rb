@@ -1,5 +1,6 @@
 
 puts 'cleaning'
+UserChallenge.destroy_all
 Challenge.destroy_all
 User.destroy_all
 
@@ -161,7 +162,6 @@ puts 'adding userchallenges'
 UserChallenge.create!(user_id: myriam.id, challenge_id: tawashi.id, status: 'accepted')
 UserChallenge.create!(user_id: myriam.id, challenge_id: lessive.id, status: 'accepted')
 UserChallenge.create!(user_id: myriam.id, challenge_id: viande.id, status: 'accepted')
-UserChallenge.create!(user_id: myriam.id, challenge_id: plantes.id, status: 'validated')
 UserChallenge.create!(user_id: myriam.id, challenge_id: plantes.id, status: 'validated')
 
 puts '3 challenges en cours pour myriam et 2 validés'

@@ -1,0 +1,35 @@
+.card-show {
+  background-color: $lightgrey;
+  height: 400px;
+  margin: 0px 15px 10px 15px;
+  padding: 10px;
+  border-radius: 20px;
+  color: $darkgreen;
+}
+
+.card-show h1 {
+  text-align: center;
+  margin: 0px 10px 10px 10px;
+}
+
+.user-challenge-count {
+  background: $lightgrey;
+  color: $darkgreen;
+  border-radius: 50%;
+  padding: 0px 7px;
+  display: inline;
+  position: absolute;
+  top: 20px;
+  right: 10px
+}
+
+.current-week {
+  color: $lightgrey;
+  margin-left: 15px;
+  margin-bottom: 60px;
+  padding-top: 25px
+}
+
+.buttons {
+  text-align: center;
+}

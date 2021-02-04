@@ -1,0 +1,23 @@
+<div class="current-week">
+  <h2> semaine du <%= @current_week %></h2>
+</div>
+<div class="user-challenge-count">
+  <%= @user_challenges_ongoing %>
+</div>
+<%= link_to challenge_path(@user_challenge.challenge) do %>
+  <div class="card-show">
+    <h1><%= @user_challenge.challenge.name %></h1>
+    <p><%= @user_challenge.challenge.description %></p>
+  </div>
+<% end %>
+<div class="buttons">
+  <%= link_to decline_user_challenge_path(@user_challenge), class: "button-decline", method: :patch do %>
+    <i class="fas fa-times-circle"></i>
+  <% end %>
+    <%= link_to user_challenges_path, class: "button-back" do %>
+    <i class="fas fa-undo-alt"></i>
+  <% end %>
+  <%= link_to accept_user_challenge_path(@user_challenge), class: "button-accept", method: :patch do %>
+    <i class="fas fa-check"></i>
+  <% end %>
+</div>
