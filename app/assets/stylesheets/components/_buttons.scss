@@ -9,6 +9,10 @@
   background: $orange;
 }
 
+.button-success {
+  background: $lightgreen;
+}
+
 .button-add {
     display: flex;
     background: #ECA809;
@@ -22,10 +26,6 @@
     color: $darkgreen;
 }
 
-.button-success {
-  background: $lightgreen;
-}
-
 .button-arrow {
   background: $lightgrey;
   color: $darkgreen;
@@ -35,4 +35,28 @@
 
 .button-arrow:active {
   color: $gold;
+}
+
+.button-accept {
+  color: $lightgreen;
+  font-size: 50px;
+    &:hover {
+      color: $lightgreen;
+   }
+}
+
+.button-decline {
+  color: $orange;
+  font-size: 50px;
+    &:hover {
+      color: $orange;
+   }
+}
+
+.button-back {
+  color: $lightgrey;
+  font-size: 40px;
+  &:hover {
+    color: $lightgrey;
+   }
 }

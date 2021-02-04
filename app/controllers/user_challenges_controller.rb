@@ -11,7 +11,6 @@ class UserChallengesController < ApplicationController
     @user_challenge = UserChallenge.new
     @user_challenge.user = current_user
     @user_challenge.challenge = @challenge
-    @user_challenge.status = "pending"
     @user_challenge.save
     redirect_to user_challenge_path(@user_challenge)
   end
@@ -19,6 +18,7 @@ class UserChallengesController < ApplicationController
   def show
     @user_challenge = UserChallenge.find(params[:id])
     @user_challenges_ongoing = UserChallenge.all.where({ user: current_user, status: ["accepted"] }).count
+    @current_week = Date.today.strftime('%d %b %Y')
   end
 
   def accept
@@ -44,9 +44,16 @@ class UserChallengesController < ApplicationController
   end
 
   def drop
+    @challenge = Challenge.find(params[:id])
+    @user_challenge = UserChallenge.where(challenge: @challenge)
+    @user_challenge.update(status: "dropped")
+    redirect_to user_challenges_path
   end
 
   def validate
+    @challenge = Challenge.find(params[:id])
+    @user_challenge = UserChallenge.where(challenge: @challenge)
+    @user_challenge.update(status: "validated")
+    redirect_to user_challenges_path
   end
-
 end
