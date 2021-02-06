@@ -25,11 +25,41 @@
   color: $lightgrey;
 }
 
-.label-alim {
-  background-color: $blue;
+.label-alimentation {
+  background-color: #98D4D9;
+}
+
+.label-divers {
+  background-color: #7EE4B3;
+}
+
+.label-techno {
+  background-color: #C7B2D8;
+}
+
+.label-cosmetique {
+  background-color: #98D4D9;
+}
+
+.label-menager {
+  background-color: #C4E36A;
 }
 
 .card-challenge a {
   text-decoration: none;
   color: #212529;
+}
+
+.no-challenge {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68%;
+}
+
+.no-challenge p {
+  color: $gold;
+  font-size: 32px;
+  text-align: center;
 }
