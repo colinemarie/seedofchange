@@ -1,7 +1,7 @@
 .card-show {
   background-color: $lightgrey;
-  margin: 0px 15px 10px 15px;
-  padding: 15px 15px 80px 15px;
+  margin: 0px 15px 60px;
+  padding: 15px 15px 30px;
   border-radius: 20px;
   color: $darkgreen;
 }
@@ -9,6 +9,23 @@
 .card-show h1 {
   text-align: center;
   margin: 0px 10px 10px 10px;
+}
+
+.know-more {
+  color: $gold;
+  text-align: center;
+  display: block;
+  &.collapsed {
+    transition: margin-bottom .7s ease-out;
+  }
+  &:not(.collapsed) {
+    margin-bottom: 20px;
+    transition: none;
+  }
+  &:visited,
+  &:hover {
+    color: $gold;
+  }
 }
 
 .user-challenge-count {
