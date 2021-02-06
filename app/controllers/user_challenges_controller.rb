@@ -1,6 +1,6 @@
 class UserChallengesController < ApplicationController
-  before_action :set_user_challenge, only: [:show, :accept, :decline, :drop]
-  before_action :set_challenge, only: [:validate]
+  before_action :set_user_challenge, only: [:show, :accept, :decline, :drop, :validate]
+
   def index
     @user_challenges = UserChallenge.all.where({ user: current_user, status: ["accepted"] })
   end
@@ -24,7 +24,6 @@ class UserChallengesController < ApplicationController
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
     @current_week = Date.today.strftime('%d %b %Y')
   end
-
 
   def accept
     @user_challenge.update(status: "accepted")
@@ -52,7 +51,6 @@ class UserChallengesController < ApplicationController
   end
 
   def validate
-    @user_challenge = UserChallenge.where(challenge: @challenge)
     @user_challenge.update(status: "validated")
     redirect_to user_challenges_path
   end

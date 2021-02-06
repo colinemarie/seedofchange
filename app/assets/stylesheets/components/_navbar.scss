@@ -3,7 +3,8 @@
   color: $lightgrey;
   display: flex;
   justify-content: space-around;
-  position: sticky !important;
+  position: sticky;
+  padding-top: 10px;
 }
 
 .navbar-element {
