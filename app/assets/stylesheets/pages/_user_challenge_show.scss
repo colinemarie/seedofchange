@@ -32,4 +32,11 @@
 
 .buttons {
   text-align: center;
+  position: fixed;
+  bottom: 65px;
+  width: 50%;
+  background: #253334;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px
 }

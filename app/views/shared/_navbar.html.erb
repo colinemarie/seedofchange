@@ -1,20 +1,29 @@
 <div class="navbar navbar-seed">
-  <%= link_to root_path, class:"navbar-element" do %>
-    <i class="fa fa-home"></i>
-    <subtitle> Accueil </subtitle>
-  <% end %>
-  <%= link_to user_challenges_path, class:"navbar-element" do %>
-    <i class="fas fa-seedling"></i>
-    <subtitle>Défis</subtitle>
-  <% end %>
-  <%= link_to root_path, class:"navbar-element" do %>
-    <i class="fas fa-seedling"></i>
-    <subtitle>Clan</subtitle>
-  <% end %>
-  <% if current_user %>
-    <%= link_to user_path(current_user), class:"navbar-element" do %>
-      <i class="fas fa-user"></i>
-      <subtitle>Profil</subtitle>
+  <div class="<%= 'active' if controller.controller_name == 'pages' && controller.action_name == 'home' %>">
+    <%= link_to root_path, class:"navbar-element" do %>
+      <i class="fa fa-home"></i>
+      <subtitle> Accueil </subtitle>
     <% end %>
-  <% end %>
+  </div>
+
+  <div class="<%= 'active' if controller.controller_name == 'user_challenges' && controller.action_name == 'index' %>">
+    <%= link_to user_challenges_path, class:"navbar-element" do %>
+      <i class="fas fa-seedling"></i>
+      <subtitle>Défis</subtitle>
+    <% end %>
+  </div>
+
+    <%= link_to root_path, class:"navbar-element" do %>
+      <i class="fas fa-seedling"></i>
+      <subtitle>Clan</subtitle>
+    <% end %>
+
+  <div class="<%= 'active' if controller.controller_name == 'users' && controller.action_name == 'show' %>">
+    <% if current_user %>
+      <%= link_to user_path(current_user), class:"navbar-element" do %>
+        <i class="fas fa-user"></i>
+        <subtitle>Profil</subtitle>
+      <% end %>
+    <% end %>
+  </div>
 </div>
