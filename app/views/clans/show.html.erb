@@ -1,0 +1,10 @@
+<div class="card-show">
+  <h1><%= @clan.name %></h1>
+  <h2><%= @members_by_position.count %> membres </h2>
+  <ul>
+    <% @members_by_position.each_with_index do |member, index| %>
+      <li><p>#<%= index + 1 %> <%= member.username %> avec <%= member.score %> points</p></li>
+    <% end %>
+  </ul>
+
+</div>

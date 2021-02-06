@@ -7,19 +7,14 @@ class UserChallengesController < ApplicationController
 
   def create
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
-    @used_challenges_id = UserChallenge.where(user: current_user).map(&:challenge_id)
-    @challenges = Challenge.where.not(id: @used_challenges_id).sample(7 - @user_challenges_ongoing)
-    return if @challenges.empty?
+    @undone_challenges = (Challenge.all - current_user.challenges).sample(7 - current_user.challenges.count)
+    return if @undone_challenges.empty?
 
     @user_challenges = []
-    @challenges.each do |challenge|
+    @undone_challenges.each do |challenge|
       @user_challenges << UserChallenge.create(challenge: challenge, user: current_user, status: 'pending')
     end
     redirect_to user_challenge_path(@user_challenges.first)
-    # @user_challenge = UserChallenge.new
-    # @user_challenge.user = current_user
-    # @user_challenge.challenge = @challenge
-    # @user_challenge.save
   end
 
   def show
