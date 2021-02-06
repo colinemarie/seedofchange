@@ -14,9 +14,6 @@
   <%= link_to decline_user_challenge_path(@user_challenge), class: "button-decline", method: :patch do %>
     <i class="fas fa-times-circle"></i>
   <% end %>
-    <%= link_to user_challenges_path, class: "button-back" do %>
-    <i class="fas fa-undo-alt"></i>
-  <% end %>
   <%= link_to accept_user_challenge_path(@user_challenge), class: "button-accept", method: :patch do %>
     <i class="fas fa-check"></i>
   <% end %>
