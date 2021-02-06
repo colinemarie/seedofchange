@@ -2,13 +2,15 @@ class UserChallengesController < ApplicationController
   before_action :set_user_challenge, only: [:show, :accept, :decline, :drop]
   before_action :set_challenge, only: [:validate]
   def index
-    @user_challenges = UserChallenge.all.where({ user: current_user, status: ["accepted"] })
+    @user_challenges = UserChallenge.where({ user: current_user, status: ["accepted"] })
   end
 
   def create
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
-    @used_challenges_id = UserChallenge.all.where(user: current_user).map(&:challenge_id)
-    @challenges = Challenge.all.where.not(id: @used_challenges_id).sample(7 - @user_challenges_ongoing)
+    @used_challenges_id = UserChallenge.where(user: current_user).map(&:challenge_id)
+    @challenges = Challenge.where.not(id: @used_challenges_id).sample(7 - @user_challenges_ongoing)
+    return if @challenges.empty?
+
     @user_challenges = []
     @challenges.each do |challenge|
       @user_challenges << UserChallenge.create(challenge: challenge, user: current_user, status: 'pending')
@@ -24,7 +26,6 @@ class UserChallengesController < ApplicationController
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
     @current_week = Date.today.strftime('%d %b %Y')
   end
-
 
   def accept
     @user_challenge.update(status: "accepted")
