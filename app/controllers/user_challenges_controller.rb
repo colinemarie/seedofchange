@@ -7,7 +7,7 @@ class UserChallengesController < ApplicationController
 
   def create
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
-    @undone_challenges = (Challenge.all - current_user.challenges).sample(7 - current_user.challenges.count)
+    @undone_challenges = (Challenge.all - current_user.challenges).sample(7 - @user_challenges_ongoing)
     return if @undone_challenges.empty?
 
     @user_challenges = []
@@ -25,8 +25,9 @@ class UserChallengesController < ApplicationController
   def accept
     @user_challenge.update(status: "accepted")
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
-    if UserChallenge.find_by_id(@user_challenge.id + 1) && @user_challenges_ongoing < 5
-      redirect_to user_challenge_path(UserChallenge.find_by_id(@user_challenge.id + 1))
+    @user_challenges_pending = UserChallenge.get_user_challenges(current_user, 'pending')
+    if !@user_challenges_pending.empty? && @user_challenges_ongoing < 5
+      redirect_to user_challenge_path(@user_challenges_pending.first)
     else
       render "user_challenges/end"
     end
@@ -35,8 +36,9 @@ class UserChallengesController < ApplicationController
   def decline
     @user_challenge.update(status: "declined")
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
-    if UserChallenge.find_by_id(@user_challenge.id + 1) && @user_challenges_ongoing < 5
-      redirect_to user_challenge_path(UserChallenge.find_by_id(@user_challenge.id + 1))
+    @user_challenges_pending = UserChallenge.get_user_challenges(current_user, 'pending')
+    if !@user_challenges_pending.empty? && @user_challenges_ongoing < 5
+      redirect_to user_challenge_path(@user_challenges_pending.first)
     else
       render "user_challenges/end"
     end
