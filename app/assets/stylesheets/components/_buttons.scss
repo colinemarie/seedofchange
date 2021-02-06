@@ -13,6 +13,13 @@
   background: $lightgreen;
 }
 
+.button-gold {
+  background: $gold;
+  &:hover {
+    color: $lightgrey;
+  }
+}
+
 .button-add {
     display: flex;
     background: #ECA809;
@@ -53,6 +60,7 @@
 .button-accept {
   color: $lightgreen;
   font-size: 50px;
+  padding-left: 10px;
     &:hover {
       color: $lightgreen;
    }
@@ -61,6 +69,7 @@
 .button-decline {
   color: $orange;
   font-size: 50px;
+  padding-right: 10px;
     &:hover {
       color: $orange;
    }

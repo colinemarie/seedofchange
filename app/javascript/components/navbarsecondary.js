@@ -20,22 +20,22 @@ const switchRight = () => {
 };
 
 const initSwitchButton = () => {
+  if (switchButton) {
+    switchBtnLeft.addEventListener(
+      "click",
+      function () {
+        switchLeft();
+      }
+    );
 
-  switchBtnLeft.addEventListener(
-    "click",
-    function () {
-      switchLeft();
-    }
-  );
-
-  switchBtnRight.addEventListener(
-    "click",
-    function () {
-      switchRight();
-    }
-  );
-};
-
+    switchBtnRight.addEventListener(
+      "click",
+      function () {
+        switchRight();
+      }
+    );
+    };
+  }
 export {initSwitchButton};
 
 
