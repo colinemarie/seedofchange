@@ -7,29 +7,29 @@
       <% end %>
      </div>
   <% else %>
-  <div class="challenges-cards">
-    <% @user_challenges.each do |user_challenge| %>
-    <div class="card-challenge">
-      <div class="d-flex justify-content-between">
-      <h1><%= link_to user_challenge.challenge.name, challenge_path(user_challenge.challenge) %></h1>
-      <%= link_to drop_user_challenge_path(user_challenge), method: :patch, data: { confirm: "You sure?"}  do %>
-        <i class="fas fa-trash"></i>
+    <div class="challenges-cards">
+      <% @user_challenges.each do |user_challenge| %>
+        <div class="card-challenge">
+          <div class="d-flex justify-content-between">
+            <h1><%= link_to user_challenge.challenge.name, challenge_path(user_challenge.challenge) %></h1>
+            <%= link_to drop_user_challenge_path(user_challenge), method: :patch, data: { confirm: "You sure?"}  do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </div>
+          <div class="card-info">
+            <h2 class="<%= label_category(user_challenge.challenge.category) %>"><%= user_challenge.challenge.category %></h2>
+            <%= render 'shared/difficulty', level: user_challenge.challenge.difficulty %>
+          </div>
+        </div>
       <% end %>
-      </div>
-      <div class="card-info">
-        <h2 class="<%= label_category(user_challenge.challenge.category) %>"><%= user_challenge.challenge.category %></h2>
-        <%= render 'shared/difficulty', level: user_challenge.challenge.difficulty %>
-      </div>
     </div>
-      <% end %>
-  </div>
-  <% if @user_challenges.count == 5  %>
+    <% if @user_challenges.count == 5  %>
       <button class="button-add-inactive mx-auto">
         <i class="fas fa-plus"></i>
       </button>
-  <% else  %>
+    <% else  %>
       <%= link_to user_challenges_path, class: "button button-add", :method => :post do %>
         <i class="fas fa-plus"></i>
       <% end %>
+    <% end %>
   <% end %>
-<% end %>
