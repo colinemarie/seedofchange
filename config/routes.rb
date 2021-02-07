@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'clans/show'
   devise_for :users
   root to: 'pages#home'
   resources :challenges, only: [ :show ]
