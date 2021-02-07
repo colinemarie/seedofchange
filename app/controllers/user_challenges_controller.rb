@@ -7,9 +7,7 @@ class UserChallengesController < ApplicationController
 
   def create
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
-    @undone_challenges = (Challenge.all - current_user.challenges).sample(7 - current_user.challenges.count)
-    # @used_challenges_id = UserChallenge.where(user: current_user).map(&:challenge_id)
-    # @challenges = Challenge.where.not(id: @used_challenges_id).sample(7 - @user_challenges_ongoing)
+    @undone_challenges = (Challenge.all - current_user.challenges).sample(7 - @user_challenges_ongoing)
     return if @undone_challenges.empty?
 
     @user_challenges = []

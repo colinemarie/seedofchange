@@ -13,17 +13,19 @@
     <% end %>
   </div>
 
-    <%= link_to root_path, class:"navbar-element" do %>
-      <i class="fas fa-seedling"></i>
-      <subtitle>Clan</subtitle>
-    <% end %>
+  <% if current_user %>
+    <div class="<%= 'active' if controller.controller_name == 'clans' && controller.action_name == 'show' %>">
+      <%= link_to clan_path(current_user.clan), class:"navbar-element" do %>
+        <i class="fas fa-seedling"></i>
+        <subtitle>Clan</subtitle>
+      <% end %>
+    </div>
 
-  <div class="<%= 'active' if controller.controller_name == 'users' && controller.action_name == 'show' %>">
-    <% if current_user %>
+    <div class="<%= 'active' if controller.controller_name == 'users' && controller.action_name == 'show' %>">
       <%= link_to user_path(current_user), class:"navbar-element" do %>
         <i class="fas fa-user"></i>
         <subtitle>Profil</subtitle>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

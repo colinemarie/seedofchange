@@ -2,6 +2,7 @@
 puts 'cleaning'
 UserChallenge.destroy_all
 Challenge.destroy_all
+Clan.destroy_all
 User.destroy_all
 
 puts 'adding challenges...'
@@ -169,6 +170,14 @@ UserChallenge.create!(user_id: coline.id, challenge_id: viande.id, status: 'acce
 UserChallenge.create!(user_id: coline.id, challenge_id: pipi.id, status: 'accepted')
 
 puts '2 challenges en cours pour coline'
+
+
+puts 'creating clans'
+
+teammontreuil = Clan.create!(name: 'team montreuil!', user: coline)
+myriam.update(clan: teammontreuil)
+
+puts 'tout le monde dans la team montreuil'
 
 puts "that's it!"
 
