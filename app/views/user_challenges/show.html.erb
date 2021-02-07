@@ -1,19 +1,61 @@
 <div class="current-week">
   <h2> semaine du <%= @current_week %></h2>
 </div>
+
+
 <div class="user-challenge-count">
   <%= @user_challenges_ongoing %>
 </div>
+
+
 <div class="card-show">
   <h1><%= @user_challenge.challenge.name %></h1>
   <p><%= @user_challenge.challenge.description %></p>
+
   <a class="know-more collapsed" data-toggle="collapse" href="#textCollaspe" role="button" aria-expanded="false" aria-controls="textCollaspe">En savoir plus</a>
+
   <div class="collapse" id="textCollaspe">
-    <p><%= @user_challenge.challenge.description %></p>
-    <p><%= @user_challenge.challenge.description %></p>
-    <p><%= @user_challenge.challenge.description %></p>
+    <div class="other-info">
+      <% if @user_challenge.challenge.necessary_items.present? %>
+        <h2>Liste de course</h2>
+        <% @user_challenge.challenge.necessary_items.each do |item| %>
+          <ul>
+            <li>
+              <%= item %>
+            </li>
+          </ul>
+        <% end %>
+      <% end %>
+
+      <% if @user_challenge.challenge.how_to.present? %>
+        <h2>Comment faire ?</h2>
+        <% @user_challenge.challenge.how_to.each do |step| %>
+          <ul>
+            <li>
+              <%= step %>
+            </li>
+          </ul>
+        <% end %>
+      <% end %>
+
+
+      <% if @user_challenge.challenge.tips.present? %>
+        <div class= "tips">
+          <h2>Petite astuce</h2>
+          <%= @user_challenge.challenge.tips %>
+        </div>
+      <% end %>
+
+
+      <% if @user_challenge.challenge.where_to.present? %>
+        <h2>Petite astuce</h2>
+        <%= @user_challenge.challenge.where_to %>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
 <div class="buttons">
   <%= link_to decline_user_challenge_path(@user_challenge), class: "button-decline", method: :patch do %>
     <i class="fas fa-times-circle"></i>
