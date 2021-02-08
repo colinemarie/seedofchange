@@ -22,14 +22,14 @@
           </div>
         </div>
       <% end %>
-    </div>
-    <% if @user_challenges.count == 5  %>
-      <button class="button-add-inactive mx-auto">
-        <i class="fas fa-plus"></i>
-      </button>
-    <% else  %>
-      <%= link_to user_challenges_path, class: "button button-add", :method => :post do %>
-        <i class="fas fa-plus"></i>
+      <% if @user_challenges.count == 5  %>
+        <button class="button-add-inactive mx-auto">
+          <i class="fas fa-plus"></i>
+        </button>
+      <% else  %>
+        <%= link_to user_challenges_path, class: "button button-add", :method => :post do %>
+          <i class="fas fa-plus"></i>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>

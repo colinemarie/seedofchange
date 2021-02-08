@@ -1,102 +1,99 @@
-<div class="container">
+<div class="challenge-show">
 
-  <div class="challenge-show">
+  <%= link_to user_challenges_path, class:"button-arrow" do  %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
 
-    <%= link_to user_challenges_path, class:"button-arrow" do  %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
+  <br><br>
 
-    <br><br>
+  <h1><%= @challenge.name %></h1>
+  <br>
 
-    <h1><%= @challenge.name %></h1>
-    <br>
-
-  <div class="d-flex justify-content-between" class="first-info">
-    <div class="card-info">
-      <h2 class="<%= label_category(@challenge.category) %>"><%= @challenge.category %></h2>
-    </div>
-
-    <div>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
-    </div>
+<div class="d-flex justify-content-between" class="first-info">
+  <div class="card-info">
+    <h2 class="<%= label_category(@challenge.category) %>"><%= @challenge.category %></h2>
   </div>
+
+  <div>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+  </div>
+</div>
 
 <div class="compulsory-info">
 
-  <div class="d-flex justify-content-between">
-    <div class="price-duration">
-      <p><i class="fas fa-shopping-cart"></i>    <%= @challenge.price %> €</p>
-      <p><i class="fas fa-hourglass-start"></i>    <%= @challenge.duration %> minutes</p>
-    </div>
-      <div class="difficulty">
-    <%= render 'shared/difficulty', level: @challenge.difficulty %>
-      </div>
+<div class="d-flex justify-content-between">
+  <div class="price-duration">
+    <p><i class="fas fa-shopping-cart"></i>    <%= @challenge.price %> €</p>
+    <p><i class="fas fa-hourglass-start"></i>    <%= @challenge.duration %> minutes</p>
   </div>
-  <p><%= @challenge.description %></p>
+    <div class="difficulty">
+  <%= render 'shared/difficulty', level: @challenge.difficulty %>
+    </div>
+</div>
+<p><%= @challenge.description %></p>
 </div>
 
 <div class="other-info">
-    <% if @challenge.necessary_items.present? %>
-      <h2>Liste de course</h2>
-      <% @challenge.necessary_items.each do |item| %>
-      <ul>
-        <li>
-          <%= item %>
-        </li>
-      </ul>
-      <% end %>
+  <% if @challenge.necessary_items.present? %>
+    <h2>Liste de course</h2>
+    <% @challenge.necessary_items.each do |item| %>
+    <ul>
+      <li>
+        <%= item %>
+      </li>
+    </ul>
     <% end %>
+  <% end %>
 
-  <% if @challenge.how_to.present? %>
-      <h2>Comment faire ?</h2>
-      <% @challenge.how_to.each do |step| %>
-      <ul>
-        <li>
-          <%= step %>
-        </li>
-      </ul>
-      <% end %>
+<% if @challenge.how_to.present? %>
+    <h2>Comment faire ?</h2>
+    <% @challenge.how_to.each do |step| %>
+    <ul>
+      <li>
+        <%= step %>
+      </li>
+    </ul>
     <% end %>
+  <% end %>
 
 
-    <% if @challenge.tips.present? %>
-         <div class= "tips">
-        <h2>Petite astuce</h2>
-        <%= @challenge.tips %>
-          </div>
-      <% end %>
-
-
-  <% if @challenge.where_to.present? %>
+  <% if @challenge.tips.present? %>
+       <div class= "tips">
       <h2>Petite astuce</h2>
-      <%= @challenge.where_to %>
+      <%= @challenge.tips %>
+        </div>
     <% end %>
 
-  <br>
 
-  <% if @user_challenge.status == "pending" %>
-    <div class="buttons">
-      <%= link_to decline_user_challenge_path(@user_challenge), class: "button-decline", method: :patch do %>
-        <i class="fas fa-times-circle"></i>
-      <% end %>
-        <%= link_to user_challenges_path, class: "button-back" do %>
-        <i class="fas fa-undo-alt"></i>
-      <% end %>
-      <%= link_to accept_user_challenge_path(@user_challenge), class: "button-accept", method: :patch do %>
-        <i class="fas fa-check"></i>
-      <% end %>
-    </div>
+<% if @challenge.where_to.present? %>
+    <h2>Petite astuce</h2>
+    <%= @challenge.where_to %>
   <% end %>
 
-  <% if @user_challenge.status == "accepted" %>
-  <div class="challenge-show-action">
-    <%= link_to "J'abandonne", drop_user_challenge_path(@user_challenge), method: :patch, class:"button button-fail"  %>
-    <%= link_to "Yeah, terminé !", validate_user_challenge_path(@user_challenge), method: :patch, class:"button button-success"  %>
-  </div>
-  <% end %>
+<br>
+  <!--
+    <% if @user_challenge.status == "pending" %>
+      <div class="buttons">
+        <%= link_to decline_user_challenge_path(@user_challenge), class: "button-decline", method: :patch do %>
+          <i class="fas fa-times-circle"></i>
+        <% end %>
+          <%= link_to user_challenges_path, class: "button-back" do %>
+          <i class="fas fa-undo-alt"></i>
+        <% end %>
+        <%= link_to accept_user_challenge_path(@user_challenge), class: "button-accept", method: :patch do %>
+          <i class="fas fa-check"></i>
+        <% end %>
+      </div>
+    <% end %> -->
 
-  </div>
+    <% if @user_challenge.status == "accepted" %>
+      <div class="challenge-show-action">
+        <%= link_to "J'abandonne", drop_user_challenge_path(@user_challenge), method: :patch, class:"button button-fail"  %>
+        <%= link_to "Yeah, terminé !", validate_user_challenge_path(@user_challenge), method: :patch, class:"button button-success"  %>
+      </div>
+    <% end %>
+
   </div>
 </div>
 
