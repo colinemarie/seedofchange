@@ -12,47 +12,50 @@
   <h1><%= @user_challenge.challenge.name %></h1>
   <p><%= @user_challenge.challenge.description %></p>
 
-  <a class="know-more collapsed" data-toggle="collapse" href="#textCollaspe" role="button" aria-expanded="false" aria-controls="textCollaspe">En savoir plus</a>
+  <% if @user_challenge.challenge.necessary_items.present? || @user_challenge.challenge.how_to.present? ||
+    @user_challenge.challenge.tips.present? || @user_challenge.challenge.where_to.present? %>
+    <a class="know-more collapsed" data-toggle="collapse" href="#textCollaspe" role="button" aria-expanded="false" aria-controls="textCollaspe">En savoir plus</a>
 
-  <div class="collapse" id="textCollaspe">
-    <div class="other-info">
-      <% if @user_challenge.challenge.necessary_items.present? %>
-        <h2>Liste de course</h2>
-        <% @user_challenge.challenge.necessary_items.each do |item| %>
-          <ul>
-            <li>
-              <%= item %>
-            </li>
-          </ul>
+    <div class="collapse" id="textCollaspe">
+      <div class="other-info">
+        <% if @user_challenge.challenge.necessary_items.present? %>
+          <h2>Liste de course</h2>
+          <% @user_challenge.challenge.necessary_items.each do |item| %>
+            <ul>
+              <li>
+                <%= item %>
+              </li>
+            </ul>
+          <% end %>
         <% end %>
-      <% end %>
 
-      <% if @user_challenge.challenge.how_to.present? %>
-        <h2>Comment faire ?</h2>
-        <% @user_challenge.challenge.how_to.each do |step| %>
-          <ul>
-            <li>
-              <%= step %>
-            </li>
-          </ul>
+        <% if @user_challenge.challenge.how_to.present? %>
+          <h2>Comment faire ?</h2>
+          <% @user_challenge.challenge.how_to.each do |step| %>
+            <ul>
+              <li>
+                <%= step %>
+              </li>
+            </ul>
+          <% end %>
         <% end %>
-      <% end %>
 
 
-      <% if @user_challenge.challenge.tips.present? %>
-        <div class= "tips">
+        <% if @user_challenge.challenge.tips.present? %>
+          <div class= "tips">
+            <h2>Petite astuce</h2>
+            <%= @user_challenge.challenge.tips %>
+          </div>
+        <% end %>
+
+
+        <% if @user_challenge.challenge.where_to.present? %>
           <h2>Petite astuce</h2>
-          <%= @user_challenge.challenge.tips %>
-        </div>
-      <% end %>
-
-
-      <% if @user_challenge.challenge.where_to.present? %>
-        <h2>Petite astuce</h2>
-        <%= @user_challenge.challenge.where_to %>
-      <% end %>
+          <%= @user_challenge.challenge.where_to %>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
 

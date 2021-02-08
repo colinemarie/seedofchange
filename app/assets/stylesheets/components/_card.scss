@@ -1,3 +1,4 @@
+// Cards dans l'index des challenges
 .challenges-cards {
   margin-top: 80px;
 }
@@ -9,6 +10,11 @@
   padding: 10px;
 }
 
+.card-challenge a {
+  text-decoration: none;
+  color: #212529;
+}
+
 .card-challenge h1 {
   margin-bottom: 20px;
 }
@@ -18,37 +24,8 @@
   justify-content: space-between;
 }
 
-.label {
-  border-radius: 20px;
-  padding: 3px 10px;
-  display: table;
-  color: $lightgrey;
-}
 
-.label-alimentation {
-  background-color: #98D4D9;
-}
 
-.label-divers {
-  background-color: #7EE4B3;
-}
-
-.label-techno {
-  background-color: #C7B2D8;
-}
-
-.label-cosmetique {
-  background-color: #98D4D9;
-}
-
-.label-menager {
-  background-color: #C4E36A;
-}
-
-.card-challenge a {
-  text-decoration: none;
-  color: #212529;
-}
 
 .no-challenge {
   position: absolute;

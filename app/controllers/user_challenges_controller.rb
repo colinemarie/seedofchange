@@ -2,7 +2,7 @@ class UserChallengesController < ApplicationController
   before_action :set_user_challenge, only: [:show, :accept, :decline, :drop, :validate]
 
   def index
-    @user_challenges = UserChallenge.where({ user: current_user, status: ["accepted"] })
+    @user_challenges = UserChallenge.get_user_challenges(current_user, 'accepted')
   end
 
   def create
@@ -24,24 +24,12 @@ class UserChallengesController < ApplicationController
 
   def accept
     @user_challenge.update(status: "accepted")
-    @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
-    @user_challenges_pending = UserChallenge.get_user_challenges(current_user, 'pending')
-    if !@user_challenges_pending.empty? && @user_challenges_ongoing < 5
-      redirect_to user_challenge_path(@user_challenges_pending.first)
-    else
-      render "user_challenges/end"
-    end
+    action_after_update
   end
 
   def decline
     @user_challenge.update(status: "declined")
-    @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
-    @user_challenges_pending = UserChallenge.get_user_challenges(current_user, 'pending')
-    if !@user_challenges_pending.empty? && @user_challenges_ongoing < 5
-      redirect_to user_challenge_path(@user_challenges_pending.first)
-    else
-      render "user_challenges/end"
-    end
+    action_after_update
   end
 
   def drop
@@ -60,7 +48,16 @@ class UserChallengesController < ApplicationController
     @user_challenge = UserChallenge.find(params[:id])
   end
 
-  def set_challenge
-    @challenge = Challenge.find(params[:id])
+  def action_after_update
+    @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
+    @user_challenges_pending = UserChallenge.get_user_challenges(current_user, 'pending')
+    if @user_challenges_ongoing >= 5
+      @user_challenges_pending.destroy_all
+      render "user_challenges/end"
+    elsif @user_challenges_pending.empty?
+      render "user_challenges/end"
+    else
+      redirect_to user_challenge_path(@user_challenges_pending.first)
+    end
   end
 end

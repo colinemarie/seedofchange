@@ -4,15 +4,16 @@ body#challenges-show {
   padding-top: 25px;
 }
 
+.challenge-show {
+  margin: 10px;
+}
+
 .challenge-show h1 {
   text-align: center;
 }
 
 .challenge-show h2 {
   font-style: bold;
-}
-
-.first-info {
 }
 
 .compulsory-info {
@@ -30,11 +31,6 @@ body#challenges-show {
   margin-bottom: 10px;
 }
 
-.challenge-show-action {
-  text-align: center;
-  display-align: flex;
-}
-
 .tips {
   border: solid 1px #D2E1DD;
   border-radius: 15px;
@@ -42,3 +38,8 @@ body#challenges-show {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.challenge-show-action {
+  text-align: center;
+}
+

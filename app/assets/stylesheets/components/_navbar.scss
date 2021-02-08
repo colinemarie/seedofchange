@@ -15,14 +15,13 @@
   align-items: center;
 }
 
-.navbar .active *  {
+.navbar .active * {
   color: $gold;
 }
 
 .navbar-element:hover {
   color: $gold;
 }
-
 
 .switch-button {
   width: 95%;

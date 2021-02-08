@@ -31,6 +31,10 @@
     align-items: center;
     justify-content: center;
     color: $darkgreen;
+    margin: 0 auto;
+  &:hover {
+    color: $darkgreen;
+  }
 }
 
 .button-add-inactive {
@@ -44,6 +48,7 @@
     align-items: center;
     justify-content: center;
     color: $darkgreen;
+    margin: 0 auto;
 }
 
 .button-arrow {
