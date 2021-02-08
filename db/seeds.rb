@@ -144,11 +144,11 @@ puts 'challenge tawashi created'
 random1 = Challenge.new(name: "Random challenge example 1 ",
                    price: 5,
                    category: "Techno",
-                   description: "Upsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
+                   description: "Upsum has been the industry's standard", "dummy text ever since the 1500s", "when an unknown printer took a galley" "of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"
-                   tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
+                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
 random1.save!
 
 
@@ -158,7 +158,7 @@ random2 = Challenge.new(name: "Random challenge example 2 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 2500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 2960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 2960s with the release of Letraset sheets containin")
 random2.save!
 
@@ -169,7 +169,7 @@ random3 = Challenge.new(name: "Random challenge example 3 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 3500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 3960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 3960s with the release of Letraset sheets containin")
 random3.save!
 
@@ -179,7 +179,7 @@ random4 = Challenge.new(name: "Random challenge example 4 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 4500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 1,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 4960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 4960s with the release of Letraset sheets containin")
 random4.save!
 
@@ -190,7 +190,7 @@ random5 = Challenge.new(name: "Random challenge example 5 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 5500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 5960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 5960s with the release of Letraset sheets containin")
 random5.save!
 
@@ -201,7 +201,7 @@ random6 = Challenge.new(name: "Random challenge example 6 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 6500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 6960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 6960s with the release of Letraset sheets containin")
 random6.save!
 
@@ -211,7 +211,7 @@ random7 = Challenge.new(name: "Random challenge example 7 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 7500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 7960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 7960s with the release of Letraset sheets containin")
 random7.save!
 
@@ -221,7 +221,7 @@ random8 = Challenge.new(name: "Random challenge example 8 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 8500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 8960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 8960s with the release of Letraset sheets containin")
 random8.save!
 
@@ -231,7 +231,7 @@ random9 = Challenge.new(name: "Random challenge example 9 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 9500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 9960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 9960s with the release of Letraset sheets containin")
 random9.save!
 
@@ -241,7 +241,7 @@ random10 = Challenge.new(name: "Random challenge example 10 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
 random10.save!
 
@@ -251,7 +251,7 @@ random11 = Challenge.new(name: "Random challenge example 11 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
 random11.save!
 
@@ -261,7 +261,7 @@ random12 = Challenge.new(name: "Random challenge example 12 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
 random12.save!
 
@@ -271,7 +271,7 @@ random13 = Challenge.new(name: "Random challenge example 13 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
 random13.save!
 
@@ -281,7 +281,7 @@ random14 = Challenge.new(name: "Random challenge example 14 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
 random14.save!
 
@@ -291,7 +291,7 @@ random15 = Challenge.new(name: "Random challenge example 15 ",
                    description: "Upsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
                    difficulty: 2,
-                   how_to: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"
+                   how_to: ["It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin"],
                    tips: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
 random15.save!
 
