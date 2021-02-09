@@ -7,10 +7,24 @@
   <%= @user_challenges_ongoing %>
 </div>
 
-
 <div class="card-show">
   <h1><%= @user_challenge.challenge.name %></h1>
-  <p><%= @user_challenge.challenge.description %></p>
+<br>
+  <div class="compulsory-info">
+    <div class="d-flex justify-content-between">
+      <div class="price-duration">
+        <p><i class="fas fa-shopping-cart"></i>    <%= @user_challenge.challenge.price %> €</p>
+        <p><i class="fas fa-hourglass-start"></i>    <%= @user_challenge.challenge.duration %> minutes</p>
+      </div>
+        <div class="difficulty">
+      <%= render 'shared/difficulty', level: @user_challenge.challenge.difficulty %>
+        </div>
+    </div>
+    <p><%= @user_challenge.challenge.description %></p>
+    </div>
+
+
+
 
   <% if @user_challenge.challenge.necessary_items.present? || @user_challenge.challenge.how_to.present? ||
     @user_challenge.challenge.tips.present? || @user_challenge.challenge.where_to.present? %>
