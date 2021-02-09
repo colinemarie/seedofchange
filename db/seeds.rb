@@ -359,7 +359,7 @@ puts '2 challenges en cours pour coline'
 
 puts 'creating clans'
 
-teammontreuil = Clan.create!(name: 'team montreuil!', user: coline)
+teammontreuil = Clan.create!(name: 'team montreuil!', owner: coline)
 myriam.update(clan: teammontreuil)
 audrey.update(clan: teammontreuil)
 simon.update(clan: teammontreuil)
