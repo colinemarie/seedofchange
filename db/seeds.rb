@@ -30,7 +30,7 @@ pub = Challenge.new(name: "Coller un “stop-pub” sur sa boîte aux lettres",
                    category: "Divers",
                    description: "Coller une étiquette « stop-pub » permet d’éviter l’accumulation de prospectus dans sa boîte aux lettres qui finiront aussitôt à la poubelle. Une bonne façon de prévenir et réduire les déchets.",
                    duration: 5,
-                   difficulty: 1,
+                   difficulty: 2,
                    necessary_items: ["papier", "scotch", "stylo"])
 pub.save!
 
@@ -42,7 +42,7 @@ appareils = Challenge.new(name: "Éteindre complètement les appareils électriq
                    description: "Utilisez le bouton de mise sous tension de vos appareils électriques pour les éteindre complètement ou débranchez-les
                    lorsque cela n’est pas possible. Les appareils simplement mis en veille consomment 10% d’électricité en plus !",
                    duration: 5,
-                   difficulty: 1,
+                   difficulty: 2,
                    tips: "vous pouvez brancher vos appareils sur des multiprises fonctionnant avec un bouton marche / arrêt. En un seul geste, vous éteignez ainsi tous vos appareils.")
 appareils.save!
 
@@ -54,7 +54,7 @@ eau = Challenge.new(name: "Boire l’eau du robinet",
                    description: "Sauf indication contraire de votre commune, il est tout à fait possible de boire l’eau du robinet en France.
                    Elle est potable et naturellement riche en sels minéraux.",
                    duration: 5,
-                   difficulty: 1,
+                   difficulty: 2,
                    tips: "Si le goût vous dérange, vous pouvez utiliser un filtre qui se fixe sur le robinet ou une carafe filtrante.")
 eau.save!
 
