@@ -1,10 +1,35 @@
-<div class="card-show">
+
+
+<div class="user-container mt-5 text-center p-3">
   <h1><%= @clan.name %></h1>
+</div>
+
+<div class="user-container mb-4 text-center text-white">
   <h2><%= @members_by_position.count %> membres </h2>
+</div>
+
+<!-- <div class="clan-points">
+800
+<p>points</p>
+</div> -->
+
+<div class="members-list">
   <ul>
     <% @members_by_position.each_with_index do |member, index| %>
-      <li><p>#<%= index + 1 %> <%= member.username %> avec <%= member.score %> points</p></li>
+      <li>
+        <div class="row" class="card-member">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+            <div class="info-member col-8">
+               <h1><%= member.username %> </h1>
+               <subtitle><%= member.score %> points</subtitle>
+            </div>
+            <div class="member-order">
+           <p>#<%= index + 1 %> </p>
+           </div>
+        </div>
+
+      </li>
     <% end %>
   </ul>
-
 </div>
+
