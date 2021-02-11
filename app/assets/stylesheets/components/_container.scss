@@ -6,3 +6,16 @@
   color: $white;
   font-size: 30px;
 }
+
+.golden-title {
+  color: goldenrod;
+  font-size: 30px;
+}
+
+
+.end-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

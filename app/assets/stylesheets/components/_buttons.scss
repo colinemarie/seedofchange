@@ -16,10 +16,19 @@
 }
 
 .button-gold {
-  background: $gold;
-  &:hover {
-    color: $lightgrey;
-  }
+  margin: auto;
+  width: 164px;
+  height: 50px;
+  background: goldenrod;
+  border-radius: 30px;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
 }
 
 .button-add {
