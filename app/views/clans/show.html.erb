@@ -17,16 +17,29 @@
   <ul>
     <% @members_by_position.each_with_index do |member, index| %>
       <li>
-        <div class="row" class="card-member">
+        <% if member.username == current_user.username %>
+          <div class=" row card-clan">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+              <div class="info-member col-8">
+                  <h2 class="text-gold"><%= member.username %> </h2>
+                  <subtitle class="text-gold" ><%= member.score %> points</subtitle>
+              </div>
+              <div>
+             <p class="text-gold ">#<%= index + 1 %> </p>
+             </div>
+          </div>
+        <% else %>
+          <div class="row card-member">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
             <div class="info-member col-8">
-               <h1><%= member.username %> </h1>
-               <subtitle><%= member.score %> points</subtitle>
+                <h2><%= member.username %> </h2>
+                <subtitle><%= member.score %> points</subtitle>
             </div>
-            <div class="member-order">
+            <div>
            <p>#<%= index + 1 %> </p>
            </div>
-        </div>
+          </div>
+        <% end %>
 
       </li>
     <% end %>
