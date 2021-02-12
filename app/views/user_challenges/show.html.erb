@@ -14,7 +14,7 @@
     <div class="d-flex justify-content-between">
       <div class="price-duration">
         <p><i class="fas fa-shopping-cart"></i>    <%= @user_challenge.challenge.price %> €</p>
-        <p><i class="fas fa-hourglass-start"></i>    <%= @user_challenge.challenge.duration %> minutes</p>
+        <p><i class="fas fa-hourglass-start"></i>    <%= pluralize(@user_challenge.challenge.duration, 'minute') %></p>
       </div>
         <div class="difficulty">
       <%= render 'shared/difficulty', level: @user_challenge.challenge.difficulty %>

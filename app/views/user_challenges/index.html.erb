@@ -13,7 +13,7 @@
           <div class="card-challenge">
             <div class="d-flex justify-content-between">
               <h1><%= user_challenge.challenge.name %>  </h1>
-              <%= link_to drop_user_challenge_path(user_challenge), method: :patch, data: { confirm: "You sure?"}  do %>
+              <%= link_to drop_user_challenge_path(user_challenge), method: :patch, data: {:confirm => "C'était un super challenge...",  title: 'Êtes-vous sûr ?'}  do %>
                 <i class="fas fa-trash"></i>
               <% end %>
             </div>
