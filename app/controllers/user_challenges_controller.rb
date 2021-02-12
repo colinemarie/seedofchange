@@ -39,7 +39,8 @@ class UserChallengesController < ApplicationController
 
   def validate
     @user_challenge.update(status: "validated")
-    redirect_to user_challenges_path
+    # flash[:notice] = "Post successfully created"
+    redirect_to user_challenges_path, notice: "Bravo tu as gagné #{@user_challenge.challenge.difficulty * 50} points"
   end
 
   private

@@ -1,6 +1,18 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  top: 16px;
+  right: 5px;
+  width: 95%;
   z-index: 1000;
+  height: 90px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
 }
+
+
+.alert-info {
+  background: $lightgreen;
+  color: $lightgrey;
+}
+
