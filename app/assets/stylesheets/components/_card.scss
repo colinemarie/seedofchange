@@ -56,10 +56,17 @@
 
 
 // Clan
-
 .card-clan {
   border-radius : 20px;
-  background-color: $lightgrey;
-  padding: 10px;
+  padding-left : 10px;
 }
+
+
+.current-user {
+  background-color: $lightgrey;
+  color: $gold;
+  padding : 10px;
+}
+
+
 
