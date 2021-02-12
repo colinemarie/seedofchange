@@ -1,3 +1,8 @@
+//All
+.text-gold {
+  color: $gold;
+}
+
 // Cards dans l'index des challenges
 .challenges-cards {
   margin-top: 80px;
@@ -25,9 +30,6 @@
   justify-content: space-between;
 }
 
-
-
-
 .no-challenge {
   position: absolute;
   top: 25%;
@@ -46,11 +48,25 @@
   margin: 0;
 }
 
-.text-gold {
-  color: $gold;
-}
-
 .score {
   font-size: 50px;
   line-height: 80%;
 }
+
+
+
+// Clan
+.card-clan {
+  border-radius : 20px;
+  padding-left : 10px;
+}
+
+
+.current-user {
+  background-color: $lightgrey;
+  color: $gold;
+  padding : 10px;
+}
+
+
+
