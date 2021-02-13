@@ -9,3 +9,41 @@
 #bell i {
   font-size : 28px;
 }
+
+.activity-card {
+  background-color: $darkgreen;
+  padding: 7px;
+  border-bottom: 1px solid $lightgrey;
+}
+
+.activity-info {
+  padding: 4px;
+  text-align: left;
+  color: white;
+  margin-left: 15px;
+  color: $lightgrey;
+}
+
+.points {
+  border-radius: 50%;
+  // background-color: $gold;
+  padding: 5px;
+  // height: 25px;
+  // width: 25px;
+  font-size: 16px;
+  text-align: center;
+  color: $gold;
+}
+
+#activities-title {
+  color: $gold;
+}
+
+.stars {
+  color: $gold;
+  margin-bottom: 15px;
+}
+
+.stars i {
+  margin: 5px;
+}
