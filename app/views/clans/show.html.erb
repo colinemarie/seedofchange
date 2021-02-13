@@ -19,7 +19,7 @@
       <li>
         <% if member.username == current_user.username %>
           <div class=" row card-clan current-user">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+            <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
               <div class="info-member col-8">
                   <h2 ><%= member.username %> </h2>
                   <subtitle><%= member.score %> points</subtitle>
@@ -30,7 +30,7 @@
           </div>
         <% else %>
           <div class="row card-clan">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+          <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
             <div class="info-member col-8">
                 <h2><%= member.username %> </h2>
                 <subtitle><%= member.score %> points</subtitle>
