@@ -340,7 +340,7 @@ lomig.save!
 cecile = User.new(username: 'cece', first_name: 'cecile', email: 'cecile@gmail.com', password: 'Coucou460', score: 400)
 cecile.save!
 
-alex = User.new(username: 'alex', first_name: 'alex', email: 'alex@gmail.com', password: 'Coucou460', score: 200)
+alex = User.new(username: 'alexis', first_name: 'alexis', email: 'alex@gmail.com', password: 'Coucou460', score: 200)
 alex.save!
 
 
@@ -361,7 +361,7 @@ puts '2 challenges en cours pour coline'
 
 puts 'creating clans'
 
-teammontreuil = Clan.create!(name: 'team montreuil!')
+teammontreuil = Clan.create!(name: 'team montreuil')
 myriam.update(clan: teammontreuil)
 coline.update(clan: teammontreuil)
 audrey.update(clan: teammontreuil)
