@@ -1,5 +1,6 @@
 <div class="switch-button">
   <span class="active"></span>
-  <button class="switch-button-case left active-case">Classement</button>
-  <button class="switch-button-case right">Actualités</button>
+  <%= link_to "Classement", clan_path(current_user.clan), class: "switch-button-case right" %>
+  <%= link_to "Activités", clan_activities_path(current_user.clan), class: "switch-button-case right" %>
 </div>
+
