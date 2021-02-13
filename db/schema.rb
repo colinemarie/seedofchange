@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2021_02_13_145007) do
   create_table "user_challenges", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "challenge_id", null: false
-    t.string "status", default: "pending"
+    t.string "status"
     t.boolean "saved", default: false
     t.datetime "starts_at"
     t.datetime "created_at", precision: 6, null: false

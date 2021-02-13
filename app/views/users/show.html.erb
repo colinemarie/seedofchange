@@ -1,3 +1,5 @@
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
 <div class="user-container mt-5 text-center p-3">
   <h1><%= @user.first_name %></br>Tu es une planthipster</h1>
 </div>
@@ -17,4 +19,13 @@
       <i class="fas fa-arrow-right"></i>
     </div>
   <% end %>
+</div>
+
+<div class="badges">
+  <div class="progression-bar">
+    <progress value="10" max="50">
+  </div>
+  <div class="badges-icon d-flex justify-content-center align-items-center">
+    <span class="iconify" data-icon="mdi:seed-outline" data-inline="false"></span>
+  </div>
 </div>

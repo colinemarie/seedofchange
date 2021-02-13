@@ -1,12 +1,24 @@
 <div class="user-container mt-5 text-center p-3">
 <%= render "shared/navbarsecondaryclan" %>
 <br>
-<ul>
+<h1 id="activities-title">Derniers défis du clan</h1>
+<div class="d-flex justify-content-center stars">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+</div>
+<div class="activities">
   <% @validated_challenges.each do |user_challenge| %>
   <% time = Date.today %>
-    <li>
-      <%= user_challenge.user.username %> a remporté <%= user_challenge.challenge.difficulty * 50 %> points avec <%= user_challenge.challenge.name %> le <%= user_challenge.updated_at.strftime('%d/%m')  %>
-    </li>
+    <div class="activity-card d-flex align-items-center">
+      <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
+      <div class="activity-info">
+        a fini <strong><%= user_challenge.challenge.name %></strong> le <%= user_challenge.updated_at.strftime('%d/%m')  %>
+      </div>
+      <div class="points">
+      <strong>+<%= user_challenge.challenge.difficulty * 50 %></strong>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
 </div>
