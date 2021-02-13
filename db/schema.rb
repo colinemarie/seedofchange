@@ -66,6 +66,12 @@ ActiveRecord::Schema.define(version: 2021_02_13_145007) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "user_challenges", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "challenge_id", null: false
