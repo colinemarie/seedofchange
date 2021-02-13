@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [ :show ]
   resources :clans, only: [ :show ] do
     post :add_user, on: :member
+    resources :activities, only: [ :index ]
   end
   resources :user_challenges, only: [ :index, :create, :show] do
     member { patch :accept, :decline, :validate, :drop }
