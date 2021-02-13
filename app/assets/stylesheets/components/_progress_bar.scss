@@ -3,12 +3,11 @@
   position: relative;
   width: 186px;
   height: 36px;
-  display: flex;
-  align-items: stretch;
 }
 
 
 .progression-bar{
+
 }
 
 progress {
@@ -33,4 +32,12 @@ progress {
   height: 36px;
   background: #69B09C;
   border-radius: 100%;
+  top: -8px;
+  left: 130px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.iconify {
+  color: #ECA809;
+  filter: drop-shadow(0px 4px 4px rgb(0, 0, 0));
 }
