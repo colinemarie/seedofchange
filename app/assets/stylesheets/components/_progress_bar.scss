@@ -1,0 +1,43 @@
+
+.badges {
+  position: relative;
+  width: 186px;
+  height: 36px;
+}
+
+
+.progression-bar{
+
+}
+
+progress {
+  -webkit-appearance: none;
+}
+
+
+::-webkit-progress-bar {
+  background-color: #69B09C;
+  border-radius: 20px;
+}
+
+::-webkit-progress-value {
+  background-color: #ECA809;
+  border-radius: 20px;
+}
+
+
+.badges-icon {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: #69B09C;
+  border-radius: 100%;
+  top: -8px;
+  left: 130px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.iconify {
+  color: #ECA809;
+  filter: drop-shadow(0px 4px 4px rgb(0, 0, 0));
+}
