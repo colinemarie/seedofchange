@@ -18,7 +18,11 @@
       <%= render 'shared/flashes' %>
       <% if current_user&.clan %>
         <div id="bell" data-clan-id="<%= current_user.clan.id %>">
-          <%= render 'shared/notifications', status: false %>
+          <% if current_user.activities.where(read: false).empty? %>
+            <%= render 'shared/notifications', status: false %>
+          <% else %>
+            <i class="fa-bell fas"></i>
+          <% end %>
         </div>
       <% end %>
       <div class="custom-container container">
