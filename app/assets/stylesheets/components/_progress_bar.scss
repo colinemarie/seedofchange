@@ -1,0 +1,36 @@
+
+.badges {
+  position: relative;
+  width: 186px;
+  height: 36px;
+  display: flex;
+  align-items: stretch;
+}
+
+
+.progression-bar{
+}
+
+progress {
+  -webkit-appearance: none;
+}
+
+
+::-webkit-progress-bar {
+  background-color: #69B09C;
+  border-radius: 20px;
+}
+
+::-webkit-progress-value {
+  background-color: #ECA809;
+  border-radius: 20px;
+}
+
+
+.badges-icon {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: #69B09C;
+  border-radius: 100%;
+}
