@@ -16,6 +16,11 @@
 
   <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
       <%= render 'shared/flashes' %>
+      <% if current_user&.clan %>
+        <div id="bell" data-clan-id="<%= current_user.clan.id %>">
+          <%= render 'shared/notifications', status: false %>
+        </div>
+      <% end %>
       <div class="custom-container container">
         <%= yield %>
       </div>

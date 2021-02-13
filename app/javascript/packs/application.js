@@ -30,7 +30,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import {initSwitchButton} from '../components/navbarsecondary.js'
 import {infoConfirmModal} from '../components/infoConfirmModal.js'
-
+import {initNotificationCable} from '../channels/notification_channel.js'
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initSwitchButton();
   infoConfirmModal();
+  initNotificationCable();
 });
 
 

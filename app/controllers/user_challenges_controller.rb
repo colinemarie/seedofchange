@@ -39,11 +39,19 @@ class UserChallengesController < ApplicationController
 
   def validate
     @user_challenge.update(status: "validated")
+    broadcast_notification
     # flash[:notice] = "Post successfully created"
     redirect_to user_challenges_path, notice: "Bravo tu as gagné #{@user_challenge.challenge.difficulty * 50} points"
   end
 
   private
+
+  def broadcast_notification
+    NotificationChannel.broadcast_to(
+      current_user.clan,
+      render_to_string(partial: "shared/notifications", locals: {status: true})
+    )
+  end
 
   def set_user_challenge
     @user_challenge = UserChallenge.find(params[:id])
