@@ -14,13 +14,29 @@
   color: $white;
   list-style-type: none;
   margin: 15px;
+  padding-bottom: 15px;
+}
+
+.members-list ul {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .card-member {
 }
 
 .info-member {
+height: 10px;
+}
 
+.info-member h2 {
+margin-bottom: 0px;
+font-weight: bold;
+}
+
+.info-member subtitle {
+font-size: 10px;
+font-weight: none;
 }
 
 .member-order {
