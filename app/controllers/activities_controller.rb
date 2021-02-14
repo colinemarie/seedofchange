@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
   def index
     @clan_id = current_user.clan_id
-    @validated_challenges = UserChallenge.includes(:user).where(status: "validated", users: {clan_id: @clan_id})
+    @validated_challenges = UserChallenge.includes(:user).where(status: "validated", users: {clan_id: @clan_id}).order(updated_at: :desc)
     @time = Time.zone.now
     activities = current_user.activities
     activities.update(read: true)
