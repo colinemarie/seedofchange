@@ -3,6 +3,7 @@
   position: relative;
   width: 186px;
   height: 36px;
+  top: 8px;
 }
 
 
@@ -40,4 +41,10 @@ progress {
 .iconify {
   color: #ECA809;
   filter: drop-shadow(0px 4px 4px rgb(0, 0, 0));
+}
+
+
+.card-challenge-component {
+  width: 100px ;
+  border-collapse: separate;
 }

@@ -13,17 +13,55 @@
 
 <div class="user-container mt-4 mb-4">
   <% @category_count.each do |category, count| %>
-    <div class="card-challenge d-flex justify-content-around align-items-center user-card">
-      <h2 class="<%= label_category(category) %>"><%= category %></h2>
-      <p><%= count %> défis</p>
-      <div class="badges ">
-        <div class="progression-bar">
-          <progress value="<%=count%>" max="5">
-        </div>
-        <div class="badges-icon badges-icon d-flex justify-content-center align-items-center">
-          <span class="iconify" data-icon="mdi:seed-outline" data-inline="false"></span>
-        </div>
-      </div>
-    </div>
+    <table class="card-challenge d-flex justify-content-around align-items-center user-card">
+      <tr>
+        <th class="card-challenge-component">
+          <h2 class="<%= label_category(category) %>"><%= category %></h2>
+        </th>
+        <th class="card-challenge-component">
+          <% if count <= @level_gap %>
+             <div class="badges ">
+              <div class="progression-bar">
+                <progress value="<%=count - @level_gap * 0%>" max="5">
+              </div>
+              <div class="badges-icon badges-icon d-flex justify-content-center align-items-center">
+                <span class="iconify" data-icon="mdi:seed-outline" data-inline="false"></span>
+              </div>
+            </div>
+          <% elsif count > @level_gap * 1 %>
+             <div class="badges ">
+              <div class="progression-bar">
+                <progress value="<%= count - @level_gap * 1 %>" max="5">
+              </div>
+              <div class="badges-icon badges-icon d-flex justify-content-center align-items-center">
+               <span class="iconify" data-icon="fluent-leaf-one-24-regular" data-inline="false"></span>
+              </div>
+            </div>
+          <% elsif count > @level_gap * 2 %>
+             <div class="badges ">
+              <div class="progression-bar">
+                <progress value="<%=count - @level_gap * 2 %>" max="5">
+              </div>
+              <div class="badges-icon badges-icon d-flex justify-content-center align-items-center">
+                <span class="iconify" data-icon="fluent-leaf-two-20-regular" data-inline="false"></span>
+              </div>
+            </div>
+          <% else %>
+             <div class="badges ">
+              <div class="progression-bar">
+                <progress value="<%=count - @level_gap * 3%>" max="5">
+              </div>
+              <div class="badges-icon badges-icon d-flex justify-content-center align-items-center">
+                <span class="iconify" data-icon="fluent-leaf-three-16-regular" data-inline="false"></span>
+              </div>
+            </div>
+          <% end %>
+        </th>
+      </tr>
+    </table>
   <% end %>
 </div>
+
+
+
+
