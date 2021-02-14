@@ -1,7 +1,7 @@
 #bell  {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 22px;
+  right: 3px;
   color: $gold;
   padding: 5px 5px 0 0;
 }
@@ -13,7 +13,7 @@
 .activity-card {
   background-color: $darkgreen;
   padding: 7px;
-  border-bottom: 1px solid $lightgrey;
+  border-bottom: 0.5px solid rgb(81, 112, 114);
 }
 
 .activity-info {
