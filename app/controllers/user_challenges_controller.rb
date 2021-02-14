@@ -18,6 +18,7 @@ class UserChallengesController < ApplicationController
   end
 
   def show
+    @disable_bell = true
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
     @current_week = Date.today.strftime('%d %b %Y')
   end
@@ -39,8 +40,11 @@ class UserChallengesController < ApplicationController
 
   def validate
     @user_challenge.update(status: "validated")
-    broadcast_notification
-    current_user.clan.users.each do |user|
+    if @user_challenge.user_id != current_user.id
+      broadcast_notification
+    end
+    other_users = current_user.clan.users.where.not(id: current_user.id)
+    other_users.each do |user|
       Activity.create(user: user)
     end
     redirect_to user_challenges_path, notice: "Bravo tu as gagné #{@user_challenge.challenge.difficulty * 50} points"
