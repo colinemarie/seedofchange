@@ -5,7 +5,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 12px;
   background: $darkgreen;
   border-top: solid 1px $mediummediumgreen;
 }
@@ -34,20 +34,21 @@
   transform: translateX(-50%);
   z-index: 197 !important;
   cursor: pointer;
-  // transition: 0.3s ease background-color;
+  transition: 0.3s ease background-color;
   background-color: #7C9A92;
   border-radius: 20px;
 }
 
 .switch-button-case {
   display: inline-block;
+  padding: 8px;
   background: none;
   width: 49%;
   height: 100%;
   color: white;
   position: relative;
   border: none;
-  // transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 
 .switch-button-case:focus {

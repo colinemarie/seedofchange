@@ -1,33 +1,21 @@
 <div class="navbar navbar-seed">
-  <div class="<%= 'active' if controller.controller_name == 'pages' && controller.action_name == 'home' %>">
-    <%= link_to root_path, class:"navbar-element" do %>
-      <i class="fa fa-home"></i>
-      <subtitle> Accueil </subtitle>
-    <% end %>
+  <div class="<%= 'active' if controller.controller_name == 'pages' && controller.action_name == 'home' %> navbar-element">
+    <%= link_to_unless_current '<i class="fa fa-home"></i><subtitle> Accueil </subtitle>'.html_safe, (root_path), class: "navbar-element" %>
   </div>
 
-  <div class="<%= 'active' if controller.controller_name == 'user_challenges' && controller.action_name == 'index' %>">
-    <%= link_to user_challenges_path, class:"navbar-element" do %>
-      <i class="fas fa-seedling"></i>
-      <subtitle>Défis</subtitle>
-    <% end %>
+  <div class="<%= 'active' if controller.controller_name == 'user_challenges' || controller.controller_name == 'challenges' %> navbar-element">
+    <%= link_to_unless_current '<i class="fas fa-seedling"></i> <subtitle>Défis</subtitle>'.html_safe, user_challenges_path, class: "navbar-element" %>
   </div>
 
   <% if current_user %>
-    <% if current_user.clan.present? %>
-      <div class="<%= 'active' if controller.controller_name == 'clans' && controller.action_name == 'show' %>">
-        <%= link_to clan_path(current_user.clan), class:"navbar-element" do %>
-          <i class="fas fa-seedling"></i>
-          <subtitle>Clan</subtitle>
-        <% end %>
+    <% if current_user&.clan %>
+      <div class="<%= 'active' if controller.controller_name == 'clans' || controller.controller_name == 'activities' %> navbar-element">
+        <%= link_to_unless_current '<i class="fas fa-seedling"></i> <subtitle>Clan</subtitle>'.html_safe, clan_path(current_user.clan), class: "navbar-element" %>
       </div>
     <% end %>
 
-    <div class="<%= 'active' if controller.controller_name == 'users' && controller.action_name == 'show' %>">
-      <%= link_to user_path(current_user), class:"navbar-element" do %>
-        <i class="fas fa-user"></i>
-        <subtitle>Profil</subtitle>
-      <% end %>
+    <div class="<%= 'active' if controller.controller_name == 'users' && controller.action_name == 'show' %> navbar-element">
+      <%= link_to_unless_current '<i class="fas fa-user"></i> <subtitle>Profil</subtitle>'.html_safe, user_path(current_user), class: "navbar-element" %>
     </div>
   <% end %>
 </div>

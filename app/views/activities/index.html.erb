@@ -8,7 +8,7 @@
   <i class="fas fa-star"></i>
 </div>
 <div class="activities">
-  <% @validated_challenges.each do |user_challenge| %>
+  <% @user_challenges_except_user.each do |user_challenge| %>
   <% time = Date.today %>
     <div class="activity-card d-flex align-items-center">
       <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>

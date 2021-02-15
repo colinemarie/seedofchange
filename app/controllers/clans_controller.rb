@@ -11,13 +11,11 @@ class ClansController < ApplicationController
       user.clan = @clan
       user.save
       flash[:alert] = "Nous l'avons bien ajouté à votre clan"
-      redirect_to clan_path @clan
     elsif user
       flash[:alert] = "Cette personne est déjà dans un clan"
-      redirect_to clan_path @clan
     else
       flash[:alert] = "Nous n'avons pas trouvé cette personne"
-      redirect_to clan_path @clan
     end
+    redirect_to clan_path @clan
   end
 end
