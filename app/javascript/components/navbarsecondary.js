@@ -8,14 +8,14 @@ const activeSwitch = document.querySelector(".active");
 
 
 const switchLeft = () => {
-  switchBtnRight.classList.remove("active-case");
-  switchBtnLeft.classList.add("active-case");
+  // switchBtnRight.classList.remove("active-case");
+  // switchBtnLeft.classList.add("active-case");
   activeSwitch.style.left = "0%";
 };
 
 const switchRight = () => {
-  switchBtnRight.classList.add("active-case");
-  switchBtnLeft.classList.remove("active-case");
+  // switchBtnRight.classList.add("active-case");
+  // switchBtnLeft.classList.remove("active-case");
   activeSwitch.style.left = "50%";
 };
 

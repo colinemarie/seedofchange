@@ -16,7 +16,7 @@
 
   <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
       <%= render 'shared/flashes' %>
-      <% if current_user&.clan && @disable_bell != true %>
+      <% if current_user&.clan && !@disable_bell %>
         <div id="bell" data-clan-id="<%= current_user.clan.id %>">
           <% if current_user.activities.where(read: false).empty? %>
             <%= render 'shared/notifications', status: false %>

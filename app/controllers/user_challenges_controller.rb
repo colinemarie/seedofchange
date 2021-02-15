@@ -8,13 +8,16 @@ class UserChallengesController < ApplicationController
   def create
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
     @undone_challenges = (Challenge.all - current_user.challenges).sample(7 - @user_challenges_ongoing)
-    return if @undone_challenges.empty?
-
-    @user_challenges = []
-    @undone_challenges.each do |challenge|
-      @user_challenges << UserChallenge.create(challenge: challenge, user: current_user, status: 'pending')
+    if @undone_challenges.empty?
+      flash[:alert] = "Vous avez réalisé tous les challenges, bravo chef !"
+      redirect_to user_challenges_path
+    else
+      @user_challenges = []
+      @undone_challenges.each do |challenge|
+        @user_challenges << UserChallenge.create(challenge: challenge, user: current_user, status: 'pending')
+      end
+      redirect_to user_challenge_path(@user_challenges.first)
     end
-    redirect_to user_challenge_path(@user_challenges.first)
   end
 
   def show
@@ -40,10 +43,9 @@ class UserChallengesController < ApplicationController
 
   def validate
     @user_challenge.update(status: "validated")
-    if @user_challenge.user_id != current_user.id
-      broadcast_notification
-    end
-    other_users = current_user.clan.users.where.not(id: current_user.id)
+    broadcast_notification if @user_challenge.user_id != current_user.id
+    # other_users = current_user.clan.users.where.not(id: current_user.id)
+    other_users = current_user.clan.users.excluding(current_user)
     other_users.each do |user|
       Activity.create(user: user)
     end
