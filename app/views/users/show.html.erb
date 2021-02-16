@@ -24,36 +24,52 @@
               <div class="progression-bar">
                 <progress value="<%=count - @level_gap * 0%>" max="5">
               </div>
-              <div class="badges-icon badges-icon d-flex justify-content-center align-items-center">
-                <span class="iconify" data-icon="mdi:seed-outline" data-inline="false"></span>
+              <div class="badges-icon-next d-flex justify-content-center align-items-center">
+                <span class="iconify icon-next" data-icon="mdi:seed-outline" data-inline="false"></span>
               </div>
+              <p class="progression-bar-count"><%= count - @level_gap * 0 %> / 5 </p>
             </div>
           <% elsif count > @level_gap * 1 %>
              <div class="badges ">
+              <div class="badges-icon-obtain d-flex justify-content-center align-items-center">
+                <span class="iconify icon-obtain" data-icon="mdi:seed-outline" data-inline="false"></span>
+              </div>
+              <div class="badges-icon-next d-flex justify-content-center align-items-center">
+                <span class="iconify icon-next" data-icon="mdi:seed-outline" data-inline="false"></span>
+              </div>
               <div class="progression-bar">
                 <progress value="<%= count - @level_gap * 1 %>" max="5">
               </div>
-              <div class="badges-icon badges-icon d-flex justify-content-center align-items-center">
-               <span class="iconify" data-icon="fluent-leaf-one-24-regular" data-inline="false"></span>
+              <div class="badges-icon-next d-flex justify-content-center align-items-center">
+               <span class="iconify icon-next" data-icon="fluent-leaf-one-24-regular" data-inline="false"></span>
               </div>
+              <p class="progression-bar-count"><%= count - @level_gap * 1 %> / 5 </p>
             </div>
           <% elsif count > @level_gap * 2 %>
              <div class="badges ">
+              <div class="badges-icon-obtain d-flex justify-content-center align-items-center">
+                <span class="iconify icon-next" data-icon="fluent-leaf-one-24-regular" data-inline="false"></span>
+              </div>
               <div class="progression-bar">
                 <progress value="<%=count - @level_gap * 2 %>" max="5">
               </div>
-              <div class="badges-icon badges-icon d-flex justify-content-center align-items-center">
-                <span class="iconify" data-icon="fluent-leaf-two-20-regular" data-inline="false"></span>
+              <div class="badges-icon-next d-flex justify-content-center align-items-center">
+                <span class="iconify icon-next" data-icon="fluent-leaf-two-20-regular" data-inline="false"></span>
               </div>
+              <p class="progression-bar-count"><%= count - @level_gap * 2 %> / 5 </p>
             </div>
           <% else %>
              <div class="badges ">
+              <div class="badges-icon-obtain d-flex justify-content-center align-items-center">
+                <span class="iconify icon-next" data-icon="fluent-leaf-two-20-regular" data-inline="false"></span>
+              </div>
               <div class="progression-bar">
                 <progress value="<%=count - @level_gap * 3%>" max="5">
               </div>
-              <div class="badges-icon badges-icon d-flex justify-content-center align-items-center">
-                <span class="iconify" data-icon="fluent-leaf-three-16-regular" data-inline="false"></span>
+              <div class="badges-icon-next d-flex justify-content-center align-items-center">
+                <span class="iconify icon-next" data-icon="fluent-leaf-three-16-regular" data-inline="false"></span>
               </div>
+              <p class="progression-bar-count"><%= count - @level_gap * 3 %> / 5 </p>
             </div>
           <% end %>
         </th>

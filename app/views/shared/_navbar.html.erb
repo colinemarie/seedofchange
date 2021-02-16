@@ -10,10 +10,14 @@
   <% if current_user %>
     <% if current_user&.clan %>
       <div class="<%= 'active' if controller.controller_name == 'clans' || controller.controller_name == 'activities' %> navbar-element">
-        <%= link_to_unless_current '<i class="fas fa-seedling"></i> <subtitle>Clan</subtitle>'.html_safe, clan_path(current_user.clan),
-        class: "navbar-element",
-        # data: {turbolinks: false}
-        'data-turbolinks': false %>
+        <%= link_to_unless_current '<i class="fas fa-seedling"></i> <subtitle>Clan</subtitle>'.html_safe, clan_activities_path(current_user.clan), class: "navbar-element", 'data-turbolinks': false %>
+          <% if current_user&.clan %>
+          <div id="notif" data-clan-id="<%= current_user.clan.id %>">
+            <% if current_user.activities.where(read: false).exists? %>
+              <i class="fa-circle fas"></i>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     <% end %>
 
@@ -22,3 +26,5 @@
     </div>
   <% end %>
 </div>
+
+
