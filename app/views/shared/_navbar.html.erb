@@ -10,7 +10,10 @@
   <% if current_user %>
     <% if current_user&.clan %>
       <div class="<%= 'active' if controller.controller_name == 'clans' || controller.controller_name == 'activities' %> navbar-element">
-        <%= link_to_unless_current '<i class="fas fa-seedling"></i> <subtitle>Clan</subtitle>'.html_safe, clan_path(current_user.clan), class: "navbar-element" %>
+        <%= link_to_unless_current '<i class="fas fa-seedling"></i> <subtitle>Clan</subtitle>'.html_safe, clan_path(current_user.clan),
+        class: "navbar-element",
+        # data: {turbolinks: false}
+        'data-turbolinks': false %>
       </div>
     <% end %>
 

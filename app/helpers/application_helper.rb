@@ -13,5 +13,9 @@ module ApplicationHelper
         "label label-techno"
     end
   end
-end
 
+  def keep_navbar?
+    (controller_name == "clans" && action_name == "show") ||
+      (controller_name == "activities" && action_name == "index")
+  end
+end
