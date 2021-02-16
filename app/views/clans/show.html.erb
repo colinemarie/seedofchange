@@ -4,6 +4,10 @@
 <%= render "shared/navbarsecondaryclan" %>
 <br>
 
+<% if current_user.invitation.status == "pending" %>
+  <p>Tu as reçu une invitation pour être membre du clan </p>
+<% end %>
+
   <h1><%= @clan.name %></h1>
 </div>
 
@@ -66,7 +70,7 @@
       <div class="modal-body">
         <p>Quelle formidable personne souhaites-tu ajouter à ton clan ?</p>
         <br>
-        <%= form_tag  add_user_clan_path @clan, method: :post do %>
+        <%= form_tag  invitations_path, method: :post do %>
           <%= text_field_tag :username,
             params[:username],
             class: "form-control",
