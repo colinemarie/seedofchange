@@ -43,7 +43,8 @@ class UserChallengesController < ApplicationController
 
   def validate
     @user_challenge.update(status: "validated")
-    broadcast_notification unless @user_challenge.user_id == current_user.id
+    broadcast_notification
+    # broadcast_notification if @user_challenge.user_id != current_user.id
     # other_users = current_user.clan.users.where.not(id: current_user.id)
     other_users = current_user.clan.users.excluding(current_user)
     other_users.each do |user|
