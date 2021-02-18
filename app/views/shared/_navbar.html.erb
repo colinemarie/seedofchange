@@ -9,11 +9,11 @@
 
   <% if current_user %>
     <% if current_user&.clan %>
-      <div class="<%= 'active' if controller.controller_name == 'clans' || controller.controller_name == 'activities' %> navbar-element">
+      <div id="navbar-clan" class="<%= 'active' if controller.controller_name == 'clans' || controller.controller_name == 'activities' %> navbar-element">
         <%= link_to_unless_current '<i class="fas fa-seedling"></i> <subtitle>Clan</subtitle>'.html_safe, clan_activities_path(current_user.clan), class: "navbar-element", 'data-turbolinks': false %>
-        <div id="notif" data-clan-id="<%= current_user.clan.id %>">
+        <div id="notif" data-clan-id="<%= current_user.clan.id %>" data-current-user="<%= current_user.id %>">
           <% if current_user.activities.where(read: false).empty? %>
-            <%= render 'shared/notifications', status: false %>
+            <%= render 'shared/notifications', status: false, user: nil %>
           <% else %>
             <i class="fa-circle fas"></i>
           <% end %>
