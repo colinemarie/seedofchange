@@ -6,14 +6,23 @@
 
   <h1><%= @clan.name %></h1>
 </div>
-
-<div class="user-container mb-4 text-center text-white">
-  <h2><%= @members_by_position.count %> membres </h2>
+<div class="clan-level mb-2">
+  <% if @clan.score < 2200 %>
+    <%= image_tag "pollue.png", width: 200 %>
+  <% else %>
+      <%= image_tag "moins pollue.png", width: 200 %>
+  <% end %>
 </div>
 
-<div class="clan-points">
-<%= @clan.score %>
-<p>points</p>
+<div class="d-flex justify-content-around pb-2">
+  <div class="clan-points pb-0 mb-0">
+    <%= @members_by_position.count %>
+    <p>membres</p>
+  </div>
+  <div class="clan-points pb-0 mb-0">
+    <%= @clan.score %>
+    <p>points</p>
+  </div>
 </div>
 
 <div class="members-list">
