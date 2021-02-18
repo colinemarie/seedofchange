@@ -1,11 +1,8 @@
 <div class="user-container mt-5 text-center p-3">
 <%= render "shared/navbarsecondaryclan" %>
 <br>
-<h1 id="activities-title">Derniers défis du clan</h1>
+<h1 class="page-title">Derniers défis du clan</h1>
 <div class="d-flex justify-content-center stars">
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
-  <i class="fas fa-star"></i>
 </div>
 <div class="activities">
   <% @user_challenges_except_user.each do |user_challenge| %>
