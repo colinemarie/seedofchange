@@ -2,6 +2,7 @@ class ClansController < ApplicationController
   def show
     @clan = current_user.clan
     @members_by_position = @clan.users.order(score: :desc)
+    @invitation = current_user.invitations.where(status: "pending").last
   end
 
   def add_user

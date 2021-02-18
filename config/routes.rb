@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :user_challenges, only: [ :index, :create, :show] do
     member { patch :accept, :decline, :validate, :drop }
   end
-  resources :invitations, only: [:create]
+  resources :invitations, only: [:create, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
