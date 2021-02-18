@@ -4,16 +4,40 @@
 <%= render "shared/navbarsecondaryclan" %>
 <br>
 
+<% if @invitation %>
+  <div class="card-invitation">
+
+      <p>Tu as reçu une invitation pour être membre du clan : <br> <strong><%= @invitation.clan.name %></strong></p>
+
+      <%= link_to invitation_path(@invitation, status: "declined"), class: "button-decline", method: :patch do %>
+        <i class="fas fa-times-circle"></i>
+      <% end %>
+      <%= link_to invitation_path(@invitation, status: "accepted"), class: "button-accept", method: :patch do %>
+        <i class="fas fa-check"></i>
+      <% end %>
+  </div>
+<% end %>
+
   <h1><%= @clan.name %></h1>
 </div>
 
-<div class="mb-4 text-center text-white">
-  <h2><%= @members_by_position.count %> membres/25</h2>
-</div>
+<div class="clan-level mb-2">
+  <% if @clan.score < 2200 %>
+    <%= image_tag "pollue.png", width: 200 %>
+  <% else %>
+      <%= image_tag "moins pollue.png", width: 200 %>
+  <% end %>
+ </div>
 
-<div class="clan-points">
-<%= @clan.score %>
-<p>points</p>
+<div class="d-flex justify-content-around pb-2">
+  <div class="clan-points pb-0 mb-0">
+    <%= @members_by_position.count %>
+    <p>membres / 25</p>
+  </div>
+  <div class="clan-points pb-0 mb-0">
+    <%= @clan.score %>
+    <p>points</p>
+  </div>
 </div>
 
 <div class="members-list">
@@ -68,7 +92,7 @@
       <div class="modal-body">
         <p>Quelle formidable personne souhaites-tu ajouter à ton clan ?</p>
         <br>
-        <%= form_tag  add_user_clan_path @clan, method: :post do %>
+        <%= form_tag  invitations_path, method: :post do %>
           <%= text_field_tag :username,
             params[:username],
             class: "form-control",
