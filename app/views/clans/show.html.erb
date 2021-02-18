@@ -4,6 +4,20 @@
 <%= render "shared/navbarsecondaryclan" %>
 <br>
 
+<% if @invitation %>
+  <div class="card-invitation">
+
+      <p>Tu as reçu une invitation pour être membre du clan : <br> <strong><%= @invitation.clan.name %></strong></p>
+
+      <%= link_to invitation_path(@invitation, status: "declined"), class: "button-decline", method: :patch do %>
+        <i class="fas fa-times-circle"></i>
+      <% end %>
+      <%= link_to invitation_path(@invitation, status: "accepted"), class: "button-accept", method: :patch do %>
+        <i class="fas fa-check"></i>
+      <% end %>
+  </div>
+<% end %>
+
   <h1><%= @clan.name %></h1>
 </div>
 <div class="clan-level mb-2">
@@ -75,7 +89,7 @@
       <div class="modal-body">
         <p>Quelle formidable personne souhaites-tu ajouter à ton clan ?</p>
         <br>
-        <%= form_tag  add_user_clan_path @clan, method: :post do %>
+        <%= form_tag  invitations_path, method: :post do %>
           <%= text_field_tag :username,
             params[:username],
             class: "form-control",
