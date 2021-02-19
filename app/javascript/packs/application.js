@@ -31,6 +31,7 @@ import "bootstrap";
 import {initSwitchButton} from '../components/navbarsecondary.js'
 import {infoConfirmModal} from '../components/infoConfirmModal.js'
 import {initNotificationCable} from '../channels/notification_channel.js'
+import {initTooltip} from '../components/initTooltip.js'
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -39,6 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   initSwitchButton();
   infoConfirmModal();
   initNotificationCable();
+  initTooltip();
 });
 
 
