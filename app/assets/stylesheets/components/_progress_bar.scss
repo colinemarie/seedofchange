@@ -61,13 +61,38 @@ progress {
 }
 
 
-.progression-bar-count {
-  color: #ECA809;
+.progression-bar-level-first {
+  color: white;
   position: absolute;
-  top: 18px;
-  left: 75px;
+  top: 1px;
+  left: 32px;
   font-size: smaller;
 }
+
+.progression-bar-level-second {
+  color: white;
+  position: absolute;
+  top: 1px;
+  left: 64px;
+  font-size: smaller;
+}
+
+.progression-bar-level-third {
+  color: white;
+  position: absolute;
+  top: 1px;
+  left: 96px;
+  font-size: smaller;
+}
+
+.progression-bar-level-fourth {
+  color: white;
+  position: absolute;
+  top: 1px;
+  left: 128px;
+  font-size: smaller;
+}
+
 
 .clan-level {
   text-align: center;
