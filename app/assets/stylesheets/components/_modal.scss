@@ -1,0 +1,26 @@
+.modal-content {
+  background-color: $lightgrey;
+  position: fixed;
+  bottom: 10px;
+  right: 9px;
+  border-radius: 20px;
+  width: 95%;
+  border: none;
+}
+
+.modal-footer .btn-danger{
+  background-color: $orange;
+  border: none;
+  color: $lightgrey;
+
+}
+
+.modal-footer .btn-default{
+  background-color: $lightgreen;
+  border: none;
+  color: $lightgrey;
+}
+
+.modal-footer {
+  justify-content: center;
+}
