@@ -1,13 +1,15 @@
 .alert {
   position: fixed;
-  top: 16px;
+  bottom: 10px;
   right: 5px;
   width: 95%;
+  height: 150px;
   z-index: 1000;
   height: 90px;
   font-size: 20px;
   display: flex;
   align-items: center;
+  border: none;
 }
 
 
@@ -16,3 +18,7 @@
   color: $lightgrey;
 }
 
+.alert-warning {
+  background: $orange;
+  color: $lightgrey;
+}

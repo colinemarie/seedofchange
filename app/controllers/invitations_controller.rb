@@ -11,7 +11,7 @@ class InvitationsController < ApplicationController
     else
       flash[:alert] = "Nous n'avons pas trouvé cette personne"
     end
-    redirect_to clan_pat(current_user.clan)
+    redirect_to clan_path(current_user.clan)
   end
 
   def update
