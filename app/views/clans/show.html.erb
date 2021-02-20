@@ -1,6 +1,4 @@
-
 <div class="user-container mt-5 text-center p-3">
-
 <%= render "shared/navbarsecondaryclan" %>
 <br>
 
@@ -46,27 +44,31 @@
       <li>
         <% if member.username == current_user.username %>
           <%= link_to user_path(current_user) do  %>
-            <div class=" row card-clan current-user">
-              <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
-                <div class="info-member col-8">
-                    <h2 ><%= member.username %> </h2>
-                    <subtitle><%= member.score %> points</subtitle>
-                </div>
-                <div>
-               <p>#<%= index + 1 %> </p>
-               </div>
+            <div class="row">
+              <div class=" card-clan current-user">
+                <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
+                  <div class="info-member col-8">
+                      <h2 ><%= member.username %> </h2>
+                      <subtitle><%= member.score %> points</subtitle>
+                  </div>
+                  <div>
+                 <p>#<%= index + 1 %> </p>
+                 </div>
+              </div>
             </div>
           <% end %>
         <% else %>
-          <div class="row card-clan">
-          <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
-            <div class="info-member col-8">
+          <div class="row ">
+            <div class=" card-clan">
+              <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
+              <div class="info-member col-8">
                 <h2><%= member.username %> </h2>
                 <subtitle><%= member.score %> points</subtitle>
+              </div>
+              <div>
+                <p>#<%= index + 1 %> </p>
+              </div>
             </div>
-            <div>
-           <p>#<%= index + 1 %> </p>
-           </div>
           </div>
         <% end %>
       </li>
@@ -76,7 +78,7 @@
 <!-- Button trigger modal -->
 <div class="text-center">
   <button type="button" class="button-clan text-center text-white" data-toggle="modal" data-target="#exampleModalCenter">
-    J'agrandis mon clan
+    J'agrandis mon clan !
   </button>
 </div>
 
@@ -96,10 +98,10 @@
           <%= text_field_tag :username,
             params[:username],
             class: "form-control",
-            placeholder: "Pseudo de la personne à inviter"
+            placeholder: "CocoDu77"
           %>
           <br> <br>
-          <%= submit_tag "Je l'ajoute", class: "button-modal-clan text-center text-white" %>
+          <%= submit_tag "Je l'ajoute !", class: "button-modal-clan text-center text-white" %>
         <% end %>
       </div>
     </div>

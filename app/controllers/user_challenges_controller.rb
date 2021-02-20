@@ -9,7 +9,7 @@ class UserChallengesController < ApplicationController
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
     @undone_challenges = (Challenge.all - current_user.challenges).sample(7 - @user_challenges_ongoing)
     if @undone_challenges.empty?
-      flash[:alert] = "Vous avez réalisé tous les challenges, bravo chef !"
+      flash[:alert] = "Tu as réalisé tous les challenges de Seed of Change, félications !"
       redirect_to user_challenges_path
     else
       @user_challenges = []
@@ -24,6 +24,7 @@ class UserChallengesController < ApplicationController
     @disable_bell = true
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
     @current_week = Date.today.strftime('%d %b %Y')
+    @already_users = User.includes(:user_challenges).where(clan: current_user.clan, user_challenges: { status: 'validated', id: @user_challenge.id })
   end
 
   def accept
@@ -43,17 +44,19 @@ class UserChallengesController < ApplicationController
 
   def validate
     @user_challenge.update(status: "validated")
-    broadcast_notification
     other_users = current_user.clan.users.excluding(current_user)
     other_users.each do |user|
       Activity.create(user: user, user_challenge: @user_challenge)
     end
+    broadcast_notification
     @validated_challenges = Challenge.includes(user_challenges: :user).where(category: @user_challenge.challenge.category, user_challenges: {user: current_user, status: "validated"})
     @category_count = @validated_challenges.count
     if @category_count == 6 || @category_count == 11 || @category_count == 16
-      redirect_to user_challenges_path, notice: "Bravo tu as gagné #{@user_challenge.challenge.difficulty * 50} points et tu gagnes un niveau dans la catégorie '#{@user_challenge.challenge.category}'"
+      redirect_to user_challenges_path,
+      notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points et un badge '#{@user_challenge.challenge.category} !'"
     else
-      redirect_to user_challenges_path, notice: "Bravo tu as gagné #{@user_challenge.challenge.difficulty * 50} points"
+      redirect_to user_challenges_path,
+      notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points !"
     end
   end
 

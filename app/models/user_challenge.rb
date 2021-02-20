@@ -2,7 +2,7 @@ class UserChallenge < ApplicationRecord
   belongs_to :user
   belongs_to :challenge
   scope :get_user_challenges, -> (user, status) {where(user: user, status: status)}
-  has_many :activites
+  has_many :activities, dependent: :destroy
   after_update :update_score_user
 
   DIFFICULTY_SCORES = [50, 100, 150]

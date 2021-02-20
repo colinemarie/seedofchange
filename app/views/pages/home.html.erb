@@ -1,12 +1,12 @@
 <div class="user-container">
   <div class="first-div-hp">
     <i class="fas fa-seedling fa-3x" style="color:white"></i>
-    <h1>Welcome back Mimi !</h1>
+    <h1>Welcome back <%= current_user.username.capitalize %> !</h1>
   </div>
 
   <div class="incentive-fact d-flex align-items-center">
     <i class="fas fa-globe-americas fa-3x" style="color: #7C9A92"></i>
-    <p>375 litres d’eau économisés grâce au défi : <strong>faire pipi sous la douche</strong></p>
+    <p>Depuis la création de Seed of Change, 150 000 litres d’eau ont été économisés grâce au défi <strong>"Faire pipi sous la douche".</strong></p>
   </div>
 
   <div class="hp-box-challenge">
@@ -24,10 +24,10 @@
   <% else %>
     <div class="d-flex align-items-center">
       <div>
-        <p>Tu as <strong><%= @user_challenges_ongoing %> défis </strong> en cours</p>
+        <p>Tu as <strong><%= @user_challenges_ongoing %> défis </strong> en cours.</p>
         <div class="text-center">
           <button type="button" class="button-challenge-home text-center text-white" data-toggle="modal" data-target="#exampleModalCenter">
-          J'y vais
+          Je continue !
           </button>
         </div>
       </div>
