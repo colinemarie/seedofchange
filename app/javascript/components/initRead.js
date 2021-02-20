@@ -4,7 +4,7 @@ const initRead = () => {
     setTimeout(() => {
       postAsRead(activity)
       markAsRead(activity)
-    }, 1000);
+    }, 2500);
   }
 }
 
@@ -25,13 +25,16 @@ const postAsRead = (activity) => {
   })
 }
 
-
 const markAsRead = (activity) => {
   const unreads = document.querySelectorAll(".unread");
+  const circle = document.querySelector(".fa-circle");
   unreads.forEach((unread) => {
     unread.classList.remove("unread")
-  })
+  });
+  circle.classList.remove("fa-circle");
 }
+
+
 
 
 
