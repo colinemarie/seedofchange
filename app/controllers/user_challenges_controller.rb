@@ -48,7 +48,13 @@ class UserChallengesController < ApplicationController
     other_users.each do |user|
       Activity.create(user: user)
     end
-    redirect_to user_challenges_path, notice: "Bravo tu as gagné #{@user_challenge.challenge.difficulty * 50} points"
+    @validated_challenges = Challenge.includes(user_challenges: :user).where(category: @user_challenge.challenge.category, user_challenges: {user: current_user, status: "validated"})
+    @category_count = @validated_challenges.count
+    if @category_count == 6 || @category_count == 11
+      redirect_to user_challenges_path, notice: "Bravo tu as gagné #{@user_challenge.challenge.difficulty * 50} points et tu gagnes un niveau dans la catégorie '#{@user_challenge.challenge.category}'"
+    else
+      redirect_to user_challenges_path, notice: "Bravo tu as gagné #{@user_challenge.challenge.difficulty * 50} points"
+    end
   end
 
   private
