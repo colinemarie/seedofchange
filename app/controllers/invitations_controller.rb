@@ -1,21 +1,17 @@
 class InvitationsController < ApplicationController
   def create
-    user = User.find_by(username: params[:username])
-    @invitation = user.invitation
-    @clan = current_user.clan
-    if user && user.clan.nil?
-      Invitation.create(user: user, clan: current_user.clan)
+    invited_user = User.find_by(username: params[:username])
+    clan = current_user.clan
+    if invited_user && clan != invited_user.clan
+      invitation = Invitation.create(user: invited_user, clan: clan)
       flash[:alert] = "Nous  avons envoyé l'invitation"
-      redirect_to clan_path current_user.clan
-      @invitation.save
-    elsif
-      user && clan = current_user.clan
+      invitation.save
+    elsif invited_user && clan == invited_user.clan
       flash[:alert] = "Cette personne est déjà dans votre super clan"
-      redirect_to clan_path current_user.clan
     else
       flash[:alert] = "Nous n'avons pas trouvé cette personne"
-      redirect_to clan_path current_user.clan
     end
+    redirect_to clan_path(current_user.clan)
   end
 
   def update

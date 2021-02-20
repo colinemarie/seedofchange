@@ -1,1 +1,53 @@
 // Specific CSS for your home-page
+
+// h1 {
+//   padding-top: 80px;
+//   text-align: center;
+// }
+
+.first-div-hp {
+  text-align: center;
+  padding-top: 40px;
+
+}
+
+.incentive-fact {
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+  padding: 15px;
+  // border: solid 1px;
+  border-radius: 20px;
+  // border-color: $gold;
+  background: $lightlightgreen ;
+}
+
+.incentive-fact p {
+  margin-left: 10px;
+  margin-bottom: 0px;
+  color: black;
+}
+
+.hp-box-challenge {
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: #F7F3F0;
+  border: solid 2px;
+  border-color: $gold;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+
+.hp-box-challenge p {
+  font-size: 18px;
+}
+
+.card-invitation {
+  margin-top: 40px;
+  border: solid 2px;
+  border-color: $gold;
+}
