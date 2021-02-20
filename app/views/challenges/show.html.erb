@@ -25,17 +25,16 @@
 </div>
 
 <div class="compulsory-info">
-
-<div class="d-flex justify-content-between">
-  <div class="price-duration">
-    <p><i class="fas fa-shopping-cart"></i>    <%= @challenge.price %> €</p>
-    <p><i class="fas fa-hourglass-start"></i>    <%= pluralize(@challenge.duration, 'minute') %></p>
-  </div>
-    <div class="difficulty">
-  <%= render 'shared/difficulty', level: @challenge.difficulty %>
+  <div class="d-flex justify-content-between">
+    <div class="price-duration">
+      <p><i class="fas fa-shopping-cart"></i>    <%= @challenge.price %> €</p>
+      <p><i class="fas fa-hourglass-start"></i>    <%= pluralize(@challenge.duration, 'minute') %></p>
     </div>
-</div>
-<p><%= @challenge.description %></p>
+      <div class="difficulty">
+    <%= render 'shared/difficulty', level: @challenge.difficulty %>
+      </div>
+  </div>
+  <p><%= @challenge.description %></p>
 </div>
 
 <div class="other-info">
@@ -93,7 +92,7 @@
 
     <% if @user_challenge.status == "accepted" %>
       <div class="challenge-show-action">
-        <%= link_to "J'abandonne", drop_user_challenge_path(@user_challenge), method: :patch, class:"button button-fail", data: {:confirm => "C'était un super challenge...",  title: 'Êtes-vous sûr ?'}  %>
+        <%= link_to "J'abandonne.", drop_user_challenge_path(@user_challenge), method: :patch, class:"button button-fail", data: {:confirm => "C'était un super challenge...",  title: 'Êtes-vous sûr ?'}  %>
         <%= link_to "Yeah, terminé !", validate_user_challenge_path(@user_challenge), method: :patch, class:"button button-success" %>
       </div>
     <% end %>

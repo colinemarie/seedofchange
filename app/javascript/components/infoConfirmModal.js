@@ -1,8 +1,8 @@
 const infoConfirmModal = () => {
   dataConfirmModal.setDefaults({
-    title: 'Êtes vous sûr ???',
-    commit: 'Tant pis pour la planète',
-    cancel: 'Arf allez'
+    title: 'Tu es sûr de toi ?',
+    commit: "J'abanbonne.",
+    cancel: 'Je le garde.'
   });
 }
 
