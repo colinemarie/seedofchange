@@ -1,0 +1,65 @@
+// Badges index
+
+ul {
+  margin: 0px;
+}
+
+.index-bagdes-component {
+  display: flex;
+  padding-left: 0px;
+  justify-content: center;
+}
+
+
+.index-bagdes-button {
+  color: $gold;
+  text-align: center;
+  display: block;
+  &.collapsed {
+    transition: margin-bottom .7s ease-out;
+  }
+  &:not(.collapsed) {
+    transition: none;
+  }
+  &:visited,
+  &:hover {
+    color: $gold;
+  }
+}
+
+.badges-title {
+  border: 1px;
+  border-top: 1px solid #ECA809;
+  margin-top: 12px;
+  color: #ECA809;
+}
+
+
+// badges style
+
+.badges-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.next-level {
+  background: #ECA809;
+  position: absolute;
+  top: -8px;
+  left: 151px;
+}
+
+.index-style {
+  margin: 10px;
+  margin-inline: 10px;
+  margin-top: 15px;
+  background: #b0b5b3;
+}
+
+.badge-gold {
+  background: #ECA809 !important;
+}
+

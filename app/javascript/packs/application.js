@@ -33,6 +33,7 @@ import {infoConfirmModal} from '../components/infoConfirmModal.js'
 import {initNotificationCable} from '../channels/notification_channel.js'
 import {initTooltip} from '../components/initTooltip.js'
 import {initRead} from '../components/initRead.js'
+import {animateBadges} from '../components/badgesAnimation.js'
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -43,6 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   initNotificationCable();
   initTooltip();
   initRead();
+  animateBadges();
 });
 
 
