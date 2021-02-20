@@ -24,7 +24,7 @@ class UserChallengesController < ApplicationController
     @disable_bell = true
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
     @current_week = Date.today.strftime('%d %b %Y')
-    @already_users = User.includes(:user_challenges).where(clan: current_user.clan, user_challenges: { status: 'validated', id: @user_challenge.id })
+    @already_users = User.includes(:user_challenges).where(clan: current_user.clan, user_challenges: { status: 'validated', challenge: @user_challenge.challenge })
   end
 
   def accept
