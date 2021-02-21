@@ -10,7 +10,7 @@
 
 .modal-footer .btn-danger{
   background-color: $orange;
-  border: none;
+  border: none !important;
   color: $lightgrey;
 
 }

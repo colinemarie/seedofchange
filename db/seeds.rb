@@ -353,10 +353,36 @@ UserChallenge.create!(user_id: myriam.id, challenge_id: plantes.id, status: 'val
 
 puts '3 challenges en cours pour myriam et 2 validés'
 
-UserChallenge.create!(user_id: coline.id, challenge_id: viande.id, status: 'accepted')
-UserChallenge.create!(user_id: coline.id, challenge_id: pipi.id, status: 'accepted')
+Challenge.all.sample(7).each do |challenge|
+  UserChallenge.create!(user_id: coline.id, challenge_id: challenge.id, status: 'validated')
+end
 
-puts '2 challenges en cours pour coline'
+puts '7 challenges validés pour coline'
+
+Challenge.all.sample(10).each do |challenge|
+  UserChallenge.create!(user_id: lomig.id, challenge_id: challenge.id, status: 'validated')
+end
+
+puts '10 challenges validés pour lomig'
+
+Challenge.all.each do |challenge|
+  UserChallenge.create!(user_id: audrey.id, challenge_id: challenge.id, status: 'validated')
+end
+
+puts '12 challenges validés pour simon'
+
+Challenge.all.each do |challenge|
+  UserChallenge.create!(user_id: simon.id, challenge_id: challenge.id, status: 'validated')
+end
+
+puts '10 challenges validés pour simon'
+
+Challenge.all.each do |challenge|
+  UserChallenge.create!(user_id: anna.id, challenge_id: challenge.id, status: 'validated')
+end
+
+puts '15 challenges validés pour anna'
+
 
 
 puts 'creating clans'

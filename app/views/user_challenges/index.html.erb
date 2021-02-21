@@ -2,7 +2,7 @@
 
   <% if @user_challenges.empty? %>
     <div class="d-flex flex-column justify-content-center no-challenge">
-      <p>Tu n'as pas encore de défi... </br> Ajoutes-en <i class="fas fa-smile-wink"></i></p>
+      <p>Tu n'as pas encore de défi... </br> Ajoutes-en ! <i class="fas fa-smile-wink"></i></p>
       <%= link_to user_challenges_path, class: "button button-add mx-auto mt-5", :method => :post do %>
         <i class="fas fa-plus"></i>
       <% end %>
@@ -14,7 +14,7 @@
           <div class="card-challenge">
             <div class="d-flex justify-content-between">
               <h1><%= user_challenge.challenge.name %>  </h1>
-              <%= link_to drop_user_challenge_path(user_challenge), method: :patch, data: {:confirm => "C'était un super challenge...",  title: 'Êtes-vous sûr ?'}  do %>
+              <%= link_to drop_user_challenge_path(user_challenge), method: :patch, data: {:confirm => "C'était pourtant un super challenge...",  title: 'Tu es sûr de toi ?'}  do %>
                 <i class="fas fa-trash"></i>
               <% end %>
             </div>
@@ -29,7 +29,7 @@
     <div class="btn-add-bar">
       <% if @user_challenges.count == 5  %>
         <div class="btn-add-bar-inactive">
-          <button type="button" class="button-add-inactive mx-auto tooltip-test" data-toggle="tooltip" data-placement="top" title="Pas plus de 5 challenges !">
+          <button type="button" class="button-add-inactive mx-auto tooltip-test" data-toggle="tooltip" data-placement="top" title="Pas plus de 5 challenges à la fois !">
             <i class="fas fa-plus"></i>
           </button>
         </div>

@@ -4,12 +4,12 @@ class InvitationsController < ApplicationController
     clan = current_user.clan
     if invited_user && clan != invited_user.clan
       invitation = Invitation.create(user: invited_user, clan: clan)
-      flash[:alert] = "Nous  avons envoyé l'invitation"
+      flash[:alert] = "Nous avons envoyé une invitation à #{invited_user}."
       invitation.save
     elsif invited_user && clan == invited_user.clan
-      flash[:alert] = "Cette personne est déjà dans votre super clan"
+      flash[:alert] = "#{invited_user.capitalize} fait déjà partie du clan #{clan}"
     else
-      flash[:alert] = "Nous n'avons pas trouvé cette personne"
+      flash[:alert] = "Nous n'avons pas trouvé '#{user.capitalize}'."
     end
     redirect_to clan_path(current_user.clan)
   end

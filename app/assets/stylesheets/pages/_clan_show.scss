@@ -18,9 +18,9 @@
   padding-right: 15px;
 }
 
-.info-member {
-height: 10px;
-}
+// .info-member {
+// height: 10px;
+// }
 
 .info-member h2 {
 margin-bottom: 0px;
@@ -28,7 +28,6 @@ font-weight: bold;
 }
 
 .info-member subtitle {
-font-size: 10px;
 font-weight: none;
 }
 
@@ -36,4 +35,8 @@ font-weight: none;
   text-align: center;
   color: $gold;
   font-size: 30px;
+}
+
+.card-clan p {
+  margin: 0px;
 }
