@@ -20,6 +20,10 @@ class InvitationsController < ApplicationController
     if params[:status] == "accepted"
       current_user.clan = @invitation.clan
       current_user.save
+      clan_users = current_user.clan.users.excluding(current_user)
+      clan_users.each do |user|
+        Activity.create(user: user, new_user: current_user.first_name)
+      end
     end
     redirect_to clan_path(current_user.clan)
   end
