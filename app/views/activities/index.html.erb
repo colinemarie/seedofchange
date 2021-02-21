@@ -40,26 +40,28 @@
           </div>
         <% end %>
       <% end %>
-      <% if !activity.read %>
-        <div class="activity-card d-flex align-items-center unread">
-          <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
-          <div class="activity-info">
-            a fini <strong><%= activity.user_challenge.challenge.name %></strong> le <%= activity.user_challenge.updated_at.strftime('%d/%m')  %>
+      <% if activity.user_challenge_id? %>
+        <% if !activity.read %>
+          <div class="activity-card d-flex align-items-center unread">
+            <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
+            <div class="activity-info">
+              a fini <strong><%= activity.user_challenge.challenge.name %></strong> le <%= activity.user_challenge.updated_at.strftime('%d/%m')  %>
+            </div>
+            <div class="points unread">
+            <strong>+<%= activity.user_challenge.challenge.difficulty * 50 %></strong>
+            </div>
           </div>
-          <div class="points unread">
-          <strong>+<%= activity.user_challenge.challenge.difficulty * 50 %></strong>
+        <% else %>
+          <div class="activity-card d-flex align-items-center">
+            <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
+            <div class="activity-info">
+              a fini <strong><%= activity.user_challenge.challenge.name %></strong> le <%= activity.user_challenge.updated_at.strftime('%d/%m')  %>
+            </div>
+            <div class="points">
+            <strong>+<%= activity.user_challenge.challenge.difficulty * 50 %></strong>
+            </div>
           </div>
-        </div>
-      <% else %>
-        <div class="activity-card d-flex align-items-center">
-          <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
-          <div class="activity-info">
-            a fini <strong><%= activity.user_challenge.challenge.name %></strong> le <%= activity.user_challenge.updated_at.strftime('%d/%m')  %>
-          </div>
-          <div class="points">
-          <strong>+<%= activity.user_challenge.challenge.difficulty * 50 %></strong>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
