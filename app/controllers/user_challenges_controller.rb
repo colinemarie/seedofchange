@@ -43,10 +43,15 @@ class UserChallengesController < ApplicationController
   end
 
   def validate
+    order_users
+    check_position_change
     @user_challenge.update(status: "validated")
     other_users = current_user.clan.users.excluding(current_user)
     other_users.each do |user|
       Activity.create(user: user, user_challenge: @user_challenge)
+    end
+    if check_position_change == true
+      Activity.create(user: @next_user, user_challenge: @user_challenge, username: current_user.username)
     end
     broadcast_notification
     @validated_challenges = Challenge.includes(user_challenges: :user).where(category: @user_challenge.challenge.category, user_challenges: {user: current_user, status: "validated"})
@@ -67,6 +72,28 @@ class UserChallengesController < ApplicationController
       current_user.clan,
       render_to_string(partial: "shared/notifications", locals: { status: true, user: @user_challenge.user })
     )
+  end
+
+  def order_users
+    ordered_users = []
+    users = current_user.clan.users.order(score: :desc)
+    users.each do |user|
+      ordered_users << user.id
+    end
+    @user_position = ordered_users.index(current_user.id)
+    @higher_user = ordered_users[@user_position - 1]
+  end
+
+  def check_position_change
+    @next_user = User.find(@higher_user)
+    higher_score = @next_user.score
+    challenge_score = @user_challenge.challenge.difficulty * 50
+    updated_score = current_user.score + challenge_score
+    if updated_score > higher_score
+      true
+    else
+      false
+    end
   end
 
   def set_user_challenge
