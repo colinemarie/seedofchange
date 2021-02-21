@@ -24,7 +24,9 @@
 }
 
 #challenges-show .avatar {
-  margin-left: -15px;
+  margin-left: -10px;
+  width: 30px;
+  height: 30px;
 }
 
 .avatars {
@@ -33,5 +35,6 @@
     background: $lightgreen;
     color: white;
     padding: 7px 5px 7px 9px;
+    font-size: 10px;
   }
 }
