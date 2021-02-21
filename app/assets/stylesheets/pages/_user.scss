@@ -2,7 +2,15 @@
     width: 103px;
 }
 
-
 .user-level {
   color: $gold;
+}
+
+#users-show .user-container {
+  margin-top: 40px;
+  padding: 16px 16px 0px 16px;
+}
+
+.user-score p {
+  color: white;
 }
