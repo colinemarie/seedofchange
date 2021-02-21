@@ -6,7 +6,7 @@
 
   <div class="incentive-fact d-flex align-items-center">
     <i class="fas fa-globe-americas fa-3x" style="color: #7C9A92"></i>
-    <p>Depuis la création de Seed of Change, 150 000 litres d’eau ont été économisés grâce au défi <strong>"Faire pipi sous la douche".</strong></p>
+    <p>Depuis la création de Seed of Change, <strong>150 000 litres</strong> d’eau ont été économisés grâce au défi <strong>"Faire pipi sous la douche".</strong></p>
   </div>
 
   <div class="hp-box-challenge">
@@ -15,7 +15,7 @@
     <p>Tu n'as pas de défis en cours</p>
         <div class="text-center">
           <button type="button" class="button-challenge-home text-center text-white" data-toggle="modal" data-target="#exampleModalCenter">
-          J'ajoute des défis
+          <%= link_to "J'ajoute des défis!", user_challenges_path %>
           </button>
         </div>
     <%= image_tag "image-card-challenge-hp.png", width: 150 %>
@@ -27,7 +27,7 @@
         <p>Tu as <strong><%= @user_challenges_ongoing %> défis </strong> en cours.</p>
         <div class="text-center">
           <button type="button" class="button-challenge-home text-center text-white" data-toggle="modal" data-target="#exampleModalCenter">
-          Je continue !
+            <%= link_to 'Je continue !', user_challenges_path %>
           </button>
         </div>
       </div>
