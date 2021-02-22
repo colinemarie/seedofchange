@@ -2,4 +2,30 @@
     color: goldenrod;
 }
 
+.crown {
+  position: relative;
+  right: -23px;
+  top: -46px;
+}
 
+.gold {
+  color: $gold;
+}
+
+.silver {
+  color: silver;
+}
+
+.bronze {
+  color: #cd7f32;
+}
+
+.ranking-img {
+  position: absolute;
+}
+
+.star-icon {
+  right: 44px;
+  top: -9px;
+  position: absolute;
+}
