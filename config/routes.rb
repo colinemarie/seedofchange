@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # get 'invitations/create'
   devise_for :users
   root to: 'pages#home'
+  get 'landing', to: 'pages#landing'
   resources :challenges, only: [ :show ]
   resources :users, only: [ :show ]
   resources :clans, only: [ :show ] do
@@ -17,3 +18,4 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+

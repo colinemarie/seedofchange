@@ -1,0 +1,38 @@
+.landing-container {
+  background-image: url('landing-background.png');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.landing-content {
+  color: white;
+  text-align: center;
+  margin: auto;
+  padding-top: 180px;
+}
+
+.landing-content h1 {
+  font-size: 48px;
+}
+
+.landing-content p {
+  font-size: 22px;
+  margin-bottom: 100px;
+}
+
+.landing-content i {
+  font-size: 140px;
+}
+
+.landing-content a {
+  font-size: 22px;
+}
+
+.button-landing {
+  padding: 15px 70px 15px 70px;
+}
+
+
