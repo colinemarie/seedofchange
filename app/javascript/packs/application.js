@@ -34,7 +34,7 @@ import {initNotificationCable} from '../channels/notification_channel.js'
 import {initTooltip} from '../components/initTooltip.js'
 import {initRead} from '../components/initRead.js'
 import {animateBadges} from '../components/badgesAnimation.js'
-import {notifSound} from '../components/notifSound.js'
+// import {notifSound} from '../components/notifSound.js'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -45,7 +45,7 @@ document.addEventListener('turbolinks:load', () => {
   initTooltip();
   initRead();
   animateBadges();
-  notifSound();
+  // notifSound();
 });
 
 
