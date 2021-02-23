@@ -148,7 +148,9 @@
 //HOMEPAGE
 .button-challenge-home {
   background: $gold;
-  height: 45px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
   width: 120px;
   margin-top: 25px;
   // margin-bottom: 5px;
@@ -161,3 +163,5 @@
   display: block;
   border: none;
   }
+
+
