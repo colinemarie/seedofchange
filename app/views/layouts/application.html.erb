@@ -16,9 +16,13 @@
 
   <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
       <%= render 'shared/flashes' %>
-      <div class="custom-container container">
+      <% if current_page?(landing_path) %>
+          <%= yield %>
+        <% else %>
+          <div class="custom-container container">
         <%= yield %>
-      </div>
-      <%= render 'shared/navbar' %>
+          </div>
+        <%= render 'shared/navbar' %>
+      <% end %>f
   </body>
 </html>
