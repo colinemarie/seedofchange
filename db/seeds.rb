@@ -403,8 +403,6 @@ lomig.save!
 cecile = User.new(username: 'cece', first_name: 'cecile', email: 'cecile@gmail.com', password: 'Coucou460', score: 400)
 cecile.save!
 
-# alex = User.new(username: 'alexis', first_name: 'alexis', email: 'alex@gmail.com', password: 'Coucou460', score: 200)
-# alex.save!
 
 
 puts 'adding userchallenges'
@@ -456,7 +454,6 @@ coline.update(clan: teammontreuil)
 audrey.update(clan: teammontreuil)
 simon.update(clan: teammontreuil)
 lomig.update(clan: teammontreuil)
-# alex.update(clan: teammontreuil)
 antoine.update(clan: teammontreuil)
 pascal.update(clan: teammontreuil)
 charlie.update(clan: teammontreuil)
