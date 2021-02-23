@@ -22,21 +22,19 @@
 <div class="clan-level mb-2 position-relative">
   <% if @clan.score < 2200 %>
     <%= image_tag "pollue.png", width: 200 %>
-    <%= image_tag "star1.png", width: 60, class:"star-icon" %>
   <% else %>
       <%= image_tag "moins pollue.png", width: 200 %>
-      <%= image_tag "star2.png", width: 60, class:"star-icon" %>
   <% end %>
  </div>
 
 <div class="d-flex justify-content-around pb-2">
   <div class="clan-points pb-0 mb-0">
     <%= @members_by_position.count %> / 25
-    <p>membres</p>
+    <p class="white">membres</p>
   </div>
   <div class="clan-points pb-0 mb-0">
     <%= @clan.score %>
-    <p>points</p>
+    <p class="white">points</p>
   </div>
 </div>
 
@@ -50,16 +48,17 @@
               <div class=" card-clan current-user row align-items-center">
                 <div class= "col-2">
                   <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
-                  <% if index == 0 %>
-                    <i class="fas fa-crown crown gold"></i>
-                    <% elsif index == 1 %>
-                    <i class="fas fa-crown crown silver"></i>
-                    <% elsif index == 2 %>
-                    <i class="fas fa-crown crown bronze"></i>
-                  <% end %>
                 </div>
                 <div class="info-member col-8">
-                  <h2 ><%= member.username %> </h2>
+                  <% if index == 0 %>
+                  <h2><%= member.username %> <i class="fas fa-crown crown gold"></i></h2>
+                  <% elsif index == 1 %>
+                    <h2><%= member.username %> <i class="fas fa-crown crown silver"></i></h2>
+                  <% elsif index == 2 %>
+                    <h2><%= member.username %> <i class="fas fa-crown crown bronze"></i></h2>
+                  <% else %>
+                    <h2><%= member.username %></h2>
+                  <% end %>
                   <subtitle><%= member.score %> points</subtitle>
                 </div>
                 <div class="col-2">
@@ -73,16 +72,17 @@
             <div class="card-clan row">
               <div class= "col-2">
                 <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
-                <% if index == 0 %>
-                  <i class="fas fa-crown crown gold"></i>
-                  <% elsif index == 1 %>
-                  <i class="fas fa-crown crown silver"></i>
-                  <% elsif index == 2 %>
-                  <i class="fas fa-crown crown bronze"></i>
-                <% end %>
               </div>
               <div class="info-member col-8">
-                <h2><%= member.username %> </h2>
+                <% if index == 0 %>
+                  <h2><%= member.username %> <i class="fas fa-crown crown gold"></i></h2>
+                <% elsif index == 1 %>
+                    <h2><%= member.username %> <i class="fas fa-crown crown silver"></i></h2>
+                <% elsif index == 2 %>
+                    <h2><%= member.username %> <i class="fas fa-crown crown bronze"></i></h2>
+                <% else %>
+                  <h2><%= member.username %></h2>
+                <% end %>
                 <subtitle><%= member.score %> points</subtitle>
               </div>
               <div class="col-2">

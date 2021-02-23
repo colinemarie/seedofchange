@@ -93,7 +93,7 @@
     <% if @user_challenge.status == "accepted" %>
       <div class="challenge-show-action">
         <%= link_to "J'abandonne.", drop_user_challenge_path(@user_challenge), method: :patch, class:"button button-fail", data: {:confirm => "C'était un super challenge...",  title: 'Êtes-vous sûr ?'}  %>
-        <%= link_to "Yeah, terminé !", validate_user_challenge_path(@user_challenge), method: :patch, class:"button button-success" %>
+        <%= link_to "Yeah, terminé !", validate_user_challenge_path(@user_challenge), method: :patch, class:"button button-success", id:"validate-btn" %>
       </div>
     <% end %>
 
