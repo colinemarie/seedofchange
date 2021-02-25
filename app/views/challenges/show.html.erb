@@ -9,7 +9,7 @@
   <h1><%= @challenge.name %></h1>
   <br>
 
-<div class="d-flex justify-content-between" class="first-info">
+<div class="d-flex justify-content-between align-items-center" class="first-info">
   <div class="card-info">
     <h2 class="<%= label_category(@challenge.category) %>"><%= @challenge.category %></h2>
   </div>
@@ -19,7 +19,7 @@
       <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{user.first_name}.png", class: "avatar avatar-challenge", alt: "avatar" %>
     <% end %>
     <% if @already_users.count > 2 %>
-      <p class="avatar">+ <%= @already_users.count - 2 %></p>
+      <p class="avatar">+<%= @already_users.count - 2 %></p>
     <% end %>
   </div>
 </div>
@@ -93,10 +93,9 @@
     <% if @user_challenge.status == "accepted" %>
       <div class="challenge-show-action">
         <%= link_to "J'abandonne.", drop_user_challenge_path(@user_challenge), method: :patch, class:"button button-fail", data: {:confirm => "C'était un super challenge...",  title: 'Êtes-vous sûr ?'}  %>
-        <%= link_to "Yeah, terminé !", validate_user_challenge_path(@user_challenge), method: :patch, class:"button button-success" %>
+        <%= link_to "Yeah, terminé !", validate_user_challenge_path(@user_challenge), method: :patch, class:"button button-success", id:"validate-btn" %>
       </div>
     <% end %>
 
   </div>
 </div>
-
