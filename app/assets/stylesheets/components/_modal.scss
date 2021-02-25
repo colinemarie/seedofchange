@@ -9,17 +9,17 @@
 }
 
 .modal-footer .btn-danger{
-  background: $mediumgreen;
-  border: none !important;
+  background: $orange;
+  border: $orange;
   color: $lightgrey;
   border-radius: 40px;
   padding: 12px 22px;
 }
 
 .modal-footer .btn-default{
-  background: transparent;
-  border: $mediumgreen;
-  color: $mediumgreen;
+  background: $lightgreen;
+  border: $lightgreen;
+  color: white;
   border-radius: 40px;
   padding: 12px 22px;
 }
@@ -27,3 +27,5 @@
 .modal-footer {
   justify-content: center;
 }
+
+
