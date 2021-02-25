@@ -11,6 +11,8 @@ module ApplicationHelper
         "label label-menager"
       when "Techno"
         "label label-techno"
+      when "Courses"
+        "label label-courses"
     end
   end
 

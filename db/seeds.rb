@@ -28,10 +28,10 @@ lessive = Challenge.new(name: "Fabrique ta lessive maison",
                    duration: 3,
                    difficulty: 2,
                    necessary_items: ["50g de savon de Marseille", "1 cuillère à soupe de bicarbonate de soude", "1 Litre d’eau", "10 gouttes d’huile essentielle"],
-                   how_to: ["Faire chauffer le litre d’eau et ajouter les copeaux de savon de Marseille.
-                   Mélangez doucement jusqu’à la totale dissolution des copeaux (ou du savon râpé) dans l’eau.
-                   Laissez tiédir et ajoutez la cuillère à soupe de bicarbonate de soude.
-                   Laissez refroidir une quinzaine de minutes avant de verser le tout dans un bidon de lessive ou un contenant en verre."],
+                   how_to: ["Faire chauffer le litre d’eau et ajouter les copeaux de savon de Marseille.",
+                   "Mélanger doucement jusqu’à la totale dissolution des copeaux (ou du savon râpé) dans l’eau.",
+                   "Laissez tiédir et ajoutez la cuillère à soupe de bicarbonate de soude.",
+                   "Laissez refroidir une quinzaine de minutes avant de verser le tout dans un bidon de lessive ou un contenant en verre."],
                    tips: "le savon de Marseille blanc est généralement à base d’huile de palme.
                    Le savon de Marseille vert est à base d’huile d’olive. Préférez un savon de Marseille composé au minimum de
                    72% d’huile végétale, sans colorant, sans parfum, sans glycérine (car risque de figer la lessive) et sans conservateur")
@@ -47,7 +47,7 @@ appareils = Challenge.new(name: "Éteindre complètement les appareils électriq
                    lorsque cela n’est pas possible. Les appareils simplement mis en veille consomment 10% d’électricité en plus !",
                    duration: 5,
                    difficulty: 2,
-                   tips: "vous pouvez brancher vos appareils sur des multiprises fonctionnant avec un bouton marche / arrêt. En un seul geste, vous éteignez ainsi tous vos appareils.")
+                   tips: "Tu peux brancher vos appareils sur des multiprises fonctionnant avec un bouton marche / arrêt. En un seul geste, tu éteinds ainsi tous vos appareils.")
 appareils.save!
 
 puts 'challenge appareils created'
@@ -70,7 +70,7 @@ eau = Challenge.new(name: "Boire l’eau du robinet",
                    Elle est potable et naturellement riche en sels minéraux.",
                    duration: 5,
                    difficulty: 2,
-                   tips: "Si le goût vous dérange, vous pouvez utiliser un filtre qui se fixe sur le robinet ou une carafe filtrante.")
+                   tips: "Si le goût te dérange, tu peux utiliser un filtre qui se fixe sur le robinet ou une carafe filtrante.")
 eau.save!
 
 puts 'challenge eau created'
@@ -101,8 +101,8 @@ puts 'challenge pipi created'
 plantes = Challenge.new(name: "Recueillir l’eau de pluie pour arroser ses plantes",
                    price: 0,
                    category: "Divers",
-                   description: "Pour protéger notre environnement, vous pouvez également installer un système de récupération des
-                   pluies dans votre jardin ou sur votre balcon. Vous pourrez ensuite l’utiliser pour arroser vos plantes.",
+                   description: "Pour protéger notre environnement, tu peux également installer un système de récupération des
+                   pluies dans votre jardin ou sur votre balcon. Tu pourras ensuite l’utiliser pour arroser vos plantes.",
                    duration: 1,
                    difficulty: 1)
 plantes.save!
@@ -142,161 +142,224 @@ communication.save!
 puts 'challenge communication created'
 
 
-random1 = Challenge.new(name: "Random challenge example 1 ",
-                   price: 5,
-                   category: "Techno",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
+
+sac_a_vrac = Challenge.new(name: "Acheter des sacs en tissus",
+                   price: 3.75,
+                   category: "Courses",
+                   description: "Fabriquez-les ou achetez-les de préférence en soie (ils sont aussi légers qu'un sac plastique et séchent vite) et avec un lien intégré (cela facilite leur femerture)",
                    duration: 5,
+                   difficulty: 1,
+                   tips: "" )
+sac_a_vrac.save!
+
+sac_a_pain = Challenge.new(name: "Fabriquer un grand sac à pain",
+                   price: 0,
+                   category: "Courses",
+                   description: "Fabriquer une poche pour transporter le pain acheté sans emballage à la boulangerie",
+                   duration: 10,
+                   difficulty: 1,
+                   necessary_items: ["Une taie d’oreiller", "Un vieux drap"])
+sac_a_pain.save!
+
+cabas = Challenge.new(name: "Acheter un cabas",
+                   category: "Courses",
+                   description: "“Vous voulez un sac ?”, “Non merci, j’ai mon propre sac” : ce genre d’échanges avec nos commerçants se multiplient ! Très pratique pour éviter de jeter du plastique et un gain de place à la maison.",
                    difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random1.save!
-
-
-random2 = Challenge.new(name: "Random challenge example 2 ",
+                   duration: 0,
                    price: 10,
+                   necessary_items: [])
+cabas.save!
+
+bouteille = Challenge.new(name: "Utiliser des bouteilles en verre",
+                   category: "Courses",
+                   description: "Préférer les bouteilles en verre de jus de fruit ou de lait, d’une capacité de 1 litre (les liquides en vrac se vendant généralement au litre).",
+                   difficulty: 1,
+                   duration: 0,
+                   price: 0,
+                   necessary_items: [])
+bouteille.save!
+
+bocaux = Challenge.new(name: "Stocker dans des bocaux en verre",
+                   category: "Courses",
+                   description: "Choisissez des bocaux de conserve à réutiliser. Leurs capacités dépendront des besoins de votre famille (1/2 litre, 1 litre...)",
+                   difficulty: 1,
+                   duration: 0,
+                   price: 5,
+                   how_to: "" ,
+                   tips: "" ,
+                   necessary_items: [])
+bocaux.save!
+
+puts '5 more challenges created'
+
+schampoing = Challenge.new(name: "Acheter du schampoing solide",
+                   category: "Cosmétique",
+                   description: "Les pains de shampoing et d’après-shampoing sont très pratiques pour voyager et nécessitent peu d’emballage (parfois même aucun !).",
+                   difficulty: 2,
+                   duration: 0,
+                   price: 5,
+                   how_to: "" ,
+                   tips: "" ,
+                   necessary_items: [])
+schampoing.save!
+
+déodorant = Challenge.new(name: "Utiliser la Pierre d’alun comme déodorant",
+                   category: "Cosmétique",
+                   description: "Le déodorant cristal est facile à utiliser. Il suffit de le mouiller, de l’appliquer et de le sécher après utilisation.",
+                   difficulty: 1,
+                   duration: 0,
+                   price: 5,
+                   how_to: "" ,
+                   tips: "" ,
+                   necessary_items: [])
+déodorant.save!
+
+savon = Challenge.new(name: "Acheter un savon en pain",
+                   category: "Cosmétique",
+                   description: "Le savon solide est la meilleure solution en matière de déchets si tu peux l’acheter en vrac (sans emballage) ou dans du papier recyclable (déchire un petit morceau et vérifie qu’il ne soit pas plastifié)",
+                   difficulty: 1,
+                   duration: 0,
+                   price: 3.5,
+                   how_to: "",
+                   tips: "Tu peux t'en servir pour tous tes besoins en savon : pour te laver les mains, le visage et le corps, mais aussi pour te raser et te laver les cheveux. Quand elle est trop petite pour s’en servir, coller-la, mouillée, à un nouveau pain.",
+                   necessary_items: [])
+savon.save!
+
+epilation = Challenge.new(name: "Faire une épilation au sucre",
+                   category: "Cosmétique",
+                   description: "Cette technique remonte à l’Antiquité égyptienne, elle remplace parfaitement la cire… L’application est délicate, mais tes efforts seront récompensés.",
+                   difficulty: 3,
+                   duration: 30,
+                   price: 0,
+                   how_to: ["1. Mélange 110 grammes de sucre (j’utilise du brut de canne), 1 cuillerée à soupe d’eau et 1 cuillerée à soupe de jus de citron dans une petite poêle.",
+                    "2. Fait bouillir jusqu’à ce que la température atteigne les 124 °C",
+                    "3. Verse immédiatement dans une assiette mouillé et laisse refroidir.",
+                    "4. Une fois la cire refroidie mais pas encore complètement durcie, fait une boule.",
+                    "5. Malaxe-la et étire-la : sa couleur va passer d’ambre à ivoire. Elle doit rester collante."] ,
+                   tips: "",
+                   necessary_items: ["Sucre", "Eau", "Jus de citron"]
+                   )
+epilation.save!
+
+sol = Challenge.new(name: "Laver le sol avec du vinaigre blanc ou savon noir",
                    category: "Ménager",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random2.save!
-
-
-random3 = Challenge.new(name: "Random challenge example 3 ",
+                   description: "Le vinaigre blanc et le savon de Marseille peuvent généralement être achetés en vrac dans les magasins spécialisés.",
+                   difficulty: 1,
+                   duration: 10,
                    price: 5,
-                   category: "Alimentation",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random3.save!
+                   how_to: ["2 cuillères à soupe de savon noir dans un demi-seau d’eau chaude",
+                    "Ou un demi-verre à moutarde de vinaigre blanc (environ 10-15 cl) dans un demi-seau d’eau froide."] ,
+                   tips: "L’odeur du vinaigre blanc disparait rapidement et c’est un bon substitut à la Javel pour désinfecter. Mais si elle te rebute, aucun problème, tu peux faire infuser des écorces d’oranges ou de citron bio dans le vinaigre (dans un bocal en verre hermétique)" ,
+                   necessary_items: ["Vinaigre blanc", "Savon noir"])
+sol.save!
 
-random4 = Challenge.new(name: "Random challenge example 4 ",
-                   price: 5,
-                   category: "Divers",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random4.save!
+puts 'again, 5 more challenges created'
 
-
-random5 = Challenge.new(name: "Random challenge example 5 ",
-                   price: 5,
-                   category: "Techno",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random5.save!
-
-
-random6 = Challenge.new(name: "Random challenge example 6 ",
-                   price: 5,
-                   category: "Alimentation",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random6.save!
-
-random7 = Challenge.new(name: "Random challenge example 7 ",
-                   price: 5,
-                   category: "Divers",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random7.save!
-
-random8 = Challenge.new(name: "Random challenge example 8 ",
-                   price: 5,
-                   category: "Techno",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random8.save!
-
-random9 = Challenge.new(name: "Random challenge example 9 ",
-                   price: 5,
-                   category: "Divers",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random9.save!
-
-random10 = Challenge.new(name: "Random challenge example 10 ",
-                   price: 5,
+surface = Challenge.new(name: "Decrasser les surfaces avec le bicarbonate de soude",
                    category: "Ménager",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random10.save!
+                   description: "Le bicarbonate de soude peut s’avérer efficace sur les surfaces encrassées. La poudre aura un effet abrasif sans pour autant rayer.",
+                   difficulty: 1,
+                   duration: 2,
+                   price: 4,
+                   how_to: "",
+                   tips: "Tu peux t'en servir également avec du vinaigre blanc et de l’eau bouillante en cas de canalisation bouchée." ,
+                   necessary_items: "",
+                   )
+surface.save!
 
-random11 = Challenge.new(name: "Random challenge example 11 ",
-                   price: 5,
+multisurface = Challenge.new(name: "Faire maison son nettoyant multisurface",
+                   category: "Ménager",
+                   description: "Pas besoin d’avoir de multiples produits, un seul suffit pour nettoyer cuisine, meubles et sanitaires. On peut trouver ce genre de produit à tout faire en magasin bio, mais on peut aussi le fabriquer simplement soi-même.",
+                   difficulty: 2,
+                   duration: 10,
+                   price: 10,
+                   how_to: "" ,
+                   tips: "A l'aide d’un pulvérisateur vide et propre, mettre une cuillère et demie à soupe de savon noir liquide, 25 cl de vinaigre blanc et 50 cl d’eau chaude (pas bouillante). Agite énergiquement le pulvérisateur et voilà, c’est prêt ! " ,
+                   necessary_items: ["Pulvérisateur", "Vinaigre blanc", "Savon noir"]
+                   )
+multisurface.save!
+
+
+email = Challenge.new(name: "Vider sa boite e-mail",
+                   category: "Techno",
+                   description: "Ta boîte mail a plus de 21 800 non lus, parfois même plus... Le numérique ça pollue (beaucoup), environ 10g de CO2 par mail en moyenne, alors vide ta boîte mail étape par étape.",
+                   difficulty: 3,
+                   duration: 90,
+                   price: 0,
+                   how_to: ["- supprimer les mails les plus lourds et les plus anciens
+                    - se désabonner des newsletters non lues et des spams
+                    - supprimer les spams et vider sa corbeille "],
+                   tips: "" ,
+                   necessary_items: "",
+                   )
+email.save!
+
+luminosite = Challenge.new(name: "Diminuer la luminosité de son écran",
+                   category: "Techno",
+                   description: "Une variation de la luminosité de son moniteur de 100 % à 70 % peut économiser jusqu’à 20 % de l’énergie qu’il utilise. De plus, la diminution de la luminosité réduit la fatigue oculaire.",
+                   difficulty: 1,
+                   duration: 0,
+                   price: 0,
+                   how_to: "",
+                   tips: "Tu peux également activer le mode sombre sur ses appareils (ordinateurs, tablettes, smartphones…) pour préserver tes yeux et soulager ta batterie sur les modèles équipés d’écrans à technologie OLED" ,
+                   necessary_items: "",
+                   )
+luminosite.save!
+
+pistage = Challenge.new(name: "Activer la protection contre le pistage en mode strict",
+                   category: "Techno",
+                   description: "Les services qui pistent les données engloutissent des montagnes d’informations. Sur presque tous les sites web visités, les données sur les internautes sont transmises à des dizaines, voire des centaines d’entreprises",
+                   difficulty: 2,
+                   duration: 5,
+                   price: 0,
+                   how_to: "",
+                   tips: "" ,
+                   necessary_items: "",
+                   )
+pistage.save!
+
+puts 'again and again, 5 more challenges created'
+
+streaming = Challenge.new(name: "Télécharger au lieu de visionner",
+                   category: "Techno",
+                   description: "Opte pour le téléchargement plutôt que le visionnage en ligne, car les données ne seront transmises par le serveur qu’une seule fois ",
+                   difficulty: 2,
+                   duration: 10,
+                   price: 0,
+                   how_to: "",
+                   tips: "" ,
+                   necessary_items: "",
+                   )
+streaming.save!
+
+reseau = Challenge.new(name: "Bloquer la lecture automatique de vidéos",
+                   category: "Techno",
+                   description: "La lecture de vidéos consomme beaucoup d'énergie. Cette fonctionnalité est proposée par plusieurs navigateurs, dont Firefox et Chrome.",
+                   difficulty: 2,
+                   duration: 5,
+                   price: 0,
+                   how_to: "",
+                   tips: "" ,
+                   necessary_items: "",
+                   )
+reseau.save!
+
+végé = Challenge.new(name: "Une semaine 100% végétarienne",
                    category: "Alimentation",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
+                   description: "Avec des émissions par jour de 2,89 kilos équivalent CO2 (KgeqCO2), les végans ont le régime alimentaire le moins polluant. ",
                    difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random11.save!
-
-random12 = Challenge.new(name: "Random challenge example 12 ",
-                   price: 5,
-                   category: "Techno",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
                    duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random12.save!
+                   price: 0,
+                   how_to: "",
+                   tips: " Suivis par les végétariens (3,81 Kg CO2/jour), les personnes mangeant entre 50 et 90 grammes (5,63 Kg CO2/jour) (7,19 Kg CO2/jour)." ,
+                   necessary_items: "",
+                   )
+reseau.save!
 
-random13 = Challenge.new(name: "Random challenge example 13 ",
-                   price: 5,
-                   category: "Techno",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random13.save!
+puts 'last but not least, 3 more challenges created'
 
-random14 = Challenge.new(name: "Random challenge example 14 ",
-                   price: 5,
-                   category: "Techno",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random14.save!
 
-random15 = Challenge.new(name: "Random challenge example 15 ",
-                   price: 5,
-                   category: "Techno",
-                   description: "Upsum has been the industry's standarddummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book !",
-                   duration: 5,
-                   difficulty: 2,
-                   how_to: ["It has survived not only five centuries", "but also the leap into electronic typesetting", "remaining essentially unchanged.", "It was popularised in the 1960s", "with the release of Letraset sheets containin"],
-                   tips: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containin")
-random15.save!
 
-puts '15 random challenges created'
 
 puts 'adding users...'
 
@@ -340,8 +403,6 @@ lomig.save!
 cecile = User.new(username: 'cece', first_name: 'cecile', email: 'cecile@gmail.com', password: 'Coucou460', score: 400)
 cecile.save!
 
-# alex = User.new(username: 'alexis', first_name: 'alexis', email: 'alex@gmail.com', password: 'Coucou460', score: 200)
-# alex.save!
 
 
 puts 'adding userchallenges'
@@ -393,7 +454,6 @@ coline.update(clan: teammontreuil)
 audrey.update(clan: teammontreuil)
 simon.update(clan: teammontreuil)
 lomig.update(clan: teammontreuil)
-# alex.update(clan: teammontreuil)
 antoine.update(clan: teammontreuil)
 pascal.update(clan: teammontreuil)
 charlie.update(clan: teammontreuil)

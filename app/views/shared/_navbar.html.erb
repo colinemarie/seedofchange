@@ -1,6 +1,10 @@
 <div class="navbar navbar-seed">
   <div class="<%= 'active' if controller.controller_name == 'pages' && controller.action_name == 'home' %> navbar-element">
-    <%= link_to_unless_current '<i class="fa fa-home"></i><subtitle> Accueil </subtitle>'.html_safe, (root_path), class: "navbar-element" %>
+    <% if current_page?(root_path) %>
+      <%= link_to_unless_current '<i class="fa fa-home"></i><subtitle> Accueil </subtitle>'.html_safe, (landing_path), class: "navbar-element" %>
+    <% else %>
+      <%= link_to_unless_current '<i class="fa fa-home"></i><subtitle> Accueil </subtitle>'.html_safe, (root_path), class: "navbar-element" %>
+    <% end %>
   </div>
 
   <div class="<%= 'active' if controller.controller_name == 'user_challenges' || controller.controller_name == 'challenges' %> navbar-element">

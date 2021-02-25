@@ -1,3 +1,8 @@
+#challenges-show h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 body#challenges-show {
   background: $lightgrey;
   padding-bottom: 25px;
@@ -22,6 +27,10 @@ body#challenges-show {
   padding: 25px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.compulsory-info p {
+  font-size: 18px;
 }
 
 .other-info {
