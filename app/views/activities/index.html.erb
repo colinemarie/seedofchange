@@ -4,66 +4,68 @@
   <h1 class="page-title">Derniers défis du clan</h1>
   <div class="d-flex justify-content-center stars">
   </div>
-  <div class="activities" data-user-id="<%= current_user.id %>" data-base-url="<%= root_url %>" data-auth-token="<%= form_authenticity_token %>">
-    <% @activities.each do |activity| %>
-      <% if activity.new_user? %>
-        <% if !activity.read %>
-          <div class="activity-card d-flex align-items-center unread">
-            <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.new_user}.png", class: "avatar", alt: "avatar" %>
-            <div class="activity-info">
-              a rejoint le clan le <%= activity.created_at.strftime('%d/%m')  %>
+  <% if !@activities.empty? %>
+    <div class="activities" data-user-id="<%= current_user.id %>" data-base-url="<%= root_url %>" data-auth-token="<%= form_authenticity_token %>">
+      <% @activities.each do |activity| %>
+        <% if activity.new_user? %>
+          <% if !activity.read %>
+            <div class="activity-card d-flex align-items-center unread">
+              <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.new_user}.png", class: "avatar", alt: "avatar" %>
+              <div class="activity-info">
+                a rejoint le clan le <%= activity.created_at.strftime('%d/%m')  %>
+              </div>
             </div>
-          </div>
-        <% else %>
-          <div class="activity-card d-flex align-items-center">
-            <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.new_user}.png", class: "avatar", alt: "avatar" %>
-            <div class="activity-info">
-              a rejoint le clan le <%= activity.created_at.strftime('%d/%m')  %>
+          <% else %>
+            <div class="activity-card d-flex align-items-center">
+              <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.new_user}.png", class: "avatar", alt: "avatar" %>
+              <div class="activity-info">
+                a rejoint le clan le <%= activity.created_at.strftime('%d/%m')  %>
+              </div>
             </div>
-          </div>
+          <% end %>
+        <% end %>
+        <% if activity.username? %>
+          <% if !activity.read %>
+            <div class="activity-card d-flex align-items-center unread">
+              <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
+              <div class="activity-info">
+                vous a dépassé le <%= activity.created_at.strftime('%d/%m')  %>
+              </div>
+            </div>
+          <% else %>
+            <div class="activity-card d-flex align-items-center">
+              <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
+              <div class="activity-info">
+                vous a dépassé le <%= activity.created_at.strftime('%d/%m')  %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        <% if activity.user_challenge_id? %>
+          <% if !activity.read %>
+            <div class="activity-card d-flex align-items-center unread">
+              <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
+              <div class="activity-info">
+                a fini <strong><%= activity.user_challenge.challenge.name %></strong> le <%= activity.user_challenge.updated_at.strftime('%d/%m')  %>
+              </div>
+              <div class="points unread">
+              <strong>+<%= activity.user_challenge.challenge.difficulty * 50 %></strong>
+              </div>
+            </div>
+          <% else %>
+            <div class="activity-card d-flex align-items-center">
+              <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
+              <div class="activity-info">
+                a fini <strong><%= activity.user_challenge.challenge.name %></strong> le <%= activity.user_challenge.updated_at.strftime('%d/%m')  %>
+              </div>
+              <div class="points">
+              <strong>+<%= activity.user_challenge.challenge.difficulty * 50 %></strong>
+              </div>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
-      <% if activity.username? %>
-        <% if !activity.read %>
-          <div class="activity-card d-flex align-items-center unread">
-            <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
-            <div class="activity-info">
-              vous a dépassé le <%= activity.created_at.strftime('%d/%m')  %>
-            </div>
-          </div>
-        <% else %>
-          <div class="activity-card d-flex align-items-center">
-            <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
-            <div class="activity-info">
-              vous a dépassé le <%= activity.created_at.strftime('%d/%m')  %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-      <% if activity.user_challenge_id? %>
-        <% if !activity.read %>
-          <div class="activity-card d-flex align-items-center unread">
-            <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
-            <div class="activity-info">
-              a fini <strong><%= activity.user_challenge.challenge.name %></strong> le <%= activity.user_challenge.updated_at.strftime('%d/%m')  %>
-            </div>
-            <div class="points unread">
-            <strong>+<%= activity.user_challenge.challenge.difficulty * 50 %></strong>
-            </div>
-          </div>
-        <% else %>
-          <div class="activity-card d-flex align-items-center">
-            <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
-            <div class="activity-info">
-              a fini <strong><%= activity.user_challenge.challenge.name %></strong> le <%= activity.user_challenge.updated_at.strftime('%d/%m')  %>
-            </div>
-            <div class="points">
-            <strong>+<%= activity.user_challenge.challenge.difficulty * 50 %></strong>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 

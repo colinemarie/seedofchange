@@ -58,10 +58,10 @@ class UserChallengesController < ApplicationController
     @category_count = @validated_challenges.count
     if @category_count == 6 || @category_count == 11 || @category_count == 16
       redirect_to user_challenges_path,
-      notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points et un badge '#{@user_challenge.challenge.category} !'"
+      notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points 🥳 et un badge #{@user_challenge.challenge.category} 🏆 !"
     else
       redirect_to user_challenges_path,
-      notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points !"
+      notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points ! 🥳🥳🥳 "
     end
   end
 

@@ -10,6 +10,10 @@ require("channels")
 require ("data-confirm-modal")
 
 
+
+
+
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -35,6 +39,9 @@ import {initTooltip} from '../components/initTooltip.js'
 import {initRead} from '../components/initRead.js'
 import {animateBadges} from '../components/badgesAnimation.js'
 // import {notifSound} from '../components/notifSound.js'
+
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
