@@ -28,7 +28,7 @@
               <progress value="<%=count - @level_gap * 0%>" max="5">
             </div>
             <div class="badges-icon next-level d-flex justify-content-center align-items-center">
-              <span class="iconify" data-icon="mdi:seed-outline" data-inline="false"></span>
+              <%= image_tag "seed.png", class:"oneLeaf" %>
             </div>
             <p class="progression-bar-level-first"> l </p>
             <p class="progression-bar-level-second"> l </p>
@@ -41,7 +41,7 @@
               <progress value="<%= count - @level_gap * 1 %>" max="5">
             </div>
             <div class="badges-icon next-level d-flex justify-content-center align-items-center">
-             <span class="iconify" data-icon="fluent-leaf-one-24-regular" data-inline="false"></span>
+             <%= image_tag "oneLeaf.png", class:"oneLeaf" %>
             </div>
             <p class="progression-bar-level-first"> l </p>
             <p class="progression-bar-level-second"> l </p>
@@ -54,7 +54,7 @@
               <progress value="<%=count - @level_gap * 2 %>" max="5">
             </div>
             <div class="badges-icon next-level d-flex justify-content-center align-items-center">
-              <span class="iconify" data-icon="fluent-leaf-two-20-regular" data-inline="false"></span>
+              <%= image_tag "twoLeafs.png", class:"oneLeaf" %>
             </div>
             <p class="progression-bar-level-first"> l </p>
             <p class="progression-bar-level-second"> l </p>
@@ -67,7 +67,7 @@
               <progress value="<%=count - @level_gap * 3%>" max="5">
             </div>
             <div class="badges-icon next-level d-flex justify-content-center align-items-center">
-              <span class="iconify" data-icon="fluent-leaf-three-16-regular" data-inline="false"></span>
+              <%= image_tag "threeLeafs.png", class:"oneLeaf" %>
             </div>
             <p class="progression-bar-level-first"> l </p>
             <p class="progression-bar-level-second"> l </p>
@@ -83,16 +83,16 @@
         <div class="badges-title">Mes badges </div>
         <ul class="index-bagdes-component" data-challenges=" <% count %> ">
           <li class="badges-icon index-style d-flex justify-content-center align-items-center", id="badges_one">
-            <span class="iconify" data-icon="mdi:seed-outline" data-inline="false"></span>
+            <%= image_tag "seed.png", class:"oneLeaf" %>
           </li>
           <li class="badges-icon index-style d-flex justify-content-center align-items-center" id="badges_two">
-            <span class="iconify" data-icon="fluent-leaf-one-24-regular" data-inline="false"></span>
+            <%= image_tag "oneLeaf.png", class:"oneLeaf" %>
           </li>
           <li class="badges-icon index-style d-flex justify-content-center align-items-center" id="badges_three">
-            <span class="iconify" data-icon="fluent-leaf-two-20-regular" data-inline="false"></span>
+            <%= image_tag "twoLeafs.png", class:"oneLeaf" %>
           </li>
           <li class="badges-icon index-style d-flex justify-content-center align-items-center" id="badges_four">
-            <span class="iconify" data-icon="fluent-leaf-three-16-regular" data-inline="false"></span>
+            <%= image_tag "threeLeafs.png", class:"oneLeaf" %>
           </li>
         </ul>
       </div>
