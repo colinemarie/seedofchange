@@ -14,6 +14,11 @@
   color: $lightgrey;
   border-radius: 40px;
   padding: 12px 22px;
+  outline: none !important;
+}
+
+.btn:focus {
+  box-shadow: none;
 }
 
 .modal-footer .btn-default{
