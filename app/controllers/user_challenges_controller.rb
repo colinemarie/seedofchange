@@ -7,7 +7,7 @@ class UserChallengesController < ApplicationController
 
   def create
     @user_challenges_ongoing = UserChallenge.get_user_challenges(current_user, 'accepted').count
-    @undone_challenges = (Challenge.all - current_user.challenges).sample(7 - @user_challenges_ongoing)
+    @undone_challenges = (Challenge.all - current_user.challenges).first(7 - @user_challenges_ongoing)
     if @undone_challenges.empty?
       flash[:alert] = "Tu as réalisé tous les challenges de Seed of Change, félications !"
       redirect_to user_challenges_path

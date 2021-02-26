@@ -7,13 +7,7 @@ User.destroy_all
 
 puts 'adding challenges...'
 
-pipi = Challenge.new(name: "Fais pipi sous la douche",
-                   price: 0,
-                   category: "Divers",
-                   description: "Pour économiser une chasse d’eau, tu peux uriner directement sous la douche. Pas super sexy, mais cela permet d’économiser une grande quantité d’eau chaque jour. En plus, tes urines sont stériles, il n’y a donc aucun souci à faire pipi sous la douche.",
-                   duration: 1,
-                   difficulty: 1)
-pipi.save!
+
 
 tawashi = Challenge.new(name: "Ne jette pas l'éponge",
                    price: 5,
@@ -27,9 +21,9 @@ tawashi.save!
 
 puts 'challenge tawashi created'
 
-sol = Challenge.new(name: "Lave ton sol au vinaigre",
+sol = Challenge.new(name: "Du vinaitre tout simplement",
                    category: "Ménager",
-                   description: "Le vinaigre blanc est un nettoyant super efficace, il dégraisse, désinecte et désodorise et détarte. Bien plus économique que les produits classiques du commerce et avec beaucoup moins d'ingrédients, tu le trouveras facilement dans des supermarchés ou encore mieux en vrac !",
+                   description: "Le vinaigre blanc est un nettoyant super efficace, il dégraisse, désinfecte et désodorise et détarte. Bien plus économique que les produits classiques du commerce et avec beaucoup moins d'ingrédients, tu le trouveras facilement dans des supermarchés ou encore mieux en vrac !",
                    difficulty: 1,
                    duration: 10,
                    price: 1,
@@ -37,24 +31,6 @@ sol = Challenge.new(name: "Lave ton sol au vinaigre",
                    tips: "L’odeur du vinaigre blanc disparait rapidement. Mais si elle te rebute, aucun problème, tu peux faire infuser des écorces d’oranges ou de citron bio dans le vinaigre (dans un bocal en verre hermétique) pendant deux semaines, et te voilà avec un nettoyant parfumé.",
                    necessary_items: ["vinaigre blanc"])
 sol.save!
-pub = Challenge.new(name: "Dis stop à la pub",
-                   price: 1,
-                   category: "Divers",
-                   description: "Si les prospectus s'accumulent dans ta boîte aux lettres avant de finir aussitôt à la poubelle,  coller une étiquette  « stop-pub » permet de te libérer de quelques 30 kilos de papier par an. Une bonne façon de prévenir et réduire des déchets.",
-                   duration: 10,
-                   difficulty: 1,
-                   necessary_items: ["papier", "scotch", "stylo"])
-pub.save!
-
-
-streaming = Challenge.new(name: "Télécharger au lieu de visionner",
-                   category: "Techno",
-                   description: "Pas de problème si tu es fan de série, mais opte pour le téléchargement quand c'est possible (la majorité des plateformes le propose) plutôt que de regarder tes contenus en streaming. Le serveur ne transmettra les données qu'une seule, ce qui allège la bande bassante et réduit forcement la consommation d'énergie des serveurs (et de ton ordinateur). Pareil pour tes playlists favorites !",
-                   difficulty: 3,
-                   duration: 10,
-                   price: 0,
-                   )
-streaming.save!
 
 gourde = Challenge.new(name: "Une gourde dans sa poche",
                    category: "Alimentation",
@@ -67,15 +43,43 @@ gourde = Challenge.new(name: "Une gourde dans sa poche",
                    )
 gourde.save!
 
+pub = Challenge.new(name: "Dis stop à la pub",
+                   price: 1,
+                   category: "Divers",
+                   description: "Si les prospectus s'accumulent dans ta boîte aux lettres avant de finir aussitôt à la poubelle,  coller une étiquette  « stop-pub » permet de te libérer de quelques 30 kilos de papier par an. Une bonne façon de prévenir et réduire des déchets.",
+                   duration: 10,
+                   difficulty: 1,
+                   necessary_items: ["papier", "scotch", "stylo"])
+pub.save!
 
-gourde = Challenge.new(name: "Lave ton linge moins chaud",
+
+streaming = Challenge.new(name: "Télécharge tes contenus",
+                   category: "Techno",
+                   description: "Pas de problème si tu es fan de série, mais opte pour le téléchargement quand c'est possible (la majorité des plateformes le propose) plutôt que de regarder tes contenus en streaming. Le serveur ne transmettra les données qu'une seule, ce qui allège la bande bassante et réduit fortement la consommation d'énergie des serveurs (et de ton ordinateur). Pareil pour tes playlists favorites !",
+                   difficulty: 2,
+                   duration: 10,
+                   price: 0,
+                   )
+streaming.save!
+
+
+
+temperature = Challenge.new(name: "Lave ton linge moins chaud",
                    category: "Ménager",
                    description: "Longtemps, on a cru que laver en dessous de 90°, ce n’était pas vraiment laver. Pour le bien être de tes habits comme de ta facture d’électricité, passe à 30° ! C’est la température minimum d’efficacité d’une lessive. Cela tombe bien car 80 % de l'électricité utilisée pour chaque cycle de machine sert à chauffer l'eau. Tes habits te diront aussi merci !",
                    difficulty: 1,
                    duration: 2,
                    price: 0
                    )
-gourde.save!
+temperature.save!
+
+pipi = Challenge.new(name: "Fais pipi sous la douche",
+                   price: 0,
+                   category: "Divers",
+                   description: "Pour économiser une chasse d’eau, tu peux uriner directement sous la douche. Pas super sexy, mais cela permet d’économiser une grande quantité d’eau chaque jour. En plus, tes urines sont stériles, il n’y a donc aucun souci à faire pipi sous la douche.",
+                   duration: 1,
+                   difficulty: 1)
+pipi.save!
 
 
 lessive = Challenge.new(name: "Fabrique ta lessive maison",
@@ -440,20 +444,23 @@ puts 'challenges validés pour coline'
 
 
 
-Challenge.all.each do |challenge|
+Challenge.all.sample(10).each do |challenge|
   UserChallenge.create!(user_id: lomig.id, challenge_id: challenge.id, status: 'validated')
 end
 
+Challenge.all.sample(10).each do |challenge|
+  UserChallenge.create!(user_id: audrey.id, challenge_id: challenge.id, status: 'validated')
+end
 
-Challenge.all.each do |challenge|
+Challenge.all.sample(10).each do |challenge|
   UserChallenge.create!(user_id: myriam.id, challenge_id: challenge.id, status: 'validated')
 end
 
-Challenge.all.each do |challenge|
+Challenge.all.sample(7).each do |challenge|
   UserChallenge.create!(user_id: damien.id, challenge_id: challenge.id, status: 'validated')
 end
 
-Challenge.all.each do |challenge|
+Challenge.all.sample(10).each do |challenge|
   UserChallenge.create!(user_id: cecile.id, challenge_id: challenge.id, status: 'validated')
 end
 
@@ -461,22 +468,28 @@ end
 
 puts 'creating clans'
 
-teammontreuil = Clan.create!(name: 'Team Gambetta')
-myriam.update(clan: teammontreuil)
-coline.update(clan: teammontreuil)
-audrey.update(clan: teammontreuil)
-simon.update(clan: teammontreuil)
-lomig.update(clan: teammontreuil)
-antoine.update(clan: teammontreuil)
-pascal.update(clan: teammontreuil)
-charlie.update(clan: teammontreuil)
-anna.update(clan: teammontreuil)
-olivia.update(clan: teammontreuil)
-sebastien.update(clan: teammontreuil)
+teammgambetta = Clan.create!(name: 'Team Gambetta', score: 6750)
+myriam.update(clan: teammgambetta)
+audrey.update(clan: teammgambetta)
+simon.update(clan: teammgambetta)
+lomig.update(clan: teammgambetta)
+antoine.update(clan: teammgambetta)
+pascal.update(clan: teammgambetta)
+charlie.update(clan: teammgambetta)
+anna.update(clan: teammgambetta)
+olivia.update(clan: teammgambetta)
+sebastien.update(clan: teammgambetta)
+cecile.update(clan: teammgambetta)
+damien.update(clan: teammgambetta)
+
+
 
 
 
 puts 'tout le monde dans la team gambetta'
+
+colineinvitation = Invitation.new(user: coline, clan: teammgambetta)
+colineinvitation.save!
 
 puts "that's it!"
 
