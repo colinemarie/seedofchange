@@ -12,7 +12,7 @@ puts 'adding challenges...'
 tawashi = Challenge.new(name: "Ne jette pas l'éponge",
                    price: 5,
                    category: "Ménager",
-                   description: "Essaie toi au tawashi. C'est une éponge japonaise qui est très facile à fabriquer soi-même à l’aide de vieux vêtements. Cela évite d'utiliser les éponges en plastique qu'on ne peut pas recycler et tu peux utiliser ton stock de chaussettes orphelines, d'une pierre deux coup !",
+                   description: "Essaie-toi au tawashi. C'est une éponge japonaise qui est très facile à fabriquer soi-même à l’aide de vieux vêtements. Cela évite d'utiliser les éponges en plastique qu'on ne peut pas recycler et tu peux utiliser ton stock de chaussettes orphelines, d'une pierre deux coup !",
                    duration: 50,
                    difficulty: 2,
                    necessary_items: ["2 chaussettes orphelines", "28 clous ou vis", "une planche de 20cm de longueur et de largeur", "une paire de ciseaux"],
@@ -21,9 +21,9 @@ tawashi.save!
 
 puts 'challenge tawashi created'
 
-sol = Challenge.new(name: "Du vinaitre tout simplement",
+sol = Challenge.new(name: "Du vinaigre tout simplement",
                    category: "Ménager",
-                   description: "Le vinaigre blanc est un nettoyant super efficace, il dégraisse, désinfecte et désodorise et détarte. Bien plus économique que les produits classiques du commerce et avec beaucoup moins d'ingrédients, tu le trouveras facilement dans des supermarchés ou encore mieux en vrac !",
+                   description: "Le vinaigre blanc est un nettoyant super efficace pour les sols, il dégraisse, désinfecte et désodorise et détarte. Bien plus économique que les produits classiques du commerce et avec beaucoup moins d'ingrédients, tu le trouveras facilement dans des supermarchés ou encore mieux en vrac !",
                    difficulty: 1,
                    duration: 10,
                    price: 1,
@@ -46,7 +46,7 @@ gourde.save!
 pub = Challenge.new(name: "Dis stop à la pub",
                    price: 1,
                    category: "Divers",
-                   description: "Si les prospectus s'accumulent dans ta boîte aux lettres avant de finir aussitôt à la poubelle,  coller une étiquette  « stop-pub » permet de te libérer de quelques 30 kilos de papier par an. Une bonne façon de prévenir et réduire des déchets.",
+                   description: "Si les prospectus s'accumulent dans ta boîte aux lettres avant de finir aussitôt à la poubelle,  coller une étiquette  « stop-pub » permettra de te libérer de quelques 30 kilos de papier par an. Une bonne façon de prévenir et réduire des déchets.",
                    duration: 10,
                    difficulty: 1,
                    necessary_items: ["papier", "scotch", "stylo"])
@@ -55,13 +55,12 @@ pub.save!
 
 streaming = Challenge.new(name: "Télécharge tes contenus",
                    category: "Techno",
-                   description: "Pas de problème si tu es fan de série, mais opte pour le téléchargement quand c'est possible (la majorité des plateformes le propose) plutôt que de regarder tes contenus en streaming. Le serveur ne transmettra les données qu'une seule, ce qui allège la bande bassante et réduit fortement la consommation d'énergie des serveurs (et de ton ordinateur). Pareil pour tes playlists favorites !",
+                   description: "Pas de problème si tu es fan de série, mais opte pour le téléchargement quand c'est possible (la majorité des plateformes le propose), plutôt que de regarder tes contenus en streaming. Le serveur ne transmettra les données qu'une seule fois, ce qui allège la bande passante et réduit fortement la consommation d'énergie des serveurs (et de ton ordinateur). Pareil pour tes playlists favorites !",
                    difficulty: 2,
                    duration: 10,
                    price: 0,
                    )
 streaming.save!
-
 
 
 temperature = Challenge.new(name: "Lave ton linge moins chaud",
@@ -99,7 +98,6 @@ lessive = Challenge.new(name: "Fabrique ta lessive maison",
 lessive.save!
 
 puts 'challenge lessive created'
-
 
 
 
