@@ -7,19 +7,76 @@ User.destroy_all
 
 puts 'adding challenges...'
 
-tawashi = Challenge.new(name: "Fabriquer un tawashi avec une planche et des clous/vis",
+pipi = Challenge.new(name: "Fais pipi sous la douche",
+                   price: 0,
+                   category: "Divers",
+                   description: "Pour économiser une chasse d’eau, tu peux uriner directement sous la douche. Pas super sexy, mais cela permet d’économiser une grande quantité d’eau chaque jour. En plus, tes urines sont stériles, il n’y a donc aucun souci à faire pipi sous la douche.",
+                   duration: 1,
+                   difficulty: 1)
+pipi.save!
+
+tawashi = Challenge.new(name: "Ne jette pas l'éponge",
                    price: 5,
                    category: "Ménager",
-                   description: "Le Tawashi est une éponge japonaise qui est très facile à fabriquer soi-même à l’aide de vieux vêtements.",
-                   duration: 30,
+                   description: "Essaie toi au tawashi. C'est une éponge japonaise qui est très facile à fabriquer soi-même à l’aide de vieux vêtements. Cela évite d'utiliser les éponges en plastique qu'on ne peut pas recycler et tu peux utiliser ton stock de chaussettes orphelines, d'une pierre deux coup !",
+                   duration: 50,
                    difficulty: 2,
                    necessary_items: ["2 chaussettes orphelines", "28 clous ou vis", "une planche de 20cm de longueur et de largeur", "une paire de ciseaux"],
-                   how_to: ["Dessinez un carré de 16cm x 16cm","Faites ensuite un marquage toutes les 2 cm.", "Mettez un clou ou une vis à chaque marquage (sans les coins).", "Découpez 14 lanières de chaussettes de 3cm dans la largeur.", "Accrochez 7 lanières dans un sens", "Puis 7 autres dans l’autre sens en croisant la première rangée de lanières,
-                    la nouvelle lanière passe d’abord au dessus, puis en dessous, puis au dessus… la lanière suivante fait exactement la même chose mais en commençant à l’opposé de la précédente (d’abord en dessous, puis au dessus, puis en dessous…).", "Une fois que le grillage est fait, il faut prendre la lanière d’un coin et faire passer la lanière
-                    suivante dans la boucle afin de la faire ressortir.", "Puis prendre la lanière suivante et la faire passer dans la boucle de la lanière précédente et la faire ressortir…", "Poursuivre en faisant tout le tour afin de faire son tawashi.", "À la fin, faire un noeud avec la dernière lanière pour éviter que le tawashi ne se défasse."])
+                   how_to: ["Dessine un carré de 16cm x 16cm","Fais ensuite un marquage toutes les 2 cm.", "Mets un clou ou une vis à chaque marquage (sans les coins).", "Découpe 14 lanières de chaussettes de 3cm dans la largeur.", "Accroche 7 lanières dans un sens", "Puis 7 autres dans l’autre sens en croisant la première rangée de lanières, la nouvelle lanière passe d’abord au dessus, puis en dessous, puis au dessus… la lanière suivante fait exactement la même chose mais en commençant à l’opposé de la précédente (d’abord en dessous, puis au dessus, puis en dessous…).", "Une fois que le grillage est fait, il faut prendre la lanière d’un coin et faire passer la lanière suivante dans la boucle afin de la faire ressortir.", "Puis prends la lanière suivante et fais la passer dans la boucle de la lanière précédente et fais la ressortir…", "Poursuis en faisant tout le tour afin de faire ton tawashi.", "À la fin, fais un noeud avec la dernière lanière pour éviter que le tawashi ne se défasse."])
 tawashi.save!
 
 puts 'challenge tawashi created'
+
+sol = Challenge.new(name: "Lave ton sol au vinaigre",
+                   category: "Ménager",
+                   description: "Le vinaigre blanc est un nettoyant super efficace, il dégraisse, désinecte et désodorise et détarte. Bien plus économique que les produits classiques du commerce et avec beaucoup moins d'ingrédients, tu le trouveras facilement dans des supermarchés ou encore mieux en vrac !",
+                   difficulty: 1,
+                   duration: 10,
+                   price: 1,
+                   how_to: ["Mélange un demi-verre à moutarde de vinaigre blanc (environ 10-15 cl) dans un demi-seau d’eau froide."],
+                   tips: "L’odeur du vinaigre blanc disparait rapidement. Mais si elle te rebute, aucun problème, tu peux faire infuser des écorces d’oranges ou de citron bio dans le vinaigre (dans un bocal en verre hermétique) pendant deux semaines, et te voilà avec un nettoyant parfumé.",
+                   necessary_items: ["vinaigre blanc"])
+sol.save!
+pub = Challenge.new(name: "Dis stop à la pub",
+                   price: 1,
+                   category: "Divers",
+                   description: "Si les prospectus s'accumulent dans ta boîte aux lettres avant de finir aussitôt à la poubelle,  coller une étiquette  « stop-pub » permet de te libérer de quelques 30 kilos de papier par an. Une bonne façon de prévenir et réduire des déchets.",
+                   duration: 10,
+                   difficulty: 1,
+                   necessary_items: ["papier", "scotch", "stylo"])
+pub.save!
+
+
+streaming = Challenge.new(name: "Télécharger au lieu de visionner",
+                   category: "Techno",
+                   description: "Pas de problème si tu es fan de série, mais opte pour le téléchargement quand c'est possible (la majorité des plateformes le propose) plutôt que de regarder tes contenus en streaming. Le serveur ne transmettra les données qu'une seule, ce qui allège la bande bassante et réduit forcement la consommation d'énergie des serveurs (et de ton ordinateur). Pareil pour tes playlists favorites !",
+                   difficulty: 3,
+                   duration: 10,
+                   price: 0,
+                   )
+streaming.save!
+
+gourde = Challenge.new(name: "Une gourde dans sa poche",
+                   category: "Alimentation",
+                   description: "Toujours avoir une gourde avec soi pour boire l’eau du robinet est le plus sûr moyen de ne pas accumuler de déchets plastiques. Au-delà de l’emballage, cela réduit aussi les émissions dues aux transports des bouteilles. En plus, à 0,03 ct le litre, l’eau de notre robinet est moins chère que l’eau de source ou minérale ! Maintenant tu as le choix, couleur, matériau, taille… Les gourdes sont légions !",
+                   difficulty: 2,
+                   duration: 30,
+                   price: 20,
+                   tips: "Choisis le format de gourde le plus pratique pour tes déplacements, il en existe des plates comme un livre, avec des anneaux pour les accrocher...",
+                   where_to: ["https://www.gobilab.com", "https://lapetitegourde.com", "https://welcomebio.fr"]
+                   )
+gourde.save!
+
+
+gourde = Challenge.new(name: "Lave ton linge moins chaud",
+                   category: "Ménager",
+                   description: "Longtemps, on a cru que laver en dessous de 90°, ce n’était pas vraiment laver. Pour le bien être de tes habits comme de ta facture d’électricité, passe à 30° ! C’est la température minimum d’efficacité d’une lessive. Cela tombe bien car 80 % de l'électricité utilisée pour chaque cycle de machine sert à chauffer l'eau. Tes habits te diront aussi merci !",
+                   difficulty: 1,
+                   duration: 2,
+                   price: 0
+                   )
+gourde.save!
+
 
 lessive = Challenge.new(name: "Fabrique ta lessive maison",
                    price: 5,
@@ -38,6 +95,8 @@ lessive = Challenge.new(name: "Fabrique ta lessive maison",
 lessive.save!
 
 puts 'challenge lessive created'
+
+
 
 
 appareils = Challenge.new(name: "Éteindre complètement les appareils électriques",
@@ -73,30 +132,7 @@ eau = Challenge.new(name: "Boire l’eau du robinet",
                    tips: "Si le goût te dérange, tu peux utiliser un filtre qui se fixe sur le robinet ou une carafe filtrante.")
 eau.save!
 
-puts 'challenge eau created'
 
-pipi = Challenge.new(name: "Faire pipi sous la douche",
-                   price: 0,
-                   category: "Divers",
-                   description: "Pour économiser une chasse d’eau, il est conseillé d’uriner sous la douche. Cela peut paraître peu ragoûtant aux premiers abords,
-                   mais cela permet d’éviter la consommation inutile d’une grande quantité d’eau chaque jour.
-                   En outre, vos urines sont stériles, il n’y a donc aucun souci à faire pipi sous la douche.",
-                   duration: 1,
-                   difficulty: 1)
-pipi.save!
-
-pub = Challenge.new(name: "Coller un “stop-pub” sur sa boîte aux lettres",
-                   price: 1,
-                   category: "Divers",
-                   description: "Coller une étiquette « stop-pub » permet d’éviter l’accumulation de prospectus dans sa boîte aux lettres qui finiront aussitôt à la poubelle. Une bonne façon de prévenir et réduire les déchets.",
-                   duration: 5,
-                   difficulty: 2,
-                   necessary_items: ["papier", "scotch", "stylo"])
-pub.save!
-
-puts 'challenge pub created'
-
-puts 'challenge pipi created'
 
 plantes = Challenge.new(name: "Recueillir l’eau de pluie pour arroser ses plantes",
                    price: 0,
@@ -241,18 +277,6 @@ epilation = Challenge.new(name: "Faire une épilation au sucre",
                    )
 epilation.save!
 
-sol = Challenge.new(name: "Laver le sol avec du vinaigre blanc ou savon noir",
-                   category: "Ménager",
-                   description: "Le vinaigre blanc et le savon de Marseille peuvent généralement être achetés en vrac dans les magasins spécialisés.",
-                   difficulty: 1,
-                   duration: 10,
-                   price: 5,
-                   how_to: ["2 cuillères à soupe de savon noir dans un demi-seau d’eau chaude",
-                    "Ou un demi-verre à moutarde de vinaigre blanc (environ 10-15 cl) dans un demi-seau d’eau froide."] ,
-                   tips: "L’odeur du vinaigre blanc disparait rapidement et c’est un bon substitut à la Javel pour désinfecter. Mais si elle te rebute, aucun problème, tu peux faire infuser des écorces d’oranges ou de citron bio dans le vinaigre (dans un bocal en verre hermétique)" ,
-                   necessary_items: ["Vinaigre blanc", "Savon noir"])
-sol.save!
-
 puts 'again, 5 more challenges created'
 
 surface = Challenge.new(name: "Decrasser les surfaces avec le bicarbonate de soude",
@@ -320,17 +344,6 @@ pistage.save!
 
 puts 'again and again, 5 more challenges created'
 
-streaming = Challenge.new(name: "Télécharger au lieu de visionner",
-                   category: "Techno",
-                   description: "Opte pour le téléchargement plutôt que le visionnage en ligne, car les données ne seront transmises par le serveur qu’une seule fois ",
-                   difficulty: 2,
-                   duration: 10,
-                   price: 0,
-                   how_to: "",
-                   tips: "" ,
-                   necessary_items: "",
-                   )
-streaming.save!
 
 reseau = Challenge.new(name: "Bloquer la lecture automatique de vidéos",
                    category: "Techno",
@@ -344,17 +357,16 @@ reseau = Challenge.new(name: "Bloquer la lecture automatique de vidéos",
                    )
 reseau.save!
 
-végé = Challenge.new(name: "Une semaine 100% végétarienne",
+vege = Challenge.new(name: "Une semaine 100% végétarienne",
                    category: "Alimentation",
                    description: "Avec des émissions par jour de 2,89 kilos équivalent CO2 (KgeqCO2), les végans ont le régime alimentaire le moins polluant. ",
                    difficulty: 2,
                    duration: 5,
                    price: 0,
-                   how_to: "",
                    tips: " Suivis par les végétariens (3,81 Kg CO2/jour), les personnes mangeant entre 50 et 90 grammes (5,63 Kg CO2/jour) (7,19 Kg CO2/jour)." ,
-                   necessary_items: "",
                    )
-reseau.save!
+vege.save!
+
 
 puts 'last but not least, 3 more challenges created'
 
@@ -363,92 +375,93 @@ puts 'last but not least, 3 more challenges created'
 
 puts 'adding users...'
 
-myriam = User.new(username: 'Mimi' , first_name: 'Myriam', email: 'myriam@gmail.com', password: 'Coucou460', score: 400)
+lomig = User.new(username: 'Lomig', first_name: 'lomig', email: 'lomig@gmail.com', password: 'Coucou460', score: 1600)
+lomig.save!
+
+myriam = User.new(username: 'Mymy' , first_name: 'Myriam', email: 'myriam@gmail.com', password: 'Coucou460', score: 700)
 myriam.save!
 puts 'Myriam created'
 
-coline = User.new(username: 'Coco', first_name: 'Coline', email: 'coline@gmail.com', password: 'Coucou460', score: 350)
+pascal = User.new(username: 'Fofo', first_name: 'pascal', email: 'pascal@gmail.com', password: 'Coucou460', score: 650)
+pascal.save!
+
+coline = User.new(username: 'Coco', first_name: 'Coline', email: 'coline@gmail.com', password: 'Coucou460', score: 600)
 coline.save!
 puts 'Coline created'
 
-simon = User.new(username:  'Sisi', first_name: 'Simon', email: 'simon@gmail.com', password: 'Coucou460', score: 350)
+simon = User.new(username:  'Sim', first_name: 'Simon', email: 'simon@gmail.com', password: 'Coucou460', score: 600)
 simon.save!
 puts 'Simon created'
 
-audrey = User.new(username: 'Auau', first_name: 'Audrey', email: 'audrey@gmail.com', password: 'Coucou460', score: 175)
+audrey = User.new(username: 'Audrey', first_name: 'Audrey', email: 'audrey@gmail.com', password: 'Coucou460', score: 550)
 audrey.save!
 puts 'Audrey created'
 
-charlie = User.new(username: 'Chacha', first_name: 'charlie', email: 'charlie@gmail.com', password: 'Coucou460', score: 50)
-charlie.save!
-
-pascal = User.new(username: 'Pascalou', first_name: 'pascal', email: 'pascal@gmail.com', password: 'Coucou460', score: 500)
-pascal.save!
-
-olivia = User.new(username: 'Oliv', first_name: 'olivia', email: 'olivia@gmail.com', password: 'Coucou460', score: 150)
+olivia = User.new(username: 'Oliv', first_name: 'olivia', email: 'olivia@gmail.com', password: 'Coucou460', score: 300)
 olivia.save!
 
-anna = User.new(username: 'Anna', first_name: 'anna', email: 'anna@gmail.com', password: 'Coucou460', score: 300)
+anna = User.new(username: 'Anna', first_name: 'anna', email: 'anna@gmail.com', password: 'Coucou460', score: 250)
 anna.save!
 
-sebastien = User.new(username: 'Seb', first_name: 'sebastien', email: 'sebastien@gmail.com', password: 'Coucou460', score: 600)
+sebastien = User.new(username: 'Seb', first_name: 'sebastien', email: 'sebastien@gmail.com', password: 'Coucou460', score: 500)
 sebastien.save!
 
 antoine = User.new(username: 'Antoine', first_name: 'antoine', email: 'antoine@gmail.com', password: 'Coucou460', score: 150)
 antoine.save!
 
-lomig = User.new(username: 'Lomig', first_name: 'lomig', email: 'lomig@gmail.com', password: 'Coucou460', score: 1600)
-lomig.save!
-
-cecile = User.new(username: 'cece', first_name: 'cecile', email: 'cecile@gmail.com', password: 'Coucou460', score: 400)
+cecile = User.new(username: 'Cecile', first_name: 'cecile', email: 'cecile@gmail.com', password: 'Coucou460', score: 400)
 cecile.save!
+
+damien = User.new(username: 'Dams', first_name: 'cecile', email: 'damien@gmail.com', password: 'Coucou460', score: 400)
+damien.save!
+
+charlie = User.new(username: 'Chacha', first_name: 'charlie', email: 'charlie@gmail.com', password: 'Coucou460', score: 50)
+charlie.save!
+
 
 
 
 puts 'adding userchallenges'
 
-UserChallenge.create!(user_id: myriam.id, challenge_id: pneus.id, status: 'accepted')
-UserChallenge.create!(user_id: myriam.id, challenge_id: viande.id, status: 'validated')
-UserChallenge.create!(user_id: myriam.id, challenge_id: lessive.id, status: 'validated')
-UserChallenge.create!(user_id: myriam.id, challenge_id: plantes.id, status: 'validated')
 
-puts '3 challenges en cours pour myriam et 2 validés'
+UserChallenge.create!(user_id: coline.id, challenge_id: viande.id, status: 'validated')
+UserChallenge.create!(user_id: coline.id, challenge_id: epilation.id, status: 'validated')
+UserChallenge.create!(user_id: coline.id, challenge_id: pneus.id, status: 'validated')
+UserChallenge.create!(user_id: coline.id, challenge_id: appareils.id, status: 'validated')
+UserChallenge.create!(user_id: coline.id, challenge_id: luminosite.id, status: 'validated')
+UserChallenge.create!(user_id: coline.id, challenge_id: pistage.id, status: 'validated')
+UserChallenge.create!(user_id: coline.id, challenge_id: reseau.id, status: 'validated')
+UserChallenge.create!(user_id: coline.id, challenge_id: email.id, status: 'validated')
+UserChallenge.create!(user_id: coline.id, challenge_id: vege.id, status: 'accepted')
 
-Challenge.all.sample(7).each do |challenge|
-  UserChallenge.create!(user_id: coline.id, challenge_id: challenge.id, status: 'validated')
-end
 
-puts '7 challenges validés pour coline'
+puts 'challenges validés pour coline'
 
-Challenge.all.sample(10).each do |challenge|
+
+
+
+Challenge.all.each do |challenge|
   UserChallenge.create!(user_id: lomig.id, challenge_id: challenge.id, status: 'validated')
 end
 
-puts '10 challenges validés pour lomig'
 
 Challenge.all.each do |challenge|
-  UserChallenge.create!(user_id: audrey.id, challenge_id: challenge.id, status: 'validated')
+  UserChallenge.create!(user_id: myriam.id, challenge_id: challenge.id, status: 'validated')
 end
-
-puts '12 challenges validés pour simon'
 
 Challenge.all.each do |challenge|
-  UserChallenge.create!(user_id: simon.id, challenge_id: challenge.id, status: 'validated')
+  UserChallenge.create!(user_id: damien.id, challenge_id: challenge.id, status: 'validated')
 end
-
-puts '10 challenges validés pour simon'
 
 Challenge.all.each do |challenge|
-  UserChallenge.create!(user_id: anna.id, challenge_id: challenge.id, status: 'validated')
+  UserChallenge.create!(user_id: cecile.id, challenge_id: challenge.id, status: 'validated')
 end
-
-puts '15 challenges validés pour anna'
 
 
 
 puts 'creating clans'
 
-teammontreuil = Clan.create!(name: 'team montreuil')
+teammontreuil = Clan.create!(name: 'Team Gambetta')
 myriam.update(clan: teammontreuil)
 coline.update(clan: teammontreuil)
 audrey.update(clan: teammontreuil)
@@ -463,7 +476,7 @@ sebastien.update(clan: teammontreuil)
 
 
 
-puts 'tout le monde dans la team montreuil'
+puts 'tout le monde dans la team gambetta'
 
 puts "that's it!"
 
