@@ -25,6 +25,6 @@ class InvitationsController < ApplicationController
         Activity.create(user: user, new_user: current_user.first_name)
       end
     end
-    redirect_to clan_path(current_user.clan)
+    redirect_to clan_path(current_user.clan, tab: 'ranking')
   end
 end
