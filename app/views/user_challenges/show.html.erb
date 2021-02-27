@@ -2,7 +2,6 @@
   <h2> semaine du <%= @current_week %></h2>
 </div>
 
-
 <div class="user-challenge-count">
   <subtitle> <%= @user_challenges_ongoing %>/5</subtitle>
 </div>
@@ -24,6 +23,7 @@
       <% end %>
     </div>
   </div>
+
   <div class="compulsory-info">
     <div class="d-flex justify-content-between">
       <div class="price-duration">
@@ -35,9 +35,7 @@
         </div>
     </div>
     <p><%= @user_challenge.challenge.description %></p>
-    </div>
-
-
+  </div>
 
   <% if @user_challenge.challenge.necessary_items.present? || @user_challenge.challenge.how_to.present? ||
     @user_challenge.challenge.tips.present? || @user_challenge.challenge.where_to.present? %>
@@ -75,11 +73,19 @@
           </div>
         <% end %>
 
-
-        <% if @user_challenge.challenge.where_to.present? %>
-          <h2>Petite astuce</h2>
-          <%= @user_challenge.challenge.where_to %>
+  <% if @user_challenge.challenge.where_to.present? %>
+    <div class= "useful-links">
+      <h2>Liens utiles</h2>
+      <ul>
+        <% @user_challenge.challenge.where_to.each do |link|%>
+          <li>
+            <a href="<%= link %>"><%= link %></a>
+          </li>
         <% end %>
+      </ul>
+    </div>
+    <% end %>
+
       </div>
     </div>
   <% end %>
