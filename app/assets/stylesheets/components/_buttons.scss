@@ -8,11 +8,17 @@
 .button-fail {
   background: $orange;
   font-weight: bold;
+  &:visited {
+  opacity: 0.7;
+ }
 }
 
 .button-success {
   background: $lightgreen;
   font-weight: bold;
+  &:visited {
+  opacity: 0.7;
+ }
 }
 
 .button-gold {
@@ -30,6 +36,9 @@
   text-align: center;
   color: #FFFFFF;
   justify-content: center;
+  &:visited {
+  opacity: 0.7;
+ }
 }
 
 .button-add {
@@ -44,9 +53,9 @@
     justify-content: center;
     color: $darkgreen;
     margin: 0 auto;
-  &:hover {
-    color: $darkgreen;
-  }
+    &:visited {
+    opacity: 0.7;
+   }
 }
 
 .button-add-inactive {
@@ -69,18 +78,27 @@
   color: $darkgreen;
   border-radius: 50%;
   padding: 3px 5px;
+  &:visited {
+  opacity: 0.7;
+ }
 }
 
 .button-arrow:active {
   color: $gold;
+  &:hover,
+  &:visited {
+    opacity: 0.7;
+   }
 }
 
 .button-accept {
   color: $lightgreen;
   font-size: 50px;
   padding-left: 10px;
-    &:hover {
+    &:hover,
+    &:visited {
       color: $lightgreen;
+      opacity: 0.7;
    }
 }
 
@@ -93,8 +111,9 @@
   color: $orange;
   font-size: 50px;
   padding-right: 10px;
-    &:hover {
-      color: $orange;
+    &:hover,
+    &:visited {
+      color: #f7b6a7;
    }
 }
 
@@ -116,6 +135,9 @@
   transform: translateX(-50%);
   padding: 10px;
   border-radius: 50%;
+  &:visited {
+  opacity: 0.7;
+ }
 }
 
 .btn-add-bar-inactive {
@@ -136,6 +158,9 @@
   margin-bottom: 25px;
   font-weight: bold;
   border: none;
+  &:visited {
+  opacity: 0.7;
+ }
 }
 
 .button-modal-clan {
@@ -150,6 +175,9 @@
   font-weight: bold;
   display: block;
   border: none;
+  &:visited {
+  opacity: 0.7;
+  }
 };
 
 //HOMEPAGE
@@ -163,5 +191,9 @@
   font-weight: bold;
   display: block;
   border: none;
-  }
+  &:hover,
+  &:visited {
+    opacity: 0.7;
+   }
+}
 
