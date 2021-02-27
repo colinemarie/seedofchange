@@ -70,10 +70,17 @@
 
 
 <% if @challenge.where_to.present? %>
-    <h2>Petite astuce</h2>
-    <%= @challenge.where_to %>
-  <% end %>
-
+    <div class= "useful-links">
+      <h2>Liens utiles</h2>
+      <ul>
+        <% @challenge.where_to.each do |link|%>
+          <li>
+            <a href="<%= link %>"><%= link %></a>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    </div>
 <br>
   <!--
     <% if @user_challenge.status == "pending" %>
