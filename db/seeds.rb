@@ -440,7 +440,9 @@ UserChallenge.create!(user_id: coline.id, challenge_id: vege.id, status: 'accept
 puts 'challenges validés pour coline'
 
 
+UserChallenge.create!(user_id: simon.id, challenge_id: epolation.id, status: 'accepted')
 
+puts 'une epilation pour simmon'
 
 Challenge.all.sample(10).each do |challenge|
   UserChallenge.create!(user_id: lomig.id, challenge_id: challenge.id, status: 'validated')
@@ -479,8 +481,6 @@ olivia.update(clan: teammgambetta)
 sebastien.update(clan: teammgambetta)
 cecile.update(clan: teammgambetta)
 damien.update(clan: teammgambetta)
-
-
 
 
 
