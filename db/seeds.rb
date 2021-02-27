@@ -440,7 +440,7 @@ UserChallenge.create!(user_id: coline.id, challenge_id: vege.id, status: 'accept
 puts 'challenges validés pour coline'
 
 
-UserChallenge.create!(user_id: simon.id, challenge_id: epolation.id, status: 'accepted')
+UserChallenge.create!(user_id: simon.id, challenge_id: epilation.id, status: 'accepted')
 
 puts 'une epilation pour simmon'
 
