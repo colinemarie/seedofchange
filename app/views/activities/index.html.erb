@@ -41,7 +41,7 @@
             </div>
           <% end %>
         <% end %>
-        <% if activity.user_challenge_id? %>
+        <% if activity.user_challenge_id? && !activity.username%>
           <% if !activity.read %>
             <div class="activity-card d-flex align-items-center unread">
               <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{activity.user_challenge.user.first_name}.png", class: "avatar", alt: "avatar" %>
