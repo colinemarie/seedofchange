@@ -1,5 +1,9 @@
+<%
+  ranking = params[:tab] == "ranking"
+%>
+
 <div class="switch-button" <%= "data-turbolinks-permanent" if keep_navbar? %>  id="switch-button">
-  <span class="active"></span>
+  <span class="active" style="left: <%= ranking ? 50 : 0  %>%;"></span>
   <%= link_to "Activités", clan_activities_path(current_user.clan), class: "switch-button-case left" %>
   <%= link_to "Classement", clan_path(current_user.clan), class: "switch-button-case right" %>
 </div>
