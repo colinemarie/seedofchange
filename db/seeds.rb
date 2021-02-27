@@ -7,8 +7,6 @@ User.destroy_all
 
 puts 'adding challenges...'
 
-
-
 tawashi = Challenge.new(name: "Ne jette pas l'éponge",
                    price: 5,
                    category: "Ménager",
@@ -122,30 +120,30 @@ viande = Challenge.new(name: "Manger moins de viande",
                    difficulty: 1)
 viande.save!
 
-puts 'challenge viande created'
+# puts 'challenge viande created'
 
-eau = Challenge.new(name: "Boire l’eau du robinet",
-                   price: 0,
-                   category: "Alimentation",
-                   description: "Sauf indication contraire de votre commune, il est tout à fait possible de boire l’eau du robinet en France.
-                   Elle est potable et naturellement riche en sels minéraux.",
-                   duration: 5,
-                   difficulty: 2,
-                   tips: "Si le goût te dérange, tu peux utiliser un filtre qui se fixe sur le robinet ou une carafe filtrante.")
-eau.save!
+# eau = Challenge.new(name: "Boire l’eau du robinet",
+#                    price: 0,
+#                    category: "Alimentation",
+#                    description: "Sauf indication contraire de votre commune, il est tout à fait possible de boire l’eau du robinet en France.
+#                    Elle est potable et naturellement riche en sels minéraux.",
+#                    duration: 5,
+#                    difficulty: 2,
+#                    tips: "Si le goût te dérange, tu peux utiliser un filtre qui se fixe sur le robinet ou une carafe filtrante.")
+# eau.save!
 
 
 
-plantes = Challenge.new(name: "Recueillir l’eau de pluie pour arroser ses plantes",
-                   price: 0,
-                   category: "Divers",
-                   description: "Pour protéger notre environnement, tu peux également installer un système de récupération des
-                   pluies dans votre jardin ou sur votre balcon. Tu pourras ensuite l’utiliser pour arroser vos plantes.",
-                   duration: 1,
-                   difficulty: 1)
-plantes.save!
+# plantes = Challenge.new(name: "Recueillir l’eau de pluie pour arroser ses plantes",
+#                    price: 0,
+#                    category: "Divers",
+#                    description: "Pour protéger notre environnement, tu peux également installer un système de récupération des
+#                    pluies dans votre jardin ou sur votre balcon. Tu pourras ensuite l’utiliser pour arroser vos plantes.",
+#                    duration: 1,
+#                    difficulty: 1)
+# plantes.save!
 
-puts 'challenge plantes created'
+# puts 'challenge plantes created'
 
 pneus = Challenge.new(name: "Vérifier l’état de ses pneus de voiture",
                    price: 0,
@@ -158,110 +156,110 @@ pneus.save!
 
 puts 'challenge pneus created'
 
-medicaments = Challenge.new(name: "Rapporter ses médicaments périmés chez le pharmacien",
-                   price: 0,
-                   category: "Divers",
-                   description: "Du côté de votre armoire à pharmacie, il est aussi possible de faire un geste pour l’environnement.
-                   Les médicaments périmés ou non utilisés doivent être ramenés en pharmacie afin d’être valorisés énergétiquement.",
-                   duration: 15,
-                   difficulty: 1)
-medicaments.save!
+# medicaments = Challenge.new(name: "Rapporter ses médicaments périmés chez le pharmacien",
+#                    price: 0,
+#                    category: "Divers",
+#                    description: "Du côté de votre armoire à pharmacie, il est aussi possible de faire un geste pour l’environnement.
+#                    Les médicaments périmés ou non utilisés doivent être ramenés en pharmacie afin d’être valorisés énergétiquement.",
+#                    duration: 15,
+#                    difficulty: 1)
+# medicaments.save!
 
-puts 'challenge medicaments created'
+# puts 'challenge medicaments created'
 
-communication = Challenge.new(name: "Informer son entourage et ses enfants",
-                   price: 0,
-                   category: "Divers",
-                   description: "Pour donner un vrai sens à vos gestes écologiques, il reste bien-sûr important de les partager avec votre entourage.",
-                   duration: 5,
-                   difficulty: 1)
-communication.save!
+# communication = Challenge.new(name: "Informer son entourage et ses enfants",
+#                    price: 0,
+#                    category: "Divers",
+#                    description: "Pour donner un vrai sens à vos gestes écologiques, il reste bien-sûr important de les partager avec votre entourage.",
+#                    duration: 5,
+#                    difficulty: 1)
+# communication.save!
 
-puts 'challenge communication created'
+# puts 'challenge communication created'
 
 
 
-sac_a_vrac = Challenge.new(name: "Acheter des sacs en tissus",
-                   price: 3.75,
-                   category: "Courses",
-                   description: "Fabriquez-les ou achetez-les de préférence en soie (ils sont aussi légers qu'un sac plastique et séchent vite) et avec un lien intégré (cela facilite leur femerture)",
-                   duration: 5,
-                   difficulty: 1,
-                   tips: "" )
-sac_a_vrac.save!
+# sac_a_vrac = Challenge.new(name: "Acheter des sacs en tissus",
+#                    price: 3.75,
+#                    category: "Courses",
+#                    description: "Fabriquez-les ou achetez-les de préférence en soie (ils sont aussi légers qu'un sac plastique et séchent vite) et avec un lien intégré (cela facilite leur femerture)",
+#                    duration: 5,
+#                    difficulty: 1,
+#                    tips: "" )
+# sac_a_vrac.save!
 
-sac_a_pain = Challenge.new(name: "Fabriquer un grand sac à pain",
-                   price: 0,
-                   category: "Courses",
-                   description: "Fabriquer une poche pour transporter le pain acheté sans emballage à la boulangerie",
-                   duration: 10,
-                   difficulty: 1,
-                   necessary_items: ["Une taie d’oreiller", "Un vieux drap"])
-sac_a_pain.save!
+# sac_a_pain = Challenge.new(name: "Fabriquer un grand sac à pain",
+#                    price: 0,
+#                    category: "Courses",
+#                    description: "Fabriquer une poche pour transporter le pain acheté sans emballage à la boulangerie",
+#                    duration: 10,
+#                    difficulty: 1,
+#                    necessary_items: ["Une taie d’oreiller", "Un vieux drap"])
+# sac_a_pain.save!
 
-cabas = Challenge.new(name: "Acheter un cabas",
-                   category: "Courses",
-                   description: "“Vous voulez un sac ?”, “Non merci, j’ai mon propre sac” : ce genre d’échanges avec nos commerçants se multiplient ! Très pratique pour éviter de jeter du plastique et un gain de place à la maison.",
-                   difficulty: 2,
-                   duration: 0,
-                   price: 10,
-                   necessary_items: [])
-cabas.save!
+# cabas = Challenge.new(name: "Acheter un cabas",
+#                    category: "Courses",
+#                    description: "“Vous voulez un sac ?”, “Non merci, j’ai mon propre sac” : ce genre d’échanges avec nos commerçants se multiplient ! Très pratique pour éviter de jeter du plastique et un gain de place à la maison.",
+#                    difficulty: 2,
+#                    duration: 0,
+#                    price: 10,
+#                    necessary_items: [])
+# cabas.save!
 
-bouteille = Challenge.new(name: "Utiliser des bouteilles en verre",
-                   category: "Courses",
-                   description: "Préférer les bouteilles en verre de jus de fruit ou de lait, d’une capacité de 1 litre (les liquides en vrac se vendant généralement au litre).",
-                   difficulty: 1,
-                   duration: 0,
-                   price: 0,
-                   necessary_items: [])
-bouteille.save!
+# bouteille = Challenge.new(name: "Utiliser des bouteilles en verre",
+#                    category: "Courses",
+#                    description: "Préférer les bouteilles en verre de jus de fruit ou de lait, d’une capacité de 1 litre (les liquides en vrac se vendant généralement au litre).",
+#                    difficulty: 1,
+#                    duration: 0,
+#                    price: 0,
+#                    necessary_items: [])
+# bouteille.save!
 
-bocaux = Challenge.new(name: "Stocker dans des bocaux en verre",
-                   category: "Courses",
-                   description: "Choisissez des bocaux de conserve à réutiliser. Leurs capacités dépendront des besoins de votre famille (1/2 litre, 1 litre...)",
-                   difficulty: 1,
-                   duration: 0,
-                   price: 5,
-                   how_to: "" ,
-                   tips: "" ,
-                   necessary_items: [])
-bocaux.save!
+# bocaux = Challenge.new(name: "Stocker dans des bocaux en verre",
+#                    category: "Courses",
+#                    description: "Choisissez des bocaux de conserve à réutiliser. Leurs capacités dépendront des besoins de votre famille (1/2 litre, 1 litre...)",
+#                    difficulty: 1,
+#                    duration: 0,
+#                    price: 5,
+#                    how_to: "" ,
+#                    tips: "" ,
+#                    necessary_items: [])
+# bocaux.save!
 
-puts '5 more challenges created'
+# puts '5 more challenges created'
 
-schampoing = Challenge.new(name: "Acheter du schampoing solide",
-                   category: "Cosmétique",
-                   description: "Les pains de shampoing et d’après-shampoing sont très pratiques pour voyager et nécessitent peu d’emballage (parfois même aucun !).",
-                   difficulty: 2,
-                   duration: 0,
-                   price: 5,
-                   how_to: "" ,
-                   tips: "" ,
-                   necessary_items: [])
-schampoing.save!
+# schampoing = Challenge.new(name: "Acheter du schampoing solide",
+#                    category: "Cosmétique",
+#                    description: "Les pains de shampoing et d’après-shampoing sont très pratiques pour voyager et nécessitent peu d’emballage (parfois même aucun !).",
+#                    difficulty: 2,
+#                    duration: 0,
+#                    price: 5,
+#                    how_to: "" ,
+#                    tips: "" ,
+#                    necessary_items: [])
+# schampoing.save!
 
-déodorant = Challenge.new(name: "Utiliser la Pierre d’alun comme déodorant",
-                   category: "Cosmétique",
-                   description: "Le déodorant cristal est facile à utiliser. Il suffit de le mouiller, de l’appliquer et de le sécher après utilisation.",
-                   difficulty: 1,
-                   duration: 0,
-                   price: 5,
-                   how_to: "" ,
-                   tips: "" ,
-                   necessary_items: [])
-déodorant.save!
+# déodorant = Challenge.new(name: "Utiliser la Pierre d’alun comme déodorant",
+#                    category: "Cosmétique",
+#                    description: "Le déodorant cristal est facile à utiliser. Il suffit de le mouiller, de l’appliquer et de le sécher après utilisation.",
+#                    difficulty: 1,
+#                    duration: 0,
+#                    price: 5,
+#                    how_to: "" ,
+#                    tips: "" ,
+#                    necessary_items: [])
+# déodorant.save!
 
-savon = Challenge.new(name: "Acheter un savon en pain",
-                   category: "Cosmétique",
-                   description: "Le savon solide est la meilleure solution en matière de déchets si tu peux l’acheter en vrac (sans emballage) ou dans du papier recyclable (déchire un petit morceau et vérifie qu’il ne soit pas plastifié)",
-                   difficulty: 1,
-                   duration: 0,
-                   price: 3.5,
-                   how_to: "",
-                   tips: "Tu peux t'en servir pour tous tes besoins en savon : pour te laver les mains, le visage et le corps, mais aussi pour te raser et te laver les cheveux. Quand elle est trop petite pour s’en servir, coller-la, mouillée, à un nouveau pain.",
-                   necessary_items: [])
-savon.save!
+# savon = Challenge.new(name: "Acheter un savon en pain",
+#                    category: "Cosmétique",
+#                    description: "Le savon solide est la meilleure solution en matière de déchets si tu peux l’acheter en vrac (sans emballage) ou dans du papier recyclable (déchire un petit morceau et vérifie qu’il ne soit pas plastifié)",
+#                    difficulty: 1,
+#                    duration: 0,
+#                    price: 3.5,
+#                    how_to: "",
+#                    tips: "Tu peux t'en servir pour tous tes besoins en savon : pour te laver les mains, le visage et le corps, mais aussi pour te raser et te laver les cheveux. Quand elle est trop petite pour s’en servir, coller-la, mouillée, à un nouveau pain.",
+#                    necessary_items: [])
+# savon.save!
 
 epilation = Challenge.new(name: "Faire une épilation au sucre",
                    category: "Cosmétique",
@@ -279,31 +277,31 @@ epilation = Challenge.new(name: "Faire une épilation au sucre",
                    )
 epilation.save!
 
-puts 'again, 5 more challenges created'
+# puts 'again, 5 more challenges created'
 
-surface = Challenge.new(name: "Decrasser les surfaces avec le bicarbonate de soude",
-                   category: "Ménager",
-                   description: "Le bicarbonate de soude peut s’avérer efficace sur les surfaces encrassées. La poudre aura un effet abrasif sans pour autant rayer.",
-                   difficulty: 1,
-                   duration: 2,
-                   price: 4,
-                   how_to: "",
-                   tips: "Tu peux t'en servir également avec du vinaigre blanc et de l’eau bouillante en cas de canalisation bouchée." ,
-                   necessary_items: "",
-                   )
-surface.save!
+# surface = Challenge.new(name: "Decrasser les surfaces avec le bicarbonate de soude",
+#                    category: "Ménager",
+#                    description: "Le bicarbonate de soude peut s’avérer efficace sur les surfaces encrassées. La poudre aura un effet abrasif sans pour autant rayer.",
+#                    difficulty: 1,
+#                    duration: 2,
+#                    price: 4,
+#                    how_to: "",
+#                    tips: "Tu peux t'en servir également avec du vinaigre blanc et de l’eau bouillante en cas de canalisation bouchée." ,
+#                    necessary_items: "",
+#                    )
+# surface.save!
 
-multisurface = Challenge.new(name: "Faire maison son nettoyant multisurface",
-                   category: "Ménager",
-                   description: "Pas besoin d’avoir de multiples produits, un seul suffit pour nettoyer cuisine, meubles et sanitaires. On peut trouver ce genre de produit à tout faire en magasin bio, mais on peut aussi le fabriquer simplement soi-même.",
-                   difficulty: 2,
-                   duration: 10,
-                   price: 10,
-                   how_to: "" ,
-                   tips: "A l'aide d’un pulvérisateur vide et propre, mettre une cuillère et demie à soupe de savon noir liquide, 25 cl de vinaigre blanc et 50 cl d’eau chaude (pas bouillante). Agite énergiquement le pulvérisateur et voilà, c’est prêt ! " ,
-                   necessary_items: ["Pulvérisateur", "Vinaigre blanc", "Savon noir"]
-                   )
-multisurface.save!
+# multisurface = Challenge.new(name: "Faire maison son nettoyant multisurface",
+#                    category: "Ménager",
+#                    description: "Pas besoin d’avoir de multiples produits, un seul suffit pour nettoyer cuisine, meubles et sanitaires. On peut trouver ce genre de produit à tout faire en magasin bio, mais on peut aussi le fabriquer simplement soi-même.",
+#                    difficulty: 2,
+#                    duration: 10,
+#                    price: 10,
+#                    how_to: "" ,
+#                    tips: "A l'aide d’un pulvérisateur vide et propre, mettre une cuillère et demie à soupe de savon noir liquide, 25 cl de vinaigre blanc et 50 cl d’eau chaude (pas bouillante). Agite énergiquement le pulvérisateur et voilà, c’est prêt ! " ,
+#                    necessary_items: ["Pulvérisateur", "Vinaigre blanc", "Savon noir"]
+#                    )
+# multisurface.save!
 
 
 email = Challenge.new(name: "Vider sa boite e-mail",
