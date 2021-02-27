@@ -414,7 +414,7 @@ antoine.save!
 cecile = User.new(username: 'Cecile', first_name: 'cecile', email: 'cecile@gmail.com', password: 'Coucou460', score: 400)
 cecile.save!
 
-damien = User.new(username: 'Dams', first_name: 'cecile', email: 'damien@gmail.com', password: 'Coucou460', score: 400)
+damien = User.new(username: 'Dams', first_name: 'damien', email: 'damien@gmail.com', password: 'Coucou460', score: 400)
 damien.save!
 
 charlie = User.new(username: 'Chacha', first_name: 'charlie', email: 'charlie@gmail.com', password: 'Coucou460', score: 50)
