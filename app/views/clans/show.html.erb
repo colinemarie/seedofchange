@@ -47,7 +47,7 @@
             <div class="row align-items-center">
               <div class=" card-clan current-user row align-items-center">
                 <div class= "col-2">
-                  <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
+                  <%= cl_image_tag("SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar") %>
                 </div>
                 <div class="info-member col-8">
                   <% if index == 0 %>
