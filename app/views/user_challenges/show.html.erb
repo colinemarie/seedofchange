@@ -43,6 +43,7 @@
 
     <div class="collapse" id="textCollaspe">
       <div class="other-info">
+        <div class="necessary-items">
         <% if @user_challenge.challenge.necessary_items.present? %>
           <h2>Liste de course</h2>
           <% @user_challenge.challenge.necessary_items.each do |item| %>
@@ -53,7 +54,9 @@
             </ul>
           <% end %>
         <% end %>
+      </div>
 
+    <div class="how-to">
         <% if @user_challenge.challenge.how_to.present? %>
           <h2>Comment faire ?</h2>
           <% @user_challenge.challenge.how_to.each do |step| %>
@@ -64,7 +67,7 @@
             </ul>
           <% end %>
         <% end %>
-
+    </div>
 
         <% if @user_challenge.challenge.tips.present? %>
           <div class= "tips">
