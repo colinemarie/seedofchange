@@ -382,14 +382,14 @@ myriam = User.new(username: 'Mymy' , first_name: 'Myriam', email: 'myriam@gmail.
 myriam.save!
 puts 'Myriam created'
 
-pascal = User.new(username: 'Fofo', first_name: 'pascal', email: 'pascal@gmail.com', password: 'Coucou460', score: 650)
+pascal = User.new(username: 'Fofo', first_name: 'pascal', email: 'pascal@gmail.com', password: 'Coucou460', score: 625)
 pascal.save!
 
 coline = User.new(username: 'Coco', first_name: 'Coline', email: 'coline@gmail.com', password: 'Coucou460', score: 600)
 coline.save!
 puts 'Coline created'
 
-simon = User.new(username:  'Sim', first_name: 'Simon', email: 'simon@gmail.com', password: 'Coucou460', score: 600)
+simon = User.new(username:  'Sim', first_name: 'Simon', email: 'simon@gmail.com', password: 'Coucou460', score: 650)
 simon.save!
 puts 'Simon created'
 
@@ -397,7 +397,7 @@ audrey = User.new(username: 'Audrey', first_name: 'Audrey', email: 'audrey@gmail
 audrey.save!
 puts 'Audrey created'
 
-olivia = User.new(username: 'Oliv', first_name: 'olivia', email: 'olivia@gmail.com', password: 'Coucou460', score: 300)
+olivia = User.new(username: 'Oliv', first_name: 'olivia', email: 'olivia@gmail.com', password: 'Coucou460', score: 375)
 olivia.save!
 
 anna = User.new(username: 'Anna', first_name: 'anna', email: 'anna@gmail.com', password: 'Coucou460', score: 250)
