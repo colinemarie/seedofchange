@@ -27,13 +27,7 @@
       <% end %>
     </div>
     <div class="btn-add-bar">
-      <% if @user_challenges.count == 5  %>
-<!--         <div class="btn-add-bar-inactive">
-          <button type="button" class="button-add-inactive mx-auto tooltip-test" data-toggle="tooltip" data-placement="top" title="Pas plus de 5 challenges à la fois !">
-            <i class="fas fa-plus"></i>
-          </button>
-        </div> -->
-      <% else  %>
+      <% unless @user_challenges.count == 5  %>
         <%= link_to user_challenges_path, class: "button button-add", :method => :post do %>
           <i class="fas fa-plus"></i>
         <% end %>

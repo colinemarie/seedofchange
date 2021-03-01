@@ -1,21 +1,7 @@
 <div class="user-container mt-5 text-center p-3">
-<%= render "shared/navbarsecondaryclan" %>
-<br>
-
-<% if @invitation %>
-  <div class="card-invitation">
-
-      <p>Tu as reçu une invitation pour être membre du clan : <br> <strong><%= @invitation.clan.name %></strong></p>
-
-      <%= link_to invitation_path(@invitation, status: "declined"), class: "button-decline", method: :patch do %>
-        <i class="fas fa-times-circle"></i>
-      <% end %>
-      <%= link_to invitation_path(@invitation, status: "accepted"), class: "button-accept", method: :patch do %>
-        <i class="fas fa-check"></i>
-      <% end %>
-  </div>
-<% end %>
-
+  <%= render "shared/navbarsecondaryclan" %>
+  <br>
+  <%= render 'shared/invitation' if @invitation %>
   <h1><%= @clan.name %></h1>
 </div>
 
@@ -44,89 +30,47 @@
       <li>
         <% if member.username == current_user.username %>
           <%= link_to user_path(current_user) do  %>
-            <div class="row align-items-center">
-              <div class=" card-clan current-user row align-items-center">
-                <div class= "col-2">
-                  <%= cl_image_tag("SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar") %>
-                </div>
-                <div class="info-member col-8">
-                  <% if index == 0 %>
-                  <h2><%= member.username %> <i class="fas fa-crown crown gold"></i></h2>
-                  <% elsif index == 1 %>
-                    <h2><%= member.username %> <i class="fas fa-crown crown silver"></i></h2>
-                  <% elsif index == 2 %>
-                    <h2><%= member.username %> <i class="fas fa-crown crown bronze"></i></h2>
-                  <% else %>
-                    <h2><%= member.username %></h2>
-                  <% end %>
-                  <subtitle><strong><%= member.score %></strong> points</subtitle>
-                </div>
-                <div class="col-2">
-                  <p><%= index + 1 %> </p>
-                </div>
-              </div>
-            </div>
+            <%= render 'shared/card_clan', member: member, index: index, current_user_style: true %>
           <% end %>
         <% else %>
-          <div class="row">
-            <div class="card-clan row">
-              <div class= "col-2">
-                <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar" %>
-              </div>
-              <div class="info-member col-8">
-                <% if index == 0 %>
-                  <h2><%= member.username %> <i class="fas fa-crown crown gold"></i></h2>
-                <% elsif index == 1 %>
-                    <h2><%= member.username %> <i class="fas fa-crown crown silver"></i></h2>
-                <% elsif index == 2 %>
-                    <h2><%= member.username %> <i class="fas fa-crown crown bronze"></i></h2>
-                <% else %>
-                  <h2><%= member.username %></h2>
-                <% end %>
-                <subtitle><strong><%= member.score %></strong> points</subtitle>
-              </div>
-              <div class="col-2">
-                <p><%= index + 1 %> </p>
-              </div>
-            </div>
-          </div>
+          <%= render 'shared/card_clan', member: member, index: index %>
         <% end %>
       </li>
     <% end %>
   </ul>
 
 <!-- Button trigger modal -->
-<div class="text-center">
-  <button type="button" class="button-clan text-center text-white" data-toggle="modal" data-target="#exampleModalCenter">
-    J'agrandis mon clan !
-  </button>
-</div>
+  <div class="text-center">
+    <button type="button" class="button-clan text-center text-white" data-toggle="modal" data-target="#exampleModalCenter">
+      J'agrandis mon clan !
+    </button>
+  </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Quelle formidable personne souhaites-tu ajouter à ton clan ?</p>
-        <br>
-        <%= form_tag  invitations_path, method: :post do %>
-          <%= text_field_tag :username,
-            params[:username],
-            class: "form-control",
-            placeholder: "CocoDu77"
-          %>
-          <br> <br>
-          <%= submit_tag "Je l'ajoute !", class: "button-modal-clan text-center text-white" %>
-        <% end %>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Quelle formidable personne souhaites-tu ajouter à ton clan ?</p>
+          <br>
+          <%= form_tag  invitations_path, method: :post do %>
+            <%= text_field_tag :username,
+              params[:username],
+              class: "form-control",
+              placeholder: "CocoDu77"
+            %>
+            <br> <br>
+            <%= submit_tag "Je l'ajoute !", class: "button-modal-clan text-center text-white" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </div>
 

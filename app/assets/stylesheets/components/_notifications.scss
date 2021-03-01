@@ -18,6 +18,8 @@
   background-color: $darkgreen;
   padding: 7px;
   border-top: 0.5px solid rgb(81, 112, 114);
+  display: flex;
+  align-items: center;
 }
 
 .activity-info {
@@ -35,10 +37,7 @@
 
 .points {
   border-radius: 50%;
-  // background-color: $gold;
   padding: 5px;
-  // height: 25px;
-  // width: 25px;
   font-size: 16px;
   text-align: center;
   color: $gold;

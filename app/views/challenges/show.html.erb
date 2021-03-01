@@ -4,108 +4,92 @@
     <i class="fas fa-arrow-left"></i>
   <% end %>
 
-  <br><br>
-
-  <h1><%= @challenge.name %></h1>
+  <br>
   <br>
 
-<div class="d-flex justify-content-between align-items-center" class="first-info">
-  <div class="card-info">
+  <h1><%= @challenge.name %></h1>
+
+  <br>
+
+  <div class="d-flex justify-content-between align-items-center">
     <h2 class="<%= label_category(@challenge.category) %>"><%= @challenge.category %></h2>
-  </div>
-
-  <div class="avatars">
-    <% @already_users.first(2).each do |user| %>
-      <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{user.first_name}.png", class: "avatar avatar-challenge", alt: "avatar" %>
-    <% end %>
-    <% if @already_users.count > 2 %>
-      <p class="avatar">+<%= @already_users.count - 2 %></p>
-    <% end %>
-  </div>
-</div>
-
-<div class="compulsory-info">
-  <div class="d-flex justify-content-between">
-    <div class="price-duration">
-      <p><i class="fas fa-shopping-cart"></i>    <%= @challenge.price %> €</p>
-      <p><i class="fas fa-hourglass-start"></i>    <%= pluralize(@challenge.duration, 'minute') %></p>
+    <div class="avatars">
+      <% @already_users.first(2).each do |user| %>
+        <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{user.first_name}.png", class: "avatar avatar-challenge", alt: "avatar" %>
+      <% end %>
+      <% if @already_users.count > 2 %>
+        <p class="avatar">+<%= @already_users.count - 2 %></p>
+      <% end %>
     </div>
+  </div>
+
+  <div class="compulsory-info">
+    <div class="d-flex justify-content-between">
+      <div class="price-duration">
+        <p><i class="fas fa-shopping-cart"></i>    <%= @challenge.price %> €</p>
+        <p><i class="fas fa-hourglass-start"></i>    <%= pluralize(@challenge.duration, 'minute') %></p>
+      </div>
       <div class="difficulty">
-    <%= render 'shared/difficulty', level: @challenge.difficulty %>
+        <%= render 'shared/difficulty', level: @challenge.difficulty %>
       </div>
-  </div>
-  <p><%= @challenge.description %></p>
-</div>
-
-<div class="other-info">
-  <div class="necessary-items">
-    <% if @challenge.necessary_items.present? %>
-      <h2>Liste de course</h2>
-      <% @challenge.necessary_items.each do |item| %>
-      <ul>
-        <li>
-          <%= item %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
- </div>
-
- <div class="how-to">
-  <% if @challenge.how_to.present? %>
-      <h2>Comment faire ?</h2>
-      <% @challenge.how_to.each do |step| %>
-      <ul>
-        <li>
-          <%= step %>
-        </li>
-      </ul>
-      <% end %>
-    <% end %>
-  </div>
-
-  <% if @challenge.tips.present? %>
-       <div class= "tips">
-      <h2>Petite astuce</h2>
-      <%= @challenge.tips %>
-        </div>
-    <% end %>
-
-
-<% if @challenge.where_to.present? %>
-    <div class= "useful-links">
-      <h2>Liens utiles</h2>
-      <ul>
-        <% @challenge.where_to.each do |link|%>
-          <li>
-            <a href="<%= link %>"><%= link %></a>
-          </li>
-        <% end %>
-      </ul>
     </div>
-    <% end %>
-<br>
-  <!--
-    <% if @user_challenge.status == "pending" %>
-      <div class="buttons">
-        <%= link_to decline_user_challenge_path(@user_challenge), class: "button-decline", method: :patch do %>
-          <i class="fas fa-times-circle"></i>
-        <% end %>
-          <%= link_to user_challenges_path, class: "button-back" do %>
-          <i class="fas fa-undo-alt"></i>
-        <% end %>
-        <%= link_to accept_user_challenge_path(@user_challenge), class: "button-accept", method: :patch do %>
-          <i class="fas fa-check"></i>
-        <% end %>
-      </div>
-    <% end %> -->
+    <p><%= @challenge.description %></p>
+  </div>
 
-    <% if @user_challenge.status == "accepted" %>
-      <div class="challenge-show-action">
-        <%= link_to "J'abandonne.", drop_user_challenge_path(@user_challenge), method: :patch, class:"button button-fail", data: {:confirm => "C'était un super challenge...",  title: 'Êtes-vous sûr ?'}  %>
-        <%= link_to "Yeah, terminé !", validate_user_challenge_path(@user_challenge), method: :patch, class:"button button-success", id:"validate-btn" %>
+  <div class="other-info">
+
+    <% if @challenge.necessary_items.present? %>
+      <div class="necessary-items">
+        <h2>Liste de course</h2>
+        <% @challenge.necessary_items.each do |item| %>
+        <ul>
+          <li>
+            <%= item %>
+          </li>
+        </ul>
+        <% end %>
       </div>
     <% end %>
+
+    <% if @challenge.how_to.present? %>
+      <div class="how-to">
+        <h2>Comment faire ?</h2>
+        <% @challenge.how_to.each do |step| %>
+        <ul>
+          <li>
+            <%= step %>
+          </li>
+        </ul>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% if @challenge.tips.present? %>
+      <div class= "tips">
+        <h2>Petite astuce</h2>
+        <%= @challenge.tips %>
+      </div>
+    <% end %>
+
+    <% if @challenge.where_to.present? %>
+      <div class= "useful-links">
+        <h2>Liens utiles</h2>
+        <ul>
+          <% @challenge.where_to.each do |link|%>
+            <li>
+              <a href="<%= link %>"><%= link %></a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <br>
+
+    <div class="challenge-show-action">
+      <%= link_to "J'abandonne.", drop_user_challenge_path(@user_challenge), method: :patch, class:"button button-fail", data: {:confirm => "C'était un super challenge...",  title: 'Êtes-vous sûr ?'}  %>
+      <%= link_to "Yeah, terminé !", validate_user_challenge_path(@user_challenge), method: :patch, class:"button button-success", id:"validate-btn" %>
+    </div>
 
   </div>
 </div>

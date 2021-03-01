@@ -1,0 +1,14 @@
+<div class="card-invitation">
+    <p>Tu as reçu une invitation pour être membre du clan : <strong><%= @invitation.clan.name %></strong></p>
+  <div class="d-flex justify-content-center">
+    <%= link_to invitation_path(@invitation, status: "declined"), class: "button-decline", method: :patch do %>
+      <i class="fas fa-times-circle"></i>
+    <% end %>
+    <%= link_to invitation_path(@invitation, status: "accepted"), class: "button-accept", method: :patch do %>
+      <i class="fas fa-check"></i>
+    <% end %>
+  </div>
+</div>
+
+
+
