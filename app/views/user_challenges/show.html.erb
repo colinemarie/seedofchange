@@ -7,13 +7,11 @@
 </div>
 
 <div class="card-show">
+
   <h1><%= @user_challenge.challenge.name %></h1>
   <br>
-  <div class="d-flex justify-content-between align-items-center" class="first-info">
-    <div class="card-info">
-      <h2 class="<%= label_category(@user_challenge.challenge.category) %>"><%= @user_challenge.challenge.category %></h2>
-    </div>
-
+  <div class="d-flex justify-content-between align-items-center first-info">
+    <h2 class="<%= label_category(@user_challenge.challenge.category) %>"><%= @user_challenge.challenge.category %></h2>
     <div class="avatars">
       <% @already_users.first(2).each do |user| %>
         <%= image_tag "https://res.cloudinary.com/dwbej2js2/image/upload/v1613148306/SeedOfChange%20-%20Avatar/#{user.first_name}.png", class: "avatar avatar-challenge", alt: "avatar" %>
@@ -31,7 +29,7 @@
         <p><i class="fas fa-hourglass-start"></i>    <%= pluralize(@user_challenge.challenge.duration, 'minute') %></p>
       </div>
         <div class="difficulty">
-      <%= render 'shared/difficulty', level: @user_challenge.challenge.difficulty %>
+          <%= render 'shared/difficulty', level: @user_challenge.challenge.difficulty %>
         </div>
     </div>
     <p><%= @user_challenge.challenge.description %></p>
@@ -42,32 +40,34 @@
     <a class="know-more collapsed" data-toggle="collapse" href="#textCollaspe" role="button" aria-expanded="false" aria-controls="textCollaspe"><strong>En savoir plus</strong></a>
 
     <div class="collapse" id="textCollaspe">
+
       <div class="other-info">
-        <div class="necessary-items">
+
         <% if @user_challenge.challenge.necessary_items.present? %>
-          <h2>Liste de course</h2>
-          <% @user_challenge.challenge.necessary_items.each do |item| %>
+          <div class="necessary-items">
+            <h2>Liste de course</h2>
+            <% @user_challenge.challenge.necessary_items.each do |item| %>
             <ul>
               <li>
                 <%= item %>
               </li>
             </ul>
-          <% end %>
+            <% end %>
+          </div>
         <% end %>
-      </div>
 
-    <div class="how-to">
         <% if @user_challenge.challenge.how_to.present? %>
-          <h2>Comment faire ?</h2>
-          <% @user_challenge.challenge.how_to.each do |step| %>
+          <div class="how-to">
+            <h2>Comment faire ?</h2>
+            <% @user_challenge.challenge.how_to.each do |step| %>
             <ul>
               <li>
                 <%= step %>
               </li>
             </ul>
-          <% end %>
+            <% end %>
+          </div>
         <% end %>
-    </div>
 
         <% if @user_challenge.challenge.tips.present? %>
           <div class= "tips">
@@ -76,23 +76,27 @@
           </div>
         <% end %>
 
-  <% if @user_challenge.challenge.where_to.present? %>
-    <div class= "useful-links">
-      <h2>Liens utiles</h2>
-      <ul>
-        <% @user_challenge.challenge.where_to.each do |link|%>
-          <li>
-            <a href="<%= link %>"><%= link %></a>
-          </li>
+        <% if @user_challenge.challenge.where_to.present? %>
+          <div class= "useful-links">
+            <h2>Liens utiles</h2>
+            <ul>
+              <% @user_challenge.challenge.where_to.each do |link|%>
+                <li>
+                  <a href="<%= link %>"><%= link %></a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
-    </div>
-    <% end %>
 
       </div>
+
     </div>
+
   <% end %>
+
 </div>
+
 
 <div class="buttons">
   <%= link_to decline_user_challenge_path(@user_challenge), class: "button-decline", method: :patch do %>

@@ -1,4 +1,5 @@
 <div class="navbar navbar-seed">
+
   <div class="<%= 'active' if controller.controller_name == 'pages' && controller.action_name == 'home' %> navbar-element">
     <% if current_page?(root_path) %>
       <%= link_to_unless_current '<i class="fa fa-home"></i><subtitle> Accueil </subtitle>'.html_safe, (landing_path), class: "navbar-element" %>
@@ -29,6 +30,7 @@
       <%= link_to_unless_current '<i class="fas fa-user"></i> <subtitle>Profil</subtitle>'.html_safe, user_path(current_user), class: "navbar-element" %>
     </div>
   <% end %>
+
 </div>
 
 

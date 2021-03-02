@@ -3,16 +3,12 @@
 <div class="user-container text-center">
   <h1><%= @user.username %>,</br>tu es une <div class="user-level">planthipster !</div></h1>
 </div>
+
 <div class="text-center user-score">
   <p> avec </p>
   <h1 class="score"><%= @user.score %></h1>
   <p><strong>points</strong></p>
 </div>
-
-
-
-
-
 
 <div class="mt-4 mb-4">
   <% @category_count.each do |category, count| %>
@@ -30,10 +26,7 @@
             <div class="badges-icon next-level d-flex justify-content-center align-items-center">
               <%= image_tag "seed.png", class:"oneLeaf" %>
             </div>
-            <p class="progression-bar-level-first"> l </p>
-            <p class="progression-bar-level-second"> l </p>
-            <p class="progression-bar-level-third"> l </p>
-            <p class="progression-bar-level-fourth"> l </p>
+            <%= render 'shared/progression_bar'%>
           </div>
         <% elsif count > @level_gap * 1 %>
            <div class="badges" data-level="2">
@@ -43,10 +36,7 @@
             <div class="badges-icon next-level d-flex justify-content-center align-items-center">
              <%= image_tag "oneLeaf.png", class:"oneLeaf" %>
             </div>
-            <p class="progression-bar-level-first"> l </p>
-            <p class="progression-bar-level-second"> l </p>
-            <p class="progression-bar-level-third"> l </p>
-            <p class="progression-bar-level-fourth"> l </p>
+            <%= render 'shared/progression_bar'%>
           </div>
         <% elsif count > @level_gap * 2 %>
            <div class="badges" data-level="3" >
@@ -56,10 +46,7 @@
             <div class="badges-icon next-level d-flex justify-content-center align-items-center">
               <%= image_tag "twoLeafs.png", class:"oneLeaf" %>
             </div>
-            <p class="progression-bar-level-first"> l </p>
-            <p class="progression-bar-level-second"> l </p>
-            <p class="progression-bar-level-third"> l </p>
-            <p class="progression-bar-level-fourth"> l </p>
+            <%= render 'shared/progression_bar'%>
           </div>
         <% else %>
            <div class="badges" data-level="4">
@@ -69,10 +56,7 @@
             <div class="badges-icon next-level d-flex justify-content-center align-items-center">
               <%= image_tag "threeLeafs.png", class:"oneLeaf" %>
             </div>
-            <p class="progression-bar-level-first"> l </p>
-            <p class="progression-bar-level-second"> l </p>
-            <p class="progression-bar-level-third"> l </p>
-            <p class="progression-bar-level-fourth"> l </p>
+            <%= render 'shared/progression_bar'%>
           </div>
         <% end %>
       </div>
@@ -82,16 +66,16 @@
       <div class="collapse w-100" id="badgeCollaspe-<%= category %>">
         <div class="badges-title">Mes badges </div>
         <ul class="index-bagdes-component" data-challenges=" <% count %> ">
-          <li class="badges-icon index-style d-flex justify-content-center align-items-center", id="badges_one">
+          <li class="badges-icon index-style", id="badges_one">
             <%= image_tag "seed.png", class:"oneLeaf" %>
           </li>
-          <li class="badges-icon index-style d-flex justify-content-center align-items-center" id="badges_two">
+          <li class="badges-icon index-style" id="badges_two">
             <%= image_tag "oneLeaf.png", class:"oneLeaf" %>
           </li>
-          <li class="badges-icon index-style d-flex justify-content-center align-items-center" id="badges_three">
+          <li class="badges-icon index-style" id="badges_three">
             <%= image_tag "twoLeafs.png", class:"oneLeaf" %>
           </li>
-          <li class="badges-icon index-style d-flex justify-content-center align-items-center" id="badges_four">
+          <li class="badges-icon index-style" id="badges_four">
             <%= image_tag "threeLeafs.png", class:"oneLeaf" %>
           </li>
         </ul>
