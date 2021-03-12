@@ -3,7 +3,7 @@ body#sessions-new {
 }
 
 body#registrations-new {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 #sessions-new h1 {
@@ -14,9 +14,29 @@ body#registrations-new {
 #registrations-new h1 {
   color: white;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .devise-links {
   color: $mediumgreen;
   margin-top: 10px;
+}
+
+
+.form-signin {
+  padding: 20px;
+}
+
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+
+.form-inputs label {
+  font-size: 16px;
+}
+
+.form-control-file, .form-control-range {
+  color: white,
 }
