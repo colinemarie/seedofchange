@@ -1,3 +1,5 @@
+// Card pour la show des user-challenges
+
 .card-show {
   background-color: $lightgrey;
   margin: 0px 15px 60px;
@@ -10,6 +12,8 @@
   text-align: center;
   margin: 0px 10px 10px 10px;
 }
+
+// Bouton pour expand le contenu
 
 .know-more {
   color: $gold;
@@ -28,6 +32,8 @@
   }
 }
 
+// Compteur des user-challenges acceptés
+
 .user-challenge-count {
   background: $lightgrey;
   color: $darkgreen;
@@ -40,12 +46,16 @@
   height: 32px;
 }
 
+// Semaine de sélection des challenges
+
 .current-week {
   color: $lightgrey;
   margin-left: 15px;
   margin-bottom: 40px;
   padding-top: 25px
 }
+
+// Groupement des bouttons de sélection
 
 .buttons {
   text-align: center;
@@ -58,3 +68,16 @@
   transform: translateX(-50%);
   border-radius: 50px
 }
+
+
+// Page de fin de sélection
+
+.seed {
+    color: goldenrod;
+}
+
+.golden-title {
+  color: goldenrod;
+  font-size: 30px;
+}
+
