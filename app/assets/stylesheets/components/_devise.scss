@@ -1,0 +1,22 @@
+body#sessions-new {
+  padding-top: 50px;
+}
+
+body#registrations-new {
+  padding-top: 50px;
+}
+
+#sessions-new h1 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+#registrations-new h1 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.devise-links {
+  color: $mediumgreen;
+  margin-top: 10px;
+}
