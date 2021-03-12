@@ -1,3 +1,5 @@
+// Navbar principale
+
 .navbar-seed {
   color: $lightgrey;
   display: flex;
@@ -23,6 +25,10 @@
 .navbar-element:hover {
   color: $gold;
 }
+
+
+// Navbar secondaire pour le clan
+
 
 .switch-button {
   width: 76%;
@@ -54,6 +60,7 @@
 .switch-button-case:focus {
   outline: none;
 }
+
 .switch-button .active {
   color: #151515;
   background-color: goldenrod;
@@ -66,6 +73,7 @@
   transition: 0.3s ease-out all;
   border-radius: 20px;
 }
+
 .switch-button .active-case {
   color: #white;
 }

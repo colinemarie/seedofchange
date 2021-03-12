@@ -18,10 +18,6 @@
   padding-right: 15px;
 }
 
-// .info-member {
-// height: 10px;
-// }
-
 .info-member h2 {
 margin-bottom: 0px;
 font-weight: bold;
@@ -39,4 +35,18 @@ font-weight: none;
 
 .card-clan p {
   margin: 0px;
+}
+
+// Couronnes pour les premiers du classement
+
+.gold {
+  color: $gold;
+}
+
+.silver {
+  color: silver;
+}
+
+.bronze {
+  color: #98521C;
 }

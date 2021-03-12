@@ -1,9 +1,14 @@
-
 .badges {
   position: relative;
   width: 186px;
   height: 36px;
   top: 8px;
+}
+
+.oneLeaf {
+  height: 25px;
+  width: 25px;
+  object-fit: contain;
 }
 
 progress {
@@ -68,5 +73,3 @@ progress {
 .white {
   color: white;
 }
-
-
