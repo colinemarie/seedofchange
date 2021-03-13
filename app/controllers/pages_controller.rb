@@ -9,4 +9,7 @@ class PagesController < ApplicationController
   def landing
   end
 
+  def no_clan
+  end
+
 end
