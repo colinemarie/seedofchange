@@ -376,46 +376,72 @@ puts 'last but not least, 3 more challenges created'
 puts 'adding users...'
 
 lomig = User.new(username: 'Lomig', first_name: 'lomig', email: 'lomig@gmail.com', password: 'Coucou460', score: 1600)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/Lomig.png')
+lomig.avatar.attach(io: file, filename: 'lomig.png', content_type: 'image/png')
 lomig.save!
 
 myriam = User.new(username: 'Mymy' , first_name: 'Myriam', email: 'myriam@gmail.com', password: 'Coucou460', score: 700)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/Myriam.png')
+myriam.avatar.attach(io: file, filename: 'myriam.png', content_type: 'image/png')
 myriam.save!
 puts 'Myriam created'
 
 pascal = User.new(username: 'Fofo', first_name: 'pascal', email: 'pascal@gmail.com', password: 'Coucou460', score: 625)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/Myriam.png')
+pascal.avatar.attach(io: file, filename: 'pascal.png', content_type: 'image/png')
 pascal.save!
 
 coline = User.new(username: 'Coco', first_name: 'Coline', email: 'coline@gmail.com', password: 'Coucou460', score: 600)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/Coline.png')
+coline.avatar.attach(io: file, filename: 'coline.png', content_type: 'image/png')
 coline.save!
 puts 'Coline created'
 
 simon = User.new(username:  'Sim', first_name: 'Simon', email: 'simon@gmail.com', password: 'Coucou460', score: 650)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/Simon.png')
+simon.avatar.attach(io: file, filename: 'simon.png', content_type: 'image/png')
 simon.save!
 puts 'Simon created'
 
 audrey = User.new(username: 'Audrey', first_name: 'Audrey', email: 'audrey@gmail.com', password: 'Coucou460', score: 550)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/Audrey.png')
+audrey.avatar.attach(io: file, filename: 'audrey.png', content_type: 'image/png')
 audrey.save!
 puts 'Audrey created'
 
 olivia = User.new(username: 'Oliv', first_name: 'olivia', email: 'olivia@gmail.com', password: 'Coucou460', score: 375)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/olivia.png')
+olivia.avatar.attach(io: file, filename: 'olivia.png', content_type: 'image/png')
 olivia.save!
 
 anna = User.new(username: 'Anna', first_name: 'anna', email: 'anna@gmail.com', password: 'Coucou460', score: 250)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/anna.png')
+anna.avatar.attach(io: file, filename: 'anna.png', content_type: 'image/png')
 anna.save!
 
 sebastien = User.new(username: 'Seb', first_name: 'sebastien', email: 'sebastien@gmail.com', password: 'Coucou460', score: 500)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/sebastien.png')
+sebastien.avatar.attach(io: file, filename: 'sebastien.png', content_type: 'image/png')
 sebastien.save!
 
 antoine = User.new(username: 'Antoine', first_name: 'antoine', email: 'antoine@gmail.com', password: 'Coucou460', score: 150)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/Antoine.png')
+antoine.avatar.attach(io: file, filename: 'antoine.png', content_type: 'image/png')
 antoine.save!
 
 cecile = User.new(username: 'Cecile', first_name: 'cecile', email: 'cecile@gmail.com', password: 'Coucou460', score: 400)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/cecile.png')
+cecile.avatar.attach(io: file, filename: 'cecile.png', content_type: 'image/png')
 cecile.save!
 
 damien = User.new(username: 'Dams', first_name: 'damien', email: 'damien@gmail.com', password: 'Coucou460', score: 400)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/damien.png')
+damien.avatar.attach(io: file, filename: 'damien.png', content_type: 'image/png')
 damien.save!
 
 charlie = User.new(username: 'Chacha', first_name: 'charlie', email: 'charlie@gmail.com', password: 'Coucou460', score: 50)
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/charlie.png')
+charlie.avatar.attach(io: file, filename: 'charlie.png', content_type: 'image/png')
 charlie.save!
 
 
