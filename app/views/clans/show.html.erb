@@ -1,3 +1,4 @@
+<!-- Navbar secondaire -->
 <div class="user-container mt-5 text-center p-3">
   <%= render "shared/navbarsecondaryclan" %>
   <br>
@@ -5,6 +6,7 @@
   <h1><%= @clan.name %></h1>
 </div>
 
+<!-- Image représentative du niveau du clan -->
 <div class="clan-level mb-2 position-relative">
   <% if @clan.score < 6800 %>
     <%= image_tag "pollue.png", width: 200 %>
@@ -13,6 +15,7 @@
   <% end %>
  </div>
 
+<!-- Nombre de members et total points -->
 <div class="d-flex justify-content-around pb-2">
   <div class="clan-points pb-0 mb-0">
     <%= @members_by_position.count %> / 25
@@ -24,6 +27,7 @@
   </div>
 </div>
 
+<!--  Classement des membres -->
 <div class="members-list">
   <ul>
     <% @members_by_position.each_with_index do |member, index| %>
@@ -39,14 +43,14 @@
     <% end %>
   </ul>
 
-<!-- Button trigger modal -->
+<!-- Bouton trigger modal pour invitation -->
   <div class="text-center">
     <button type="button" class="button-clan text-center text-white" data-toggle="modal" data-target="#exampleModalCenter">
       J'agrandis mon clan !
     </button>
   </div>
 
-<!-- Modal -->
+<!-- Modal d'invitation -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -71,6 +75,5 @@
       </div>
     </div>
   </div>
-
 </div>
 

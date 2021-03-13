@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # get 'invitations/create'
   devise_for :users
   root to: 'pages#home'
   get 'landing', to: 'pages#landing'
+  get 'no_clan', to: 'pages#no_clan'
   resources :challenges, only: [ :show ]
   resources :users, only: [ :show ]
   resources :clans, only: [ :show ] do

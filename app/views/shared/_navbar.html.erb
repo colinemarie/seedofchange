@@ -13,7 +13,9 @@
   </div>
 
   <% if current_user %>
+
     <% if current_user&.clan %>
+
       <div id="navbar-clan" class="<%= 'active' if controller.controller_name == 'clans' || controller.controller_name == 'activities' %> navbar-element">
         <%= link_to_unless_current '<i class="fas fa-heart"></i> <subtitle>Clan</subtitle>'.html_safe, clan_activities_path(current_user.clan), class: "navbar-element", 'data-turbolinks': false %>
         <div id="notif" data-clan-id="<%= current_user.clan.id %>" data-current-user="<%= current_user.id %>" data-file='<%= audio_url('hirondelle.wav') %>' >
@@ -24,13 +26,18 @@
           <% end %>
         </div>
       </div>
+
+    <% else %>
+      <div class="<%= 'active' if controller.controller_name == 'pages' || controller.action_name == 'no_clan' %> navbar-element">
+        <%= link_to_unless_current '<i class="fas fa-heart"></i> <subtitle>Clan</subtitle>'.html_safe, (no_clan_path), class: "navbar-element", 'data-turbolinks': false %>
+      </div>
     <% end %>
+
 
     <div class="<%= 'active' if controller.controller_name == 'users' && controller.action_name == 'show' %> navbar-element">
       <%= link_to_unless_current '<i class="fas fa-user"></i> <subtitle>Profil</subtitle>'.html_safe, user_path(current_user), class: "navbar-element" %>
     </div>
+
   <% end %>
 
 </div>
-
-
