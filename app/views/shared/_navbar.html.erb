@@ -28,7 +28,7 @@
       </div>
 
     <% else %>
-      <div class="<%= 'active' if controller.controller_name == 'pages' || controller.action_name == 'no_clan' %> navbar-element">
+      <div class="<%= 'active' if controller.controller_name == 'pages' && controller.action_name == 'no_clan' %> navbar-element">
         <%= link_to_unless_current '<i class="fas fa-heart"></i> <subtitle>Clan</subtitle>'.html_safe, (no_clan_path), class: "navbar-element", 'data-turbolinks': false %>
       </div>
     <% end %>
