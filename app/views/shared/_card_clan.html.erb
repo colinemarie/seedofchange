@@ -2,7 +2,7 @@
   <div class="card-clan row <%= 'current-user' if local_assigns[:current_user_style] %>">
 
     <div class= "col-2">
-      <%= cl_image_tag("SeedOfChange%20-%20Avatar/#{member.first_name}.png", class: "avatar", alt: "avatar") %>
+      <%= cl_image_tag member.avatar.key, class: "avatar", alt: "avatar" %>
     </div>
 
     <div class="info-member col-8">
