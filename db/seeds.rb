@@ -387,7 +387,7 @@ myriam.save!
 puts 'Myriam created'
 
 pascal = User.new(username: 'Fofo', first_name: 'pascal', email: 'pascal@gmail.com', password: 'Coucou460', score: 625)
-file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/Myriam.png')
+file = URI.open('http://res.cloudinary.com/dwbej2js2/image/upload/v1/SeedOfChange%20-%20Avatar/pascal.png')
 pascal.avatar.attach(io: file, filename: 'pascal.png', content_type: 'image/png')
 pascal.save!
 
