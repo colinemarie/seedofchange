@@ -2,7 +2,7 @@
 
   <% if @user_challenges.empty? %>
     <div class="d-flex flex-column justify-content-center no-challenge">
-      <p>Tu n'as pas encore de défi... </br> Ajoutes-en ! <i class="fas fa-smile-wink"></i></p>
+      <p>Tu n'as pas de défi <br> en cours.</br> Ajoutes-en !</p>
       <%= link_to user_challenges_path, class: "button button-add mx-auto mt-5", :method => :post do %>
         <i class="fas fa-plus"></i>
       <% end %>
