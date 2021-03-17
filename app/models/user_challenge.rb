@@ -11,8 +11,10 @@ class UserChallenge < ApplicationRecord
     return unless status == "validated"
 
     score_user = user.score
-    score_clan = user.clan.score
     user.update(score: score_user + DIFFICULTY_SCORES[challenge.difficulty - 1])
+    return unless user.clan
+
+    score_clan = user.clan.score
     user.clan.update(score: score_clan + DIFFICULTY_SCORES[challenge.difficulty - 1])
   end
 end

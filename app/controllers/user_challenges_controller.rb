@@ -12,10 +12,7 @@ class UserChallengesController < ApplicationController
       flash[:alert] = "Tu as réalisé tous les challenges de Seed of Change, félications !"
       redirect_to user_challenges_path
     else
-      @user_challenges = []
-      @undone_challenges.each do |challenge|
-        @user_challenges << UserChallenge.create(challenge: challenge, user: current_user, status: 'pending')
-      end
+      @user_challenges = @undone_challenges.map { |challenge| UserChallenge.create(challenge: challenge, user: current_user, status: 'pending')}
       redirect_to user_challenge_path(@user_challenges.first)
     end
   end
@@ -43,29 +40,27 @@ class UserChallengesController < ApplicationController
   end
 
   def validate
-    order_users
-    check_position_change
     @user_challenge.update(status: "validated")
-    other_users = current_user.clan.users.excluding(current_user)
-    other_users.each do |user|
-      Activity.create(user: user, user_challenge: @user_challenge)
-    end
-    if check_position_change == true
-      Activity.create(user: @next_user, user_challenge: @user_challenge, username: current_user.username)
-    end
-    broadcast_notification
-    @validated_challenges = Challenge.includes(user_challenges: :user).where(category: @user_challenge.challenge.category, user_challenges: {user: current_user, status: "validated"})
+    clan_notification if current_user.clan
+    @validated_challenges = Challenge.includes(user_challenges: :user).where(category: @user_challenge.challenge.category, user_challenges: { user: current_user, status: "validated" })
     @category_count = @validated_challenges.count
     if @category_count == 6 || @category_count == 11 || @category_count == 16
-      redirect_to user_challenges_path,
-      notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points 🥳 et un badge #{@user_challenge.challenge.category} 🏆 !"
+      redirect_to user_challenges_path, notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points 🥳 et un badge #{@user_challenge.challenge.category} 🏆 !"
     else
-      redirect_to user_challenges_path,
-      notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points ! 🥳🥳🥳 "
+      redirect_to user_challenges_path, notice: "Bravo, tu as gagné #{@user_challenge.challenge.difficulty * 50} points ! 🥳🥳🥳 "
     end
   end
 
   private
+
+  def clan_notification
+    other_users = current_user.clan.users.excluding(current_user)
+    broadcast_notification
+    other_users.each { |user| Activity.create(user: user, user_challenge: @user_challenge) }
+    return unless check_position_change == true
+
+    Activity.create(user: @higher_user, user_challenge: @user_challenge, username: current_user.username)
+  end
 
   def broadcast_notification
     NotificationChannel.broadcast_to(
@@ -74,26 +69,15 @@ class UserChallengesController < ApplicationController
     )
   end
 
-  def order_users
-    ordered_users = []
-    users = current_user.clan.users.order(score: :desc)
-    users.each do |user|
-      ordered_users << user.id
-    end
-    @user_position = ordered_users.index(current_user.id)
-    @higher_user = ordered_users[@user_position - 1]
-  end
-
   def check_position_change
-    @next_user = User.find(@higher_user)
-    higher_score = @next_user.score
-    challenge_score = @user_challenge.challenge.difficulty * 50
-    updated_score = current_user.score + challenge_score
-    if updated_score > higher_score
-      true
-    else
-      false
-    end
+    users = current_user.clan.users.order(score: :desc)
+    user_position = users.index(current_user)
+    return if user_position.zero?
+
+    @higher_user = users[user_position - 1]
+    higher_score = @higher_user.score
+    updated_score = (@user_challenge.challenge.difficulty * 50) + current_user.score
+    updated_score > higher_score
   end
 
   def set_user_challenge
