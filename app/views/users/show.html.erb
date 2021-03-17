@@ -1,14 +1,19 @@
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
 <div class="user-container text-center">
-  <h1><%= @user.username %>,</br>tu es une <div class="user-level">planthipster !</div></h1>
+  <h1><%= @user.username %>,</br>tu as <div class="user-level"></div></h1>
 </div>
 
 <div class="text-center user-score">
-  <p> avec </p>
   <h1 class="score"><%= @user.score %></h1>
   <p><strong>points</strong></p>
 </div>
+
+<% if @category_count.empty? %>
+  <div class="text-center user-no-challenge">
+    <h1>Hey, tu n'as pas encore validé de défi. Va vite en sélectionner et en réaliser !</h1>
+  </div>
+<% end %>
 
 <div class="mt-4 mb-4">
   <% @category_count.each do |category, count| %>
@@ -16,7 +21,6 @@
       <div class="label-badge">
         <h2 class="<%= label_category(category) %>"><%= category %></h2>
       </div>
-
       <div class="progress-bar-component">
         <% if count <= @level_gap %>
            <div class="badges" data-level="1">
